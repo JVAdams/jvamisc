@@ -14,3 +14,6 @@ If you don't already have `Rtools` and `devtools`, you will need to download and
 
 	find_rtools()
 	install.packages("devtools")
+
+_Thanks to Hilary Parker whose blog post [Writing an R package from scratch](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
+encouraged me to create my first R package._
