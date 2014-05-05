@@ -4,6 +4,7 @@
 #' @param Y a vector representing a single response
 #' @param X two or more predictor columns in a matrix or dataframe
 #' @param main subtitle for the plot
+#' @return a plot is sent to the current graphics device (no value is returned)
 #' @export
 #' @examples added.var(Y=mtcars$hp, X=mtcars[, c("mpg", "disp", "wt")], main="Predicting horsepower from MPG, displacement, and weight")
 
@@ -26,7 +27,6 @@ added.var <- function(Y, X, main="") {
 		}
 
 	# fit the full model with each of the predictors excluded in turn
-	windows()
 	plotcols <- ceiling(sqrt(p - 1))
 	plotrows <- ceiling(p/plotcols)
 	par(mar = c(2.5, 2.5, 3, 2.5), mfrow = c(plotrows, plotcols), oma = c(3, 3, 5, 0), pty="s")
