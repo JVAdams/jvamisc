@@ -3,7 +3,7 @@
 \name{jvamisc}
 \alias{jvamisc}
 \alias{jvamisc-package}
-\title{R package jvamisc}
+\title{A collection of miscellaneous functions.}
 \description{
 A collection of miscellaneous functions.
 }

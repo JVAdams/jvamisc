@@ -12,6 +12,9 @@ added.var(Y, X, main = "")
 
 \item{main}{subtitle for the plot}
 }
+\value{
+a plot is sent to the current graphics device (no value is returned)
+}
 \description{
 Produces an added variable plot given 1 response and 2 or more predictors.
 }
