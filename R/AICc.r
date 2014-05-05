@@ -17,7 +17,7 @@
 #' AICc(list(fit1, fit2, fit3, fit4))
 
 AICc <- function(fitlist, corr=TRUE) {
-	modnamz <- if(is.null(names(fitlist))) paste("Model", seq(fitlist)) else names(fitlist)
+	modnamz <- if(is.null(names(fitlist))) seq(fitlist) else names(fitlist)
 	res <- data.frame(model=modnamz, n=NA, p=NA, rmse=NA, aic=NA, aicc=NA)
 	for(i in seq(fitlist)) {
 		fit <- fitlist[[i]]

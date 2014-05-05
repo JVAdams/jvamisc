@@ -6,9 +6,9 @@
 #' @param main subtitle for the plot
 #' @return a plot is sent to the current graphics device (no value is returned)
 #' @export
-#' @examples added.var(Y=mtcars$hp, X=mtcars[, c("mpg", "disp", "wt")], main="Predicting horsepower from MPG, displacement, and weight")
+#' @examples addedvar(Y=mtcars$hp, X=mtcars[, c("mpg", "disp", "wt")], main="Predicting horsepower from MPG, displacement, and weight")
 
-added.var <- function(Y, X, main="") {
+addedvar <- function(Y, X, main="") {
 	# Added variable plots of predictors
 	# Y is one response vector
 	# X is two or more predictor columns in a matrix or dataframe
@@ -41,7 +41,7 @@ added.var <- function(Y, X, main="") {
 		abline(lsfit(resxk, resy))
 		}
 	mtext("Variability in the predictor not explained by other predictors", side=1, outer=T, line=1, cex=1)
-	mtext("Variability in the response not explained by other predictors", side=2, outer=T, line=1, cex=1)
+	mtext("Variability in the response not explained by other predictors", side=2, outer=T, line=1, cex=1, las=0)
 	mtext("Added variable plots for predictors", side=3, outer=T, line=3, cex=1.5)
 	mtext(main, side=3, outer=T, line=1.5, cex=1)
 	}
