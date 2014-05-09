@@ -29,7 +29,7 @@ addedvar <- function(Y, X, main="") {
 	# fit the full model with each of the predictors excluded in turn
 	plotcols <- ceiling(sqrt(p - 1))
 	plotrows <- ceiling(p/plotcols)
-	par(mar = c(2.5, 2.5, 3, 2.5), mfrow = c(plotrows, plotcols), oma = c(3, 3, 5, 0), pty="s")
+	par(mar = c(0.5, 0.5, 1, 0), mfrow = c(plotrows, plotcols), oma = c(2, 2, 2, 0), pty="s")
 	for(i in 1:p) {
 		noxk <- paste("~ . - X[, ", i, "]", sep="")
 		xkfory <- paste("X[, ", i, "] ~ .", sep="")
@@ -40,8 +40,8 @@ addedvar <- function(Y, X, main="") {
 		plot(resxk, resy, main=pnames[i], xlab="", ylab="", xaxt="n", yaxt="n")
 		abline(lsfit(resxk, resy))
 		}
-	mtext("Variability in the predictor not explained by other predictors", side=1, outer=T, line=1, cex=1)
-	mtext("Variability in the response not explained by other predictors", side=2, outer=T, line=1, cex=1, las=0)
-	mtext("Added variable plots for predictors", side=3, outer=T, line=3, cex=1.5)
-	mtext(main, side=3, outer=T, line=1.5, cex=1)
+	mtext("Variability in xi not explained by other x!i", side=1, outer=T, line=1, cex=1)
+	mtext("Variability in y not explained by other x!i", side=2, outer=T, line=1, cex=1, las=0)
+#	mtext("Added variable plots for predictors", side=3, outer=T, line=3, cex=1.5)
+	mtext(main, side=3, outer=T, line=1, cex=1)
 	}
