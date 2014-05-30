@@ -8,9 +8,6 @@ getpackages(want)
 \arguments{
 \item{want}{A character vector of package names.}
 }
-\value{
-Nothing is returned.
-}
 \description{
 Installs (if necessary) and attaches the specified packages.
 }

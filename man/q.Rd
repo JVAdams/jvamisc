@@ -8,11 +8,8 @@ q()
 \arguments{
 \item{save}{A character string indicating whether the workspace should be saved, "yes" (the default), "no", "ask" or "default".}
 }
-\value{
-The R session is terminated (nothing is returned).
-}
 \description{
-Quit R
+Terminate the current R session.
 }
 \seealso{
 \code\link{{quit}}.

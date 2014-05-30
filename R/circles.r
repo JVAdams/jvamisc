@@ -24,7 +24,7 @@
 #' In most instances this should be well beyond the figure margins.
 #' @export
 #' @examples 
-#' circles(trees$Height, trees$Girth, trees$Volume, data.range=sqrt(c(0, max(trees$Volume))), 
+#' circles(trees$Height, trees$Girth, sqrt(trees$Volume), data.range=sqrt(c(0, max(trees$Volume))), 
 #' 	circle.size.range=c(0, 0.3), xlab="Height (ft)", ylab="Diameter (in)", main="Tree Volume")
 
 circles <- function(x, y, z, data.range=range(z, na.rm=TRUE), circle.size.range=c(0.1, 1), outx=NA, outy=NA, add=FALSE, xlim=NULL, ylim=NULL, ...) {

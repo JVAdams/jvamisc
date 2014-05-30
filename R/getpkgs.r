@@ -2,7 +2,6 @@
 #'
 #' Installs (if necessary) and attaches the specified packages.
 #' @param want 	A character vector of package names.
-#' @return 		Nothing is returned.
 #' @export
 #' @seealso 	\code{\link{windows}}, \code{\link{par}}.
 #' @examples plotdf(mtcars)

@@ -10,9 +10,10 @@
 #' @return 		A named vector with the \code{Mean}, lower and upper confidence limits (\code{L} and \code{U}), 
 #' and the number of observations \code{N}.
 #' @export
-#' @references Thomas A. Louis. 1981. Confidence intervals for a binomial parameter after observing no successes. 
+#' @references Thomas A. Louis. 1981. 
+#' \href{http://amstat.tandfonline.com/doi/abs/10.1080/00031305.1981.10479337?journalCode=utas20#.U3t2EvldX64}
+#' {Confidence intervals for a binomial parameter after observing no successes}.
 #' The American Statistician 35(3):154.
-#' \url{http://amstat.tandfonline.com/doi/abs/10.1080/00031305.1981.10479337?journalCode=utas20#.U3t2EvldX64}.
 #' @examples 
 #' binomCI(c(0, 0, 0, 0, 1, 1))
 #' binomCI(4, 2, prob=FALSE)

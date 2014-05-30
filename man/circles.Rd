@@ -46,7 +46,7 @@ where the x and y coordinates are 10 times the range observed plus the maximum o
 In most instances this should be well beyond the figure margins.
 }
 \examples{
-circles(trees$Height, trees$Girth, trees$Volume, data.range=sqrt(c(0, max(trees$Volume))),
+circles(trees$Height, trees$Girth, sqrt(trees$Volume), data.range=sqrt(c(0, max(trees$Volume))),
 	circle.size.range=c(0, 0.3), xlab="Height (ft)", ylab="Diameter (in)", main="Tree Volume")
 }
 
