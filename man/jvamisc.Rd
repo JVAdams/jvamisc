@@ -3,8 +3,8 @@
 \name{jvamisc}
 \alias{jvamisc}
 \alias{jvamisc-package}
-\title{A collection of miscellaneous functions.}
+\title{A Collection of Miscellaneous Functions.}
 \description{
-A collection of miscellaneous functions.
+A Collection of Miscellaneous Functions.
 }
 

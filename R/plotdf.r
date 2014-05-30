@@ -1,16 +1,15 @@
-#' Plot data frame
+#' Plot Data Frame
 #'
 #' Plots each variable of a data frame.
-#' @param df a data frame
-#' @param one a logical, whether to display all plots in a single \code{windows(record=TRUE)} device, default TRUE
-#' @param ... other parameters to \code{par(...)}
-#' @return a data frame with summary statistics for each variable in the data frame, number entered, number missing, number unique, minimum, mean, maximum, and 
-#' the maximum over the non-zero minimum
+#' @param df 	A data frame.
+#' @param one 	A logical, whether to display all plots in a single \code{windows(record=TRUE)} device, default TRUE.
+#' @param ... 	Other parameters to \code{par(...)}.
+#' @return 		A data frame with summary statistics for each variable in the data frame, number entered, 
+#' number missing, number unique, minimum, mean, maximum, and the maximum over the non-zero minimum.
 #' @export
-#' @seealso \code{\link{windows}}, \code{\link{par}}
+#' @seealso 	\code{\link{windows}}, \code{\link{par}}.
 #' @examples plotdf(mtcars)
 
-# R
 plotdf <- function(df, one=TRUE, ...) {
 	if(one) windows(record=TRUE)
 	par(...)

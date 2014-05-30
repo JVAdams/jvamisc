@@ -1,17 +1,16 @@
-#' Coefficient of determination
+#' Coefficient of Determination
 #'
 #' Calculate the unadjusted and adjusted coefficient of determination (R^2).
-#' @param fitted a vector, fitted values
-#' @param observed a vector, observed values
-#' @param nparam a scalar, number of parameters in the fitted model
-#' @return vector, unadjusted and adjusted coefficients of determination 
+#' @param fitted 	A vector of fitted values.
+#' @param observed 	A vector of observed values.
+#' @param nparam 	A scalar, number of parameters in the fitted model.
+#' @return 			A vector of unadjusted and adjusted coefficients of determination.
 #' @export
 #' @examples 
 #' fit1 <- lm(mpg ~ cyl + disp, data=mtcars)
-#' summary(fit1)
 #' calcr2(fit1$fitted, mtcars$mpg, 3)
+#'
 #' fit2 <- lm(mpg ~ cyl + disp + wt, data=mtcars)
-#' summary(fit2)
 #' calcr2(fit2$fitted, mtcars$mpg, 4)
 
 calcr2 <- function(fitted, observed, nparam) {

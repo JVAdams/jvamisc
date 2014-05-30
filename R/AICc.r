@@ -1,9 +1,9 @@
-#' Comparison of models using Akaike Information Criterion
+#' Comparison of Models using Akaike Information Criterion
 #'
 #' Compares a collection of statistical models using AIC.
-#' @param fitlist a list of model fits to compare, e.g., lm/glm/aov objects
-#' @param corr a logical indicating whether the AIC should be corrected for small sample size, defaults to TRUE
-#' @return data frame with a row for each model being compared, 
+#' @param fitlist 	A list of model fits to compare, e.g., lm, glm, aov objects.
+#' @param corr 		A logical indicating whether the AIC should be corrected for small sample size, default TRUE.
+#' @return 			Data frame with a row for each model being compared, 
 #' ordered by either the uncorrected AIC (corr=FALSE) or the AIC corrected for small sample size (corr=TRUE).
 #' Columns include the number of observations (n), the number of parameters (p), the root mean squared error (rmse), 
 #' the uncorrected AIC (aic), the AIC corrected for small sample size (aicc),

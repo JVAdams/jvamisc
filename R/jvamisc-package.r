@@ -1,4 +1,4 @@
-#' A collection of miscellaneous functions.
+#' A Collection of Miscellaneous Functions.
 #'
 #' @docType package
 #' @name jvamisc

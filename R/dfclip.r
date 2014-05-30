@@ -1,8 +1,9 @@
-#' Data frame from clipboard
+#' Read Data Frame from Clipboard
 #'
-#' Read in a data frame from headers/rows pasted to the clipboard.
-#' @param ... parameters to \link{\code{read.table}}
-#' @return data frame 
+#' Read in a data frame from text pasted to the clipboard.
+#' @param ... 	Additional parameters to \link{\code{read.table}}.
+#' @return 		Data frame.
 #' @export
+#' @seealso		\link{\code{read.table}}.
 
 dfclip <- function(...) read.table("clipboard", header=TRUE, ...)

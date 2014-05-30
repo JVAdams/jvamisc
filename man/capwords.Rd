@@ -6,25 +6,21 @@
 capwords(s, strict = FALSE)
 }
 \arguments{
-\item{s}{a vector of strings}
+\item{s}{A vector of strings.}
 
-\item{strict}{a logical indicating whether other letters should be converted to lower case}
+\item{strict}{A logical indicating whether other letters should be converted to lower case.}
 }
 \value{
-a vector the same length as \code{s}
+A vector the same length as \code{s}.
 }
 \description{
 Capitalize the first letter of every word.
 }
 \examples{
 capwords(c("using AIC for model selection"))
-## ->  [1] "Using AIC For Model Selection"
 capwords(c("using AIC", "for MODEL selection"), strict = TRUE)
-## ->  [1] "Using Aic"  "For Model Selection"
-##                ^^^        ^^^^^
-##               'bad'       'good'
 }
 \seealso{
-\code{\link{casefold}} from which the function was derived
+\code{\link{casefold}}, from which the function was derived.
 }
 

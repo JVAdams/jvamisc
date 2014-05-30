@@ -1,17 +1,17 @@
-#' Chi-squared test
+#' Chi-Squared Test
 #'
 #' Performs chi-squared contingency table tests with informative output.
-#' @param x a numeric matrix
-#' @param rpct a numeric scalar indicating the rounding used for printed output, default 0
-#' @return a list with class "htest" containing the components described in \link{\code{chisq.test}}
+#' @param x 	A numeric matrix.
+#' @param rpct 	A numeric scalar indicating the rounding used for printed output, default 0.
+#' @return 		A list with class "htest" containing the components described in \link{\code{chisq.test}}.
 #' @export
-#' @seealso \link{\code{chisq.test}}
+#' @seealso 	\link{\code{chisq.test}}.
 #' @examples 
 #' ## From Agresti(2007) p.39
 #' M <- as.table(rbind(c(762, 327, 468), c(484, 239, 477)))
 #' dimnames(M) <- list(gender = c("M", "F"), party = c("Democrat", "Independent", "Republican"))
-#' mychi(M)
-mychi <- function(x, rpct=0) {
+#' chi(M)
+chi <- function(x, rpct=0) {
 	sum1 <- apply(x, 1, sum)
 	sum2 <- apply(x, 2, sum)
 	exp <- outer(sum1, sum2)/sum(x) # contribution to chi square

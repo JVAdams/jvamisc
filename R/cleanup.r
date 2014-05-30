@@ -1,7 +1,8 @@
-#' Quick clean up
+#' Quick Clean Up
 #'
 #' Removes all objects from the current working directory.
-#' @return a plot is sent to the current graphics device (no value is returned)
+#' @return 	User is prompted for response.  If the first letter of the response is "y" or "Y", all objects are removed from the current working directory.
+#' No value is returned.
 #' @export
 
 cleanup <- function() {

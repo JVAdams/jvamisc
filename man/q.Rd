@@ -6,15 +6,15 @@
 q()
 }
 \arguments{
-\item{save}{a character string indicating whether the workspace should be saved, "yes" (the default), "no", "ask" or "default"}
+\item{save}{A character string indicating whether the workspace should be saved, "yes" (the default), "no", "ask" or "default".}
 }
 \value{
-the R session is terminated (nothing is returned)
+The R session is terminated (nothing is returned).
 }
 \description{
 Quit R
 }
 \seealso{
-\code\link{{quit}}
+\code\link{{quit}}.
 }
 
