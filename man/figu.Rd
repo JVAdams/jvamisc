@@ -4,8 +4,7 @@
 \title{Add a Figure to an RTF Document}
 \usage{
 figu(..., FIG = fig, rtf = doc, figc = figcount, boldt = TRUE,
-  w = NULL, h = NULL, rf = 300, newpage = c("none", "port", "land")[1],
-  omi = c(1, 1, 1, 1))
+  w = NULL, h = NULL, rf = 300, newpage = "none", omi = c(1, 1, 1, 1))
 }
 \arguments{
 \item{...}{One or more character scalars (separated by commas) of text to use for the figure caption.}
@@ -60,6 +59,6 @@ endrtf()
 }
 \seealso{
 \code{\link[jvamisc]{startrtf}}, \code{\link[jvamisc]{heading}}, \code{\link[jvamisc]{para}}, \code{\link[jvamisc]{tabl}},
-\code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
+\code{\link[jvamisc]{figbig}}, \code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
 }
 

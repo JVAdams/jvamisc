@@ -14,7 +14,7 @@
 #' @details 		The rtf file may be written to until the \code{\link{endrtf}()} function is run.
 #' If you assign your rtf file to an object called \code{doc}, you can use the default settings in other \pkg{\link{jvamisc}} rtf functions.
 #' @seealso			\code{\link[jvamisc]{heading}}, \code{\link[jvamisc]{para}}, \code{\link[jvamisc]{tabl}}, \code{\link[jvamisc]{figu}}, 
-#' \code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
+#' \code{\link[jvamisc]{figbig}}, \code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
 #' @import 			rtf
 #' @export
 #' @examples 

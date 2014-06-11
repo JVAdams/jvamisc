@@ -38,6 +38,6 @@ endrtf()
 }
 \seealso{
 \code{\link[jvamisc]{startrtf}}, \code{\link[jvamisc]{para}}, \code{\link[jvamisc]{tabl}}, \code{\link[jvamisc]{figu}},
-\code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
+\code{\link[jvamisc]{figbig}}, \code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
 }
 

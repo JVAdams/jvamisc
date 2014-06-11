@@ -17,7 +17,7 @@
 #' @details 		The figure and caption are written to the rtf file.
 #' The size of a new page is assumed to be 8.5 by 11 inches.
 #' @seealso			\code{\link[jvamisc]{startrtf}}, \code{\link[jvamisc]{heading}}, \code{\link[jvamisc]{para}}, \code{\link[jvamisc]{tabl}}, 
-#' \code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
+#' \code{\link[jvamisc]{figbig}}, \code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
 #' @import 			rtf
 #' @export
 #' @examples 

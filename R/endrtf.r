@@ -5,7 +5,7 @@
 #' @param details	Logical scalar indicating if session details should be added to the end of the document, default FALSE.
 #' @param ...		Additional parameters to \code{\link[rtf]{addPageBreak}}.
 #' @seealso			\code{\link[jvamisc]{startrtf}}, \code{\link[jvamisc]{heading}}, \code{\link[jvamisc]{para}}, \code{\link[jvamisc]{tabl}}, 
-#' \code{\link[jvamisc]{figu}}, \code{\link[rtf]{RTF}}, \code{\link[rtf]{addPageBreak}}.
+#' \code{\link[jvamisc]{figu}}, \code{\link[jvamisc]{figbig}}, \code{\link[rtf]{RTF}}, \code{\link[rtf]{addPageBreak}}.
 #' @import 			rtf
 #' @export
 #' @examples 

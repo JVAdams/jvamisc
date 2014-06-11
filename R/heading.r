@@ -6,7 +6,7 @@
 #' @param rtf		An rtf object, default \code{doc}.
 #' @details 		The specified heading is written to the rtf file.
 #' @seealso			\code{\link[jvamisc]{startrtf}}, \code{\link[jvamisc]{para}}, \code{\link[jvamisc]{tabl}}, \code{\link[jvamisc]{figu}}, 
-#' \code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
+#' \code{\link[jvamisc]{figbig}}, \code{\link[jvamisc]{endrtf}}, \code{\link[rtf]{RTF}}.
 #' @import 			rtf
 #' @export
 #' @examples 
