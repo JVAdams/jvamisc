@@ -13,5 +13,6 @@ Imports:
 Description: jvamisc is simply a collection of miscellaneous functions that I
     find useful. Many of the functions are customized versions of functions in
     the base pacakge.
+LazyData: TRUE
 License: GPL
 URL: https://github.com/JVAdams/jvamisc
