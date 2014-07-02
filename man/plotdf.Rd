@@ -8,13 +8,13 @@ plotdf(df, one = TRUE, ...)
 \arguments{
 \item{df}{A data frame.}
 
-\item{one}{A logical, whether to display all plots in a single \code{windows(record=TRUE)} device, default TRUE.}
+\item{one}{A logical, whether to display all plots in a single graphics device, default TRUE.}
 
 \item{...}{Other parameters to \code{par(...)}.}
 }
 \value{
 A data frame with summary statistics for each variable in the data frame, number entered,
-number missing, number unique, minimum, mean, maximum, and the maximum over the non-zero minimum.
+number missing, number unique, minimum, mean, maximum, and the ratio of the maximum over the non-zero minimum.
 }
 \description{
 Plots each variable of a data frame.
@@ -23,6 +23,6 @@ Plots each variable of a data frame.
 plotdf(mtcars)
 }
 \seealso{
-\code{\link{windows}}, \code{\link{par}}.
+\code{\link{par}}.
 }
 

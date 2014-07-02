@@ -74,7 +74,7 @@ mc <- glht(amod, linfct = mcp(tension = "Tukey"))
 summary(amod)
 summary(mc)
 confint(mc)
-windows()
+dev.new()
 plot(mc)
 
 ### set up two-way ANOVA with interactions ###
@@ -234,7 +234,7 @@ rp.slider(panel, d, 1, 2, showvalue=T, action=loess.draw)
 
 ### animation ###
 for(i in 1:10) {
-	windows()
+	dev.new()
 	plot(1:10, 1:10, type="l")
 	points(i, i, pch=16, cex=2)
 	savePlot(filename=paste("Rplot", i), type="bmp")
