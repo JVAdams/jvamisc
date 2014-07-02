@@ -2,16 +2,16 @@
 #'
 #' Plots each variable of a data frame.
 #' @param df 	A data frame.
-#' @param one 	A logical, whether to display all plots in a single \code{windows(record=TRUE)} device, default TRUE.
+#' @param one 	A logical, whether to display all plots in a single graphics device, default TRUE.
 #' @param ... 	Other parameters to \code{par(...)}.
 #' @return 		A data frame with summary statistics for each variable in the data frame, number entered, 
-#' number missing, number unique, minimum, mean, maximum, and the maximum over the non-zero minimum.
+#' number missing, number unique, minimum, mean, maximum, and the ratio of the maximum over the non-zero minimum.
 #' @export
-#' @seealso 	\code{\link{windows}}, \code{\link{par}}.
+#' @seealso 	\code{\link{par}}.
 #' @examples plotdf(mtcars)
 
 plotdf <- function(df, one=TRUE, ...) {
-	if(one) windows(record=TRUE)
+	if(one) dev.new(record=TRUE)
 	par(...)
 	mcex <- 1 #as.numeric(par("cex"))*2
 	print(mcex)
