@@ -14,10 +14,10 @@
 #' test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2, dimnames=list(LETTERS[1:3], NULL))
 #' coordplot(test)
 #' # rotate the coordinates clockwise 45 degrees around the first point (the origin)
-#' rottest <- coordturn(test, test[1, ], rota=pi/4)
+#' rottest <- coordturn(test, test[1, ], rot=pi/4)
 #' coordplot(rottest)
 #' # rotate the coordinates counterclockwise 45 degrees around the first point (the origin)
-#' rottest <- coordturn(test, test[1, ], rota=-pi/4)
+#' rottest <- coordturn(test, test[1, ], rot=-pi/4)
 #' coordplot(rottest)
 
 coordturn <- function(pts, pvt, rot) {
