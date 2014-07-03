@@ -1,9 +1,9 @@
 #' Flip Coordinates
 #'
 #' Flip (or reflect) coordinates across any given line.  
-#' @param pts 	A matrix or data frame with the first two columns of numeric x and y coordinates to be rotated.
-#' @param seg 	A matrix or data frame of dimension 2 x 2 giving two points which define the line over which the coordinates will be flipped.
-#' @return 		A matrix or data frame with two columns of flipped x and y coordinates.
+#' @param pts 	A numeric matrix with two columns of x and y coordinates to be rotated.
+#' @param seg 	A numeric matrix of dimension 2 x 2 giving two points which define the line over which the coordinates will be flipped.
+#' @return 		A numeric matrix with same dimension as \code{pts} with the flipped x and y coordinates.
 #' @export
 #' @seealso		\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordturn}}.
 #' @references 	Based on a method posted by \strong{Il-Bhima} on 22 July 2010 on  
@@ -26,5 +26,7 @@ coordflip <- function(pts, seg) {
 	d <- (pts[, 1] + (pts[, 2] - b)*m) / (1 + m^2)
 	newx = 2*d - pts[, 1]
 	newy = 2*d*m - pts[, 2] + 2*b
-	cbind(newx, newy)
+	m <- cbind(newx, newy)
+	dimnames(m) <- dimnames(pts)
+	m
 	}

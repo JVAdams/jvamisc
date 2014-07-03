@@ -1,10 +1,10 @@
 #' Rotate Coordinates
 #'
 #' Rotate coordinates clockwise around a pivot point.  
-#' @param pts 	A matrix or data frame with the first two columns of numeric x and y coordinates to be rotated.
+#' @param pts 	A numeric matrix with two columns of x and y coordinates to be rotated.
 #' @param pvt 	A numeric vector of length 2, the x and y coordinates of the pivot point around which \code{pts} will be rotated.
 #' @param rot	A numeric scalar indicating the amount of clockwise rotation, in radians.
-#' @return 		A matrix or data frame with two columns of rotated x and y coordinates.
+#' @return 		A numeric matrix with same dimension as \code{pts} with the rotated x and y coordinates.
 #' @export
 #' @seealso		\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}.
 #' @references Modification of code posted by \strong{Sage} on 3 March 2011 on the website 
@@ -24,5 +24,7 @@ coordturn <- function(pts, pvt, rot) {
 	r1 <- -rot
 	xRot <- pvt[1] + cos(r1) * (pts[, 1] - pvt[1]) - sin(r1) * (pts[, 2] - pvt[2])
  	yRot <- pvt[2] + sin(r1) * (pts[, 1] - pvt[1]) + cos(r1) * (pts[, 2] - pvt[2])
-	cbind(xRot, yRot)
+	m <- cbind(xRot, yRot)
+	dimnames(m) <- dimnames(pts)
+	m
 	}

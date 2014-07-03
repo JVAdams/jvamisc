@@ -6,12 +6,12 @@
 coordflip(pts, seg)
 }
 \arguments{
-\item{pts}{A matrix or data frame with the first two columns of numeric x and y coordinates to be rotated.}
+\item{pts}{A numeric matrix with two columns of x and y coordinates to be rotated.}
 
-\item{seg}{A matrix or data frame of dimension 2 x 2 giving two points which define the line over which the coordinates will be flipped.}
+\item{seg}{A numeric matrix of dimension 2 x 2 giving two points which define the line over which the coordinates will be flipped.}
 }
 \value{
-A matrix or data frame with two columns of flipped x and y coordinates.
+A numeric matrix with same dimension as \code{pts} with the flipped x and y coordinates.
 }
 \description{
 Flip (or reflect) coordinates across any given line.

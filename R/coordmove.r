@@ -1,9 +1,10 @@
 #' Move Coordinates
 #'
 #' Move coordinates in the x and y direction in the plane. 
-#' @param pts 	A matrix or data frame with the first two columns of numeric x and y coordinates to be plotted.
+#' @param pts 	A numeric matrix with two columns of x and y coordinates to be moved.
 #' @param from 	A numeric vector of length 2, the starting x and y coordinates of a point.
 #' @param to 	A numeric vector of length 2, the ending x and y coordinates of a point.
+#' @return 		A numeric matrix with same dimension as \code{pts} with the moved x and y coordinates.
 #' @seealso		\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordflip}}.
 #' @export
 #' @examples 

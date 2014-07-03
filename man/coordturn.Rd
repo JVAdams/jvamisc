@@ -6,14 +6,14 @@
 coordturn(pts, pvt, rot)
 }
 \arguments{
-\item{pts}{A matrix or data frame with the first two columns of numeric x and y coordinates to be rotated.}
+\item{pts}{A numeric matrix with two columns of x and y coordinates to be rotated.}
 
 \item{pvt}{A numeric vector of length 2, the x and y coordinates of the pivot point around which \code{pts} will be rotated.}
 
 \item{rot}{A numeric scalar indicating the amount of clockwise rotation, in radians.}
 }
 \value{
-A matrix or data frame with two columns of rotated x and y coordinates.
+A numeric matrix with same dimension as \code{pts} with the rotated x and y coordinates.
 }
 \description{
 Rotate coordinates clockwise around a pivot point.

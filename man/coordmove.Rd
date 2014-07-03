@@ -6,11 +6,14 @@
 coordmove(pts, from, to)
 }
 \arguments{
-\item{pts}{A matrix or data frame with the first two columns of numeric x and y coordinates to be plotted.}
+\item{pts}{A numeric matrix with two columns of x and y coordinates to be moved.}
 
 \item{from}{A numeric vector of length 2, the starting x and y coordinates of a point.}
 
 \item{to}{A numeric vector of length 2, the ending x and y coordinates of a point.}
+}
+\value{
+A numeric matrix with same dimension as \code{pts} with the moved x and y coordinates.
 }
 \description{
 Move coordinates in the x and y direction in the plane.

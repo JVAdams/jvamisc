@@ -6,7 +6,7 @@
 coordplot(pts)
 }
 \arguments{
-\item{pts}{A matrix or data frame with the first two columns of numeric x and y coordinates to be plotted.}
+\item{pts}{A numeric matrix with two columns of x and y coordinates to be plotted.}
 }
 \description{
 Quick plot of coordinates on equally scaled coordinate plane, labelled with row names.
