@@ -25,7 +25,15 @@ coordtri <- function(cleft, cright, lleft, lright) {
 	# move so that cleft is at origin (0, 0)
 	cbot2 <- coordmove(cbot, cleft, c(0, 0))
 	# rotate so that cright2 is at (0, dist(cleft2, cright2))
-	ang <- atan(cleft[2]/cleft[1])
+	if(abs(cbot[2, 2]) < 1e-12) {
+		if(cbot[2, 1] < -1e-12) {
+			ang <- pi
+			} else {
+				ang <- 0
+				}
+		} else {
+		ang <- atan(cbot2[2, 2]/cbot2[2, 1])
+		}
 	cbot3 <- coordturn(cbot2, c(0, 0), ang)
 	# calculate location of triangle top
 	ctop3 <- matrix(numeric(2), ncol=2)
