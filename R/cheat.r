@@ -19,9 +19,9 @@
 #' setwd("C:/JVA/GitHub/jvamisc")
 #' document()
 #' # quit and restart R
+#' # install from local folder
 #' library(devtools)
 #' library(roxygen2)
-#' # install from local folder
 #' setwd("C:/JVA/GitHub")
 #' install("jvamisc")
 #' setwd("C:/JVA/R/Working Directory")
