@@ -34,6 +34,6 @@ Modification of code posted by \strong{Sage} on 3 March 2011 on the website
 \href{http://benn.org/2007/01/06/rotating-coordinates-around-a-centre/}{benn.org}.
 }
 \seealso{
-\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}.
+\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
 }
 

@@ -29,6 +29,6 @@ Based on a method posted by \strong{Il-Bhima} on 22 July 2010 on
 \href{http://stackoverflow.com/questions/3306838/algorithm-for-reflecting-a-point-across-a-line}{stackoverflow}.
 }
 \seealso{
-\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordturn}}.
+\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordtri}}.
 }
 

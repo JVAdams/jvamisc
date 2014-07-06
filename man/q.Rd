@@ -12,6 +12,6 @@ q()
 Terminate the current R session.
 }
 \seealso{
-\code\link{{quit}}.
+\code{\link{quit}}.
 }
 

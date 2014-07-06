@@ -16,6 +16,6 @@ test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2, dimnames=list(LETTERS[1:3], NULL))
 coordplot(test)
 }
 \seealso{
-\code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}.
+\code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
 }
 

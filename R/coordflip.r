@@ -5,7 +5,7 @@
 #' @param seg 	A numeric matrix of dimension 2 x 2 giving two points which define the line over which the coordinates will be flipped.
 #' @return 		A numeric matrix with same dimension as \code{pts} with the flipped x and y coordinates.
 #' @export
-#' @seealso		\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordturn}}.
+#' @seealso		\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordtri}}.
 #' @references 	Based on a method posted by \strong{Il-Bhima} on 22 July 2010 on  
 #' \href{http://stackoverflow.com/questions/3306838/algorithm-for-reflecting-a-point-across-a-line}{stackoverflow}.
 #' @examples 

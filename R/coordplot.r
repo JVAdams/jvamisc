@@ -2,7 +2,7 @@
 #'
 #' Quick plot of coordinates on equally scaled coordinate plane, labelled with row names. 
 #' @param pts 	A numeric matrix with two columns of x and y coordinates to be plotted.
-#' @seealso		\code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}.
+#' @seealso		\code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
 #' @import 		MASS
 #' @export
 #' @examples 

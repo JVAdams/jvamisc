@@ -26,6 +26,6 @@ mtest <- coordmove(test, test[2, ], c(0, 0))
 coordplot(mtest)
 }
 \seealso{
-\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordflip}}.
+\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
 }
 

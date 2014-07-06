@@ -6,7 +6,7 @@
 #' @param rot	A numeric scalar indicating the amount of clockwise rotation, in radians.
 #' @return 		A numeric matrix with same dimension as \code{pts} with the rotated x and y coordinates.
 #' @export
-#' @seealso		\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}.
+#' @seealso		\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
 #' @references Modification of code posted by \strong{Sage} on 3 March 2011 on the website 
 #' \href{http://benn.org/2007/01/06/rotating-coordinates-around-a-centre/}{benn.org}.
 #' @examples 
