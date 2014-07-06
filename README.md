@@ -13,6 +13,7 @@ If you don't already have `devtools` and `Rtools`, you will need to download and
 	the Comprehensive R Archive Network, then run the following lines of code before submitting the code above:
 
 	install.packages("devtools")
+	library(devtools)
 	find_rtools()
 
 _Thanks to Hilary Parker whose blog post [Writing an R package from scratch](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
