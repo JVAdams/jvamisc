@@ -6,19 +6,27 @@
 coordtri(cleft, cright, lleft, lright)
 }
 \arguments{
-\item{cleft}{A numeric vector of length 2, the x and y coordinates of the lower left point of the triangle.}
+\item{cleft}{A numeric vector of length 2, the x and y coordinates of the lower left point of the triangle (see details).}
 
-\item{cright}{A numeric vector of length 2, the x and y coordinates of the lower right point of the triangle.}
+\item{cright}{A numeric vector of length 2, the x and y coordinates of the lower right point of the triangle (see details).}
 
-\item{lleft}{A numeric scalar, the length of the left side of the triangle, from \code{cleft} to the top.}
+\item{lleft}{A numeric scalar, the length of the left side of the triangle, from \code{cleft} to the top (see details).}
 
-\item{lright}{A numeric scalar, the length of the right side of the triangle, from \code{cright} to the top.}
+\item{lright}{A numeric scalar, the length of the right side of the triangle, from \code{cright} to the top (see details).}
 }
 \value{
 A numeric vector of length 2, the x and y coordinates of the top point of the triangle.
 }
 \description{
 Determine the third coordinate of a triangle, given the other two coordinates and the distances to the third.
+}
+\details{
+The directions "left" and "right" refer to the triangle not necessarily in its current state,
+but rather \strong{after} it has been rotated such that the bottom of the triangle is level (e.g., on the y=0 line),
+and the third coordinate that the function returns is "above" the bottom (e.g., y>0).
+
+A warning message is given if a triangle can't be built from the inputs provided, and the returned value
+is \code{c(NA, NA)}.
 }
 \examples{
 # define coordinates of base of triangle
