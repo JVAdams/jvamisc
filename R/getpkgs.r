@@ -3,7 +3,6 @@
 #' Installs (if necessary) and attaches the specified packages.
 #' @param want 	A character vector of package names.
 #' @export
-#' @seealso 	\code{\link{windows}}, \code{\link{par}}.
 #' @examples plotdf(mtcars)
 getpackages <- function(want) {
 	# install (if necessary) and attach wanted packages

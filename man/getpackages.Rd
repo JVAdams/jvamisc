@@ -14,7 +14,4 @@ Installs (if necessary) and attaches the specified packages.
 \examples{
 plotdf(mtcars)
 }
-\seealso{
-\code{\link{windows}}, \code{\link{par}}.
-}
 
