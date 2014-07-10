@@ -10,7 +10,8 @@ Depends:
     R (>= 3.1.0)
 Imports:
     rtf,
-    MASS
+    MASS,
+    plotrix
 Description: jvamisc is a collection of miscellaneous functions.
 LazyData: TRUE
 License: GPL
