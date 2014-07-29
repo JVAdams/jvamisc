@@ -11,7 +11,4 @@ getpackages(want)
 \description{
 Installs (if necessary) and attaches the specified packages.
 }
-\examples{
-plotdf(mtcars)
-}
 
