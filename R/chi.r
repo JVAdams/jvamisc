@@ -3,9 +3,9 @@
 #' Performs chi-squared contingency table tests with informative output.
 #' @param x 	A numeric matrix.
 #' @param rpct 	A numeric scalar indicating the rounding used for printed output, default 0.
-#' @return 		A list with class "htest" containing the components described in \link{\code{chisq.test}}.
+#' @return 		A list with class "htest" containing the components described in \code{\link{chisq.test}}.
 #' @export
-#' @seealso 	\link{\code{chisq.test}}.
+#' @seealso 	\code{\link{chisq.test}}.
 #' @examples 
 #' ## From Agresti(2007) p.39
 #' M <- as.table(rbind(c(762, 327, 468), c(484, 239, 477)))

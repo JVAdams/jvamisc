@@ -6,7 +6,7 @@
 dfclip(...)
 }
 \arguments{
-\item{...}{Additional parameters to \link{\code{read.table}}.}
+\item{...}{Additional parameters to \code{\link{read.table}}.}
 }
 \value{
 Data frame.
@@ -15,6 +15,6 @@ Data frame.
 Read in a data frame from text pasted to the clipboard.
 }
 \seealso{
-\link{\code{read.table}}.
+\code{\link{read.table}}.
 }
 

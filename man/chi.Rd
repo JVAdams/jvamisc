@@ -11,7 +11,7 @@ chi(x, rpct = 0)
 \item{rpct}{A numeric scalar indicating the rounding used for printed output, default 0.}
 }
 \value{
-A list with class "htest" containing the components described in \link{\code{chisq.test}}.
+A list with class "htest" containing the components described in \code{\link{chisq.test}}.
 }
 \description{
 Performs chi-squared contingency table tests with informative output.
@@ -23,6 +23,6 @@ dimnames(M) <- list(gender = c("M", "F"), party = c("Democrat", "Independent", "
 chi(M)
 }
 \seealso{
-\link{\code{chisq.test}}.
+\code{\link{chisq.test}}.
 }
 
