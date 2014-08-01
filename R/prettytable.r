@@ -16,7 +16,7 @@ prettytable <- function(m, sigdig=3) {
 	nc <- mclass %in% c("numeric", "integer")
 	if(sum(nc) > 0 ) {
 		for(i in (1:dim(m)[2])[nc]) {
-			m[, nc] <- signif(m[, nc], sigdig)
+			m[, i] <- signif(m[, i], sigdig)
 			}
 		}
 	m
