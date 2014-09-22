@@ -11,7 +11,8 @@ Depends:
 Imports:
     rtf,
     MASS,
-    plotrix
+    plotrix,
+    seriation
 Description: jvamisc is a collection of miscellaneous functions.
 LazyData: TRUE
 License: GPL
