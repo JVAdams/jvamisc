@@ -3,13 +3,13 @@
 \alias{jvaFirst}
 \title{Startup}
 \usage{
-jvaFirst(maxp = 100, ndec = 10, cont = "... ", pkgs = c("rJava",
+jvaFirst(maxp = 500, ndec = 10, cont = "... ", pkgs = c("rJava",
   "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "jvamisc"),
   mirror = "http://streaming.stat.iastate.edu/CRAN/", helpt = "html",
   fac = FALSE, noplots = TRUE, show = TRUE)
 }
 \arguments{
-\item{maxp}{Integer scalar, maximum number of lines printed, default 100.}
+\item{maxp}{Integer scalar, maximum number of lines printed, default 500.}
 
 \item{ndec}{Integer scalar, maximum width of fixed notation before switching to scientific notation, default 10.}
 

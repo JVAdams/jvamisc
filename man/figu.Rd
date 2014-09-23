@@ -3,8 +3,9 @@
 \alias{figu}
 \title{Add a Figure to an RTF Document}
 \usage{
-figu(..., FIG = fig, rtf = doc, figc = figcount, boldt = TRUE,
-  w = NULL, h = NULL, rf = 300, newpage = "none", omi = c(1, 1, 1, 1))
+figu(..., FIG = fig, rtf = doc, figid = "Figure ", fign = figcount,
+  boldt = TRUE, capunder = TRUE, w = NULL, h = NULL, rf = 300,
+  newpage = "none", omi = c(1, 1, 1, 1))
 }
 \arguments{
 \item{...}{One or more character scalars (separated by commas) of text to use for the figure caption.}
@@ -13,9 +14,13 @@ figu(..., FIG = fig, rtf = doc, figc = figcount, boldt = TRUE,
 
 \item{rtf}{An rtf object, default \code{doc}.}
 
-\item{figc}{Numeric scalar figure number to use in caption, default \code{figcount}.}
+\item{figid}{Character scalar of caption identifier, default "Figure ".}
+
+\item{fign}{Numeric scalar of figure number to use in caption,, default \code{figcount}.}
 
 \item{boldt}{Logical scalar indicating if figure number should use bold font, default TRUE.}
+
+\item{capunder}{Logical scalar indicating if caption should appear under the figure (TRUE, the default) or on top of the figure (FALSE).}
 
 \item{w}{Numeric scalar width of figure in inches, default 6.5.}
 

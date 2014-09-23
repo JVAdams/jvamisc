@@ -1,7 +1,7 @@
 #' Startup
 #'
 #' One function with all the commands I typically want run at the start of an R session.
-#' @param maxp 		Integer scalar, maximum number of lines printed, default 100.
+#' @param maxp 		Integer scalar, maximum number of lines printed, default 500.
 #' @param ndec		Integer scalar, maximum width of fixed notation before switching to scientific notation, default 10. 
 #' @param cont		Character scalar, prompt used for lines which continue past first command line, default \code{"... "}.
 #' @param pkgs		Character vector, packages to be loaded, default
@@ -15,7 +15,7 @@
 #' @seealso	\code{\link{options}}, \code{\link{help}}.
 #' @examples		jvaFirst()
 jvaFirst <- function(
-	maxp=100, ndec=10, cont="... ",
+	maxp=500, ndec=10, cont="... ",
 	pkgs = c("rJava", "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "jvamisc"),
 	mirror="http://streaming.stat.iastate.edu/CRAN/", 
 	helpt="html", fac=FALSE, noplots=TRUE, show=TRUE) {

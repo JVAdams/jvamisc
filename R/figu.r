@@ -4,8 +4,10 @@
 #' @param ... 		One or more character scalars (separated by commas) of text to use for the figure caption.
 #' @param FIG		A function to create a figure which will be added to the document, default \code{fig}.
 #' @param rtf		An rtf object, default \code{doc}.
-#' @param figc 		Numeric scalar figure number to use in caption, default \code{figcount}.
+#' @param figid 	Character scalar of caption identifier, default "Figure ".
+#' @param fign 		Numeric scalar of figure number to use in caption,, default \code{figcount}.
 #' @param boldt 	Logical scalar indicating if figure number should use bold font, default TRUE.
+#' @param capunder 	Logical scalar indicating if caption should appear under the figure (TRUE, the default) or on top of the figure (FALSE).
 #' @param w 		Numeric scalar width of figure in inches, default 6.5.
 #' @param h 		Numeric scalar height of figure in inches, default 8.
 #' @param rf 		Numeric scalar resolution of figure, default 300.
@@ -38,7 +40,7 @@
 #' endrtf()
 #' }
 
-figu <- function(..., FIG=fig, rtf=doc, figc=figcount, boldt=TRUE, w=NULL, h=NULL, rf=300, newpage="none", omi=c(1, 1, 1, 1)) {
+figu <- function(..., FIG=fig, rtf=doc, figid="Figure ", fign=figcount, boldt=TRUE, capunder=TRUE, w=NULL, h=NULL, rf=300, newpage="none", omi=c(1, 1, 1, 1)) {
 	wf <- if(is.null(w)) 6.5 else w
 	hf <- if(is.null(h)) 8 else h
 	if(newpage=="none") addNewLine(this=rtf)
@@ -48,14 +50,19 @@ figu <- function(..., FIG=fig, rtf=doc, figc=figcount, boldt=TRUE, w=NULL, h=NUL
 		hf <- if(is.null(h)) 5.5 else h
 		addPageBreak(this=rtf, width=11, height=8.5, omi=omi)
 		}
-	addPlot(this=rtf, plot.fun=FIG, width=wf, height=hf, res=rf)
-	addNewLine(this=rtf)
-	addNewLine(this=rtf)
+	if(capunder) {
+		addPlot(this=rtf, plot.fun=FIG, width=wf, height=hf, res=rf)
+		addNewLine(this=rtf)
+		addNewLine(this=rtf)
+		}
 	startParagraph(this=rtf)
-	addText(this=rtf, paste0("Figure ", figc, ".  "), bold=boldt)
+	addText(this=rtf, paste0(figid, fign, ".  "), bold=boldt)
 	addText(this=rtf, ...)
 	endParagraph(this=rtf)
+	if(!capunder) {
+		addPlot(this=rtf, plot.fun=FIG, width=wf, height=hf, res=rf)
+		}
 	addNewLine(this=rtf)
 	addNewLine(this=rtf)
-	figcount <<- figc + 1
+	figcount <<- fign + 1
 	}
