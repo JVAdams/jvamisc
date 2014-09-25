@@ -20,7 +20,7 @@ jvaFirst <- function(
 	mirror="http://streaming.stat.iastate.edu/CRAN/", 
 	helpt="html", fac=FALSE, noplots=TRUE, show=TRUE) {
 
-	# don't print more than 100 rows
+	# don't print more than maxp rows
 	options(max.print=maxp)
 
 	# prefer long decimals rather than scientific notation
