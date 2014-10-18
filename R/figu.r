@@ -43,7 +43,6 @@
 figu <- function(..., FIG=fig, rtf=doc, figid="Figure ", fign=figcount, boldt=TRUE, capunder=TRUE, w=NULL, h=NULL, rf=300, newpage="none", omi=c(1, 1, 1, 1)) {
 	wf <- if(is.null(w)) 6.5 else w
 	hf <- if(is.null(h)) 8 else h
-	if(newpage=="none") addNewLine(this=rtf)
 	if(newpage=="port") addPageBreak(this=rtf, width=8.5, height=11, omi=omi)
 	if(newpage=="land") {
 		wf <- if(is.null(w)) 9 else w
@@ -53,7 +52,6 @@ figu <- function(..., FIG=fig, rtf=doc, figid="Figure ", fign=figcount, boldt=TR
 	if(capunder) {
 		addPlot(this=rtf, plot.fun=FIG, width=wf, height=hf, res=rf)
 		addNewLine(this=rtf)
-		addNewLine(this=rtf)
 		}
 	startParagraph(this=rtf)
 	addText(this=rtf, paste0(figid, fign, ".  "), bold=boldt)
@@ -62,7 +60,6 @@ figu <- function(..., FIG=fig, rtf=doc, figid="Figure ", fign=figcount, boldt=TR
 	if(!capunder) {
 		addPlot(this=rtf, plot.fun=FIG, width=wf, height=hf, res=rf)
 		}
-	addNewLine(this=rtf)
 	addNewLine(this=rtf)
 	figcount <<- fign + 1
 	}
