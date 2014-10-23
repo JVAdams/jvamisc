@@ -3,12 +3,16 @@
 \alias{chi}
 \title{Chi-Squared Test}
 \usage{
-chi(x, rpct = 0)
+chi(x, rpct = 0, print = TRUE, plot = TRUE)
 }
 \arguments{
 \item{x}{A numeric matrix.}
 
 \item{rpct}{A numeric scalar indicating the rounding used for printed output, default 0.}
+
+\item{print}{A logical scalar indicating if output should be printed, default TRUE.}
+
+\item{plot}{A logical scalar indicating if plot should be generated, default TRUE.}
 }
 \value{
 A list with class "htest" containing the components described in \code{\link{chisq.test}}.
