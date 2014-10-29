@@ -3,12 +3,12 @@
 \alias{capwords}
 \title{Capitalize}
 \usage{
-capwords(s, strict = FALSE)
+capwords(s, strict = TRUE)
 }
 \arguments{
 \item{s}{A vector of strings.}
 
-\item{strict}{A logical indicating whether other letters should be converted to lower case.}
+\item{strict}{A logical indicating whether other letters should be converted to lower case, default TRUE.}
 }
 \value{
 A vector the same length as \code{s}.
@@ -18,7 +18,7 @@ Capitalize the first letter of every word.
 }
 \examples{
 capwords(c("using AIC for model selection"))
-capwords(c("using AIC", "for MODEL selection"), strict = TRUE)
+capwords(c("using AIC", "for MODEL selection"), strict=FALSE)
 }
 \seealso{
 \code{\link{casefold}}, from which the function was derived.
