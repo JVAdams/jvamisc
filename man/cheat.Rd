@@ -21,21 +21,8 @@ dat <- readWorksheet(wb, sheet=getSheets(wb)[1], startRow=1)
 plot(1, 1, xlab="Length  (\\U03BCm)", ylab="Temperature  (\\U00b0 C)", main="Lambda squared = \\\\U03BB\\\\U00B2 = \\U03BB\\U00B2")
 
 ### update package ###
-library(devtools)
-setwd("C:/JVA/GitHub/jvamisc")
-document()
-# quit and restart R
-# install from local folder
-library(devtools)
-library(roxygen2)
-setwd("C:/JVA/GitHub")
-install("jvamisc")
-setwd("C:/JVA/R/Working Directory")
-library(jvamisc)
-# OR from shared GitHub site
-library(devtools)
-devtools::install_github("JVAdams/jvamisc")
-library(jvamisc)
+pckup("jvamisc")
+pkgin("jvamisc")
 
 ### error bars ###
 x <- 1:10

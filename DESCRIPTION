@@ -12,7 +12,8 @@ Imports:
     rtf,
     MASS,
     plotrix,
-    seriation
+    seriation,
+    devtools
 Description: jvamisc is a collection of miscellaneous functions.
 LazyData: TRUE
 License: GPL
