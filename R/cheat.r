@@ -15,8 +15,11 @@
 #' plot(1, 1, xlab="Length  (\U03BCm)", ylab="Temperature  (\U00b0 C)", main="Lambda squared = \\U03BB\\U00B2 = \U03BB\U00B2")
 #'
 #' ### update package ###
-#' pckup("jvamisc")
+#' pkgup("jvamisc")
 #' pkgin("jvamisc")
+#' "C:\Program Files\R\R-3.1.1\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc
+#' "C:\Program Files\R\R-3.1.1\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_2014-07.tar.gz
+
 #'
 #' ### error bars ###
 #' x <- 1:10
