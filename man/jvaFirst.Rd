@@ -4,7 +4,7 @@
 \title{Startup}
 \usage{
 jvaFirst(maxp = 500, ndec = 10, cont = "... ", pkgs = c("rJava",
-  "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "jvamisc"),
+  "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "MASS", "jvamisc"),
   mirror = "http://streaming.stat.iastate.edu/CRAN/", helpt = "html",
   fac = FALSE, noplots = TRUE, show = TRUE)
 }
