@@ -5,7 +5,6 @@
 #' @param ymd 		A numeric vector, the metric to plot in the y direction (e.g., a mean or median).
 #' @param ylo 		A numeric vector, the lower interval or range in the y direction (e.g., a lower confidence interval or quartile).
 #' @param yhi 		A numeric vector, the upper interval or range in the y direction (e.g., an upper confidence interval or quartile).
-#' @param ymd 		A numeric vector, the metric to plot in the y direction (often a mean or median).
 #' @param subsel	A logical vector, indicating subset of the data to plot.
 #' @param kol		A character scalar, the hex color to use for plotting both the shaded polygon and (if requested) the line, default "#000000" (black).
 #' @param opq		A numeric vector of length 2, opacity for the polygon and the line, default c(20, 50).

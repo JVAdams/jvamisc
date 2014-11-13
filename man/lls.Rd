@@ -17,6 +17,8 @@ A data frame with the name, class, dimension, and size of each member of the env
 Generate a descriptive list of all members of an environment.
 }
 \examples{
+\dontrun{
 lls()
+}
 }
 

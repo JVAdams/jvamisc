@@ -19,8 +19,8 @@
 #' matrixtrim(m, prop=c(0.7, 0.7))
 
 matrixtrim <- function(m, prop=c(1, 1), rowsfirst=TRUE) {
-	# trim the rows and columns of a 0/1 (or F/T) matrix
-	# until every row and column has at least "prop" proportion of 1's (T's)
+	# trim the rows and columns of a 0/1 (or FALSE/TRUE) matrix
+	# until every row and column has at least "prop" proportion of 1's (TRUE's)
 	# method1 tends to delete columns first
 	# method2 tends delete rows first
 	newm <- m

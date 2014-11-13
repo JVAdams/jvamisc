@@ -15,6 +15,6 @@
 #' stringin("b", txt)
 #' stringin("ar", txt)
 
-stringin <- function(pattern, x, ignore.case=TRUE, value=TRUE, ...) {
-	grep(pattern, x, ignore.case=ignore.case, value=value, ...)
+stringin <- function(pattern, x, ignore.case=TRUE, value=TRUE, fixed=TRUE, ...) {
+	grep(pattern, x, ignore.case=ignore.case, value=value, fixed=fixed, ...)
 	}

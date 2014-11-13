@@ -3,7 +3,7 @@
 \alias{stringin}
 \title{Find a String in a Character Vector}
 \usage{
-stringin(pattern, x, ignore.case = TRUE, value = TRUE, ...)
+stringin(pattern, x, ignore.case = TRUE, value = TRUE, fixed = TRUE, ...)
 }
 \arguments{
 \item{pattern}{Character scalar, string to be matched in \code{x}.}
@@ -14,9 +14,9 @@ stringin(pattern, x, ignore.case = TRUE, value = TRUE, ...)
 
 \item{value}{Logical scalar, indicating whether to return the matching elements (the default, TRUE) or their indices (FALSE).}
 
-\item{...}{Other arguments to \code{\link{grep}}.}
-
 \item{fixed}{Logical scalar, indicating whether string should be matched as is, default TRUE.}
+
+\item{...}{Other arguments to \code{\link{grep}}.}
 }
 \value{
 Character vector containing the matching elements of \code{x}.

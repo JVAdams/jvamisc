@@ -40,8 +40,8 @@ addedvar <- function(Y, X, main="") {
 		plot(resxk, resy, main=pnames[i], xlab="", ylab="", xaxt="n", yaxt="n")
 		abline(lsfit(resxk, resy))
 		}
-	mtext("Variability in xi not explained by other x!i", side=1, outer=T, line=1, cex=1)
-	mtext("Variability in y not explained by other x!i", side=2, outer=T, line=1, cex=1, las=0)
-#	mtext("Added variable plots for predictors", side=3, outer=T, line=3, cex=1.5)
-	mtext(main, side=3, outer=T, line=1, cex=1)
+	mtext("Variability in xi not explained by other x!i", side=1, outer=TRUE, line=1, cex=1)
+	mtext("Variability in y not explained by other x!i", side=2, outer=TRUE, line=1, cex=1, las=0)
+#	mtext("Added variable plots for predictors", side=3, outer=TRUE, line=3, cex=1.5)
+	mtext(main, side=3, outer=TRUE, line=1, cex=1)
 	}

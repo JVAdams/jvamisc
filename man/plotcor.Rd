@@ -44,7 +44,7 @@ lord <- plotcor(lr)
 lr[lord[[1]], lord[[2]]]
 }
 \seealso{
-\code{\link[ellipse]{plotcorr}}, on which the idea for the function was based, \code{\link{seriation}},
+\code{\link[ellipse]{plotcorr}} on which the idea for the function was based, \code{\link[seriation]{seriate}},
 	and \code{\link[plotrix]{draw.ellipse}}.
 }
 

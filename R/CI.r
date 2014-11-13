@@ -15,8 +15,8 @@
 
 CI <- function(x, alpha=0.05, keep.mean=TRUE, limits=TRUE, prefix="", na.rm=FALSE) {
     # calculates confidence interval for the mean
-    # gives mean with lower and upper limits if limits=T
-    # gives single interval if limits=F
+    # gives mean with lower and upper limits if limits=TRUE
+    # gives single interval if limits=FALSE
 	y <- if(na.rm) x[!is.na(x)] else x
     s <- sqrt(var(y))
     n <- length(y)

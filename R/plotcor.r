@@ -16,7 +16,7 @@
 #' 0 (for absolute correlation = 1).
 #' @return 			A list of with two vector of integers (the same length as each dimension of \code{r}) representing the linear order suggested by seriation.
 #' @export
-#' @seealso 		\code{\link[ellipse]{plotcorr}}, on which the idea for the function was based, \code{\link{seriation}},
+#' @seealso 		\code{\link[ellipse]{plotcorr}} on which the idea for the function was based, \code{\link[seriation]{seriate}},
 #'	and \code{\link[plotrix]{draw.ellipse}}.
 #' @import 			plotrix seriation MASS
 #' @examples

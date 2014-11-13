@@ -23,7 +23,7 @@ Fit a simple linear segmented regression (also known as changepoint, hockey stic
 The break point cuts the x vector into two groups, x <= k and x > k.
 }
 \examples{
-indvar <- sample(1:50, 100, replace=T)
+indvar <- sample(1:50, 100, replace=TRUE)
 depvar <- ifelse(indvar<32, indvar + 3, indvar/4 + 27) + rnorm(100, sd=2)
 sr <- segreg(indvar, depvar)
 plot(indvar, depvar)

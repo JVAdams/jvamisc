@@ -24,7 +24,7 @@ jvaFirst(maxp = 500, ndec = 10, cont = "... ", pkgs = c("rJava",
 
 \item{fac}{Logical scalar, use factors rather than character strings, default FALSE.}
 
-\item{noplots}{Logical scalar, remove "saved" plots, e.g., from past runs of \code{\link[jvamisc]{dfplot}}, default TRUE.}
+\item{noplots}{Logical scalar, remove "saved" plots, e.g., from past runs of \code{\link[jvamisc]{plotdf}}, default TRUE.}
 
 \item{show}{Logical scalar, list objects in current environment, default TRUE.}
 }

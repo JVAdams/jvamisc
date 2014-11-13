@@ -22,8 +22,6 @@ shadepoly(x, ymd, ylo, yhi, subsel = NULL, kol = "#000000", opq = c(20,
 \item{opq}{A numeric vector of length 2, opacity for the polygon and the line, default c(20, 50).}
 
 \item{addline}{A logical scalar, indicating if the x vs ymd line should be added to the plot (on top of the shaded polygon), default TRUE.}
-
-\item{ymd}{A numeric vector, the metric to plot in the y direction (often a mean or median).}
 }
 \description{
 Add a spline-smoothed, shaded polygon to a plot, typically to show an interval or range of values (in the y-direction) for a time series of x values.

@@ -5,7 +5,10 @@
 #' @param pat 	Regular expression pattern specifying which members to return, default "" for all members.
 #' @return 		A data frame with the name, class, dimension, and size of each member of the environment.
 #' @export
-#' @examples lls()
+#' @examples
+#' \dontrun{
+#' lls()
+#' }
 
 lls <- function(pos=1, pat="") {
 	# modification of original function
@@ -13,15 +16,15 @@ lls <- function(pos=1, pat="") {
 	# Bendix Carstensen - 10 Jan 2007
 	# see also R.oo ll() function
 	dimx <- function(dd) if(is.null(dim(dd))) length(dd) else dim(dd)
-	lll <- ls(pos=pos, pat=pat)
+	lll <- ls(pos=pos, pattern=pat)
 	if(length(lll) > 0) {
 		x <- data.frame(array(dim=c(length(lll), 3), dimnames=list(lll, c("class", "ndim", "size"))))
 		y <- rep(NA, length(lll))
 		for(i in 1:length(lll)) {
-				x$class[i] <- paste(eval(parse(t=paste("class(", lll[i], ")"))), collapse=" ")
-				x$ndim[i] <- length(eval(parse(t=paste("dimx(", lll[i], ")"))))
-				x$size[i] <- paste(eval(parse(t=paste("dimx(", lll[i], ")"))), collapse=" x ")
-				y[i] <- prod(eval(parse(t=paste("dimx(", lll[i], ")"))))
+				x$class[i] <- paste(eval(parse(text=paste("class(", lll[i], ")"))), collapse=" ")
+				x$ndim[i] <- length(eval(parse(text=paste("dimx(", lll[i], ")"))))
+				x$size[i] <- paste(eval(parse(text=paste("dimx(", lll[i], ")"))), collapse=" x ")
+				y[i] <- prod(eval(parse(text=paste("dimx(", lll[i], ")"))))
 			}
 		}
 	x$ndim[x$class=="function"] <- 0 

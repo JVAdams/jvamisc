@@ -5,4 +5,4 @@
 #' @export
 #' @seealso 	\code{\link{quit}}.
 
-q <- function() quit(save="yes")
+q <- function(save="yes") quit(save=save)

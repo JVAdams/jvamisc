@@ -3,7 +3,7 @@
 \alias{q}
 \title{Quit}
 \usage{
-q()
+q(save = "yes")
 }
 \arguments{
 \item{save}{A character string indicating whether the workspace should be saved, "yes" (the default), "no", "ask" or "default".}

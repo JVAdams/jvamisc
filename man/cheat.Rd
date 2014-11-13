@@ -23,8 +23,9 @@ plot(1, 1, xlab="Length  (\\U03BCm)", ylab="Temperature  (\\U00b0 C)", main="Lam
 ### update package ###
 pkgup("jvamisc")
 pkgin("jvamisc")
-"C:\\Program Files\\R\\R-3.1.1\\bin\\x64\\R.exe" CMD build C:\\JVA\\GitHub\\jvamisc
+"C:\\Program Files\\R\\R-3.1.1\\bin\\x64\\R.exe" CMD build C:\\JVA\\GitHub\\jvamisc --resave-data
 "C:\\Program Files\\R\\R-3.1.1\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_2014-07.tar.gz
+pkgman("jvamisc")
 
 ### error bars ###
 x <- 1:10
@@ -75,8 +76,8 @@ summary(wht, test = adjusted("Shaffer"))
 
 ### label months on jday axis ###
 plot(101:200, rnorm(100), axes=FALSE)
-axis(1, at=julian(as.Date(paste(2005, 1:12, 1, sep="-")), origin=as.Date("2004-12-31"))-0.5, labels=F)
-axis(1, at=julian(as.Date(paste(2005, 1:12, 15, sep="-")), origin=as.Date("2004-12-31")), labels=month.abb, tick=F)
+axis(1, at=julian(as.Date(paste(2005, 1:12, 1, sep="-")), origin=as.Date("2004-12-31"))-0.5, labels=FALSE)
+axis(1, at=julian(as.Date(paste(2005, 1:12, 15, sep="-")), origin=as.Date("2004-12-31")), labels=month.abb, tick=FALSE)
 axis(2)
 box()
 
@@ -218,8 +219,8 @@ loess.draw <- function(panel) {
 	panel
 	}
 panel <- rp.control(x=rnorm(50), y=rnorm(50), s=rep(3, 50), d=1)
-rp.slider(panel, s, 0.1, 10, showvalue=T, action=loess.draw)
-rp.slider(panel, d, 1, 2, showvalue=T, action=loess.draw)
+rp.slider(panel, s, 0.1, 10, showvalue=TRUE, action=loess.draw)
+rp.slider(panel, d, 1, 2, showvalue=TRUE, action=loess.draw)
 
 ### animation ###
 for(i in 1:10) {

@@ -9,7 +9,7 @@
 #' @param mirror	Character scalar, CRAN mirror, default \code{"http://streaming.stat.iastate.edu/CRAN/"}.
 #' @param helpt		Character scalar, type of help, default "html".
 #' @param fac		Logical scalar, use factors rather than character strings, default FALSE.
-#' @param noplots	Logical scalar, remove "saved" plots, e.g., from past runs of \code{\link[jvamisc]{dfplot}}, default TRUE.
+#' @param noplots	Logical scalar, remove "saved" plots, e.g., from past runs of \code{\link[jvamisc]{plotdf}}, default TRUE.
 #' @param show		Logical scalar, list objects in current environment, default TRUE.
 #' @export
 #' @seealso	\code{\link{options}}, \code{\link{help}}.

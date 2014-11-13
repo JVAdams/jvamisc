@@ -6,7 +6,7 @@
 #'	Either a color name (as listed by \code{\link{colors}()}, 
 #'	a hexadecimal string of the form "#rrggbb" or "#rrggbbaa" (see \code{\link{rgb}}), 
 #'	or a positive integer i meaning \code{\link{palette}()[i]}.
-#' @param fromcolname	A character or numeric scalar, indicating the color to use for the highest value in \code{x}.  
+#' @param tocolname		A character or numeric scalar, indicating the color to use for the highest value in \code{x}.  
 #'	See \code{fromcolname}.
 #' @export
 #' @import				plotrix
