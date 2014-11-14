@@ -16,5 +16,11 @@ If you don't already have `devtools` and `Rtools`, you will need to download and
 	library(devtools)
 	find_rtools()
 
+An alternative approach for Windows users is to download this 
+[zip file](https://github.com/JVAdams/jvamisc/raw/master/jvamisc.zip)
+and install the package from the R menu:
+- Packages
+- Install package(s) from local zip files...
+	
 _Thanks to Hilary Parker whose blog post [Writing an R package from scratch](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/)
 encouraged me to create my first R package._
