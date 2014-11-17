@@ -12,6 +12,7 @@ Imports:
     rtf,
     MASS,
     plotrix,
+    lubridate,
     seriation,
     devtools
 Description: jvamisc is a collection of miscellaneous functions.
