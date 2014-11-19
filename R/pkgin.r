@@ -9,13 +9,13 @@
 #' @export
 #' @seealso			\code{\link{pkgup}}
 
-pkgin <- function(package, wd="C:/JVA/R/Working Directory", ld="C:/Users/jvadams/Documents/R/win-library/3.1", pd="C:/JVA/GitHub") {
+pkgin <- function(package, wd="C:/JVA/R/Working Directory", ld="C:/Users/jvadams/Documents/R/win-library/3.1", 
+	pd="C:/JVA/GitHub") {
 	# install from local folder
 	setwd(pd)
 	install(package)
-	# load the package
-	setwd(wd)
-	library(package, character.only=TRUE)
+	# set the library folder as the working directory
+	setwd(ld)
 	# save installed package to zip archive
-	zip(paste0(pd, "/", package, "/", package, ".zip"), paste0(ld, "/", package))
+	zip(paste0(pd, "/", package, "/", package, ".zip"), package)
 	}
