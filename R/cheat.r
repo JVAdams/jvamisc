@@ -113,7 +113,8 @@
 #'
 #' ### convert between lat/long and projections ###
 #' library(proj4)
-#' project(xy, proj, inverse=FALSE, degrees=TRUE, silent=FALSE, ellps.default="sphere")
+#' project(xy, proj, inverse=FALSE, degrees=TRUE, 
+#'	silent=FALSE, ellps.default="sphere")
 #'
 #' ### other map stuff of interest ###
 #' # http://cartodb.com/
