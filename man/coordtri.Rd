@@ -31,7 +31,8 @@ is \code{c(NA, NA)}.
 \examples{
 # define coordinates of base of triangle
 AB <- rbind(A=c(-2, 4), B=c(2, -4))
-# determine coordinates of top of triangle, given base coordinates and side lengths
+# determine coordinates of top of triangle
+# given base coordinates and side lengths
 C <- coordtri(cleft=AB[1, ], cright=AB[2, ], lleft=12, lright=10)
 # plot results
 coordplot(rbind(C, AB))

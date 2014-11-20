@@ -25,8 +25,8 @@ ftest <- coordflip(test, test[1:2, ])
 coordplot(ftest)
 }
 \references{
-Based on a method posted by \strong{Il-Bhima} on 22 July 2010 on
-\href{http://stackoverflow.com/questions/3306838/algorithm-for-reflecting-a-point-across-a-line}{stackoverflow}.
+Based on a method posted by Il-Bhima on 22 July 2010 on stackoverflow
+\href{http://stackoverflow.com/questions/3306838/algorithm-for-reflecting-a-point-across-a-line}{[link]}.
 }
 \seealso{
 \code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordtri}}.

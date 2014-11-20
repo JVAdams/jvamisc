@@ -9,11 +9,11 @@
 #' \itemize{
 #'   \item \code{trim} = a logical matrix, the resulting trimmed matrix
 #'   \item \code{dim} = a numeric vector of length 2, the dimensions of \code{trim}
-#'   \item \code{n} = a numeric scaler, the total number of TRUE values in \code{trim}
+#'   \item \code{n} = a numeric scalar, the total number of TRUE values in \code{trim}
 #' }
 #' @export
 #' @examples 
-#' m <- matrix(c(1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0), nrow=5)
+#' m <- matrix(rep(c(1, 0, 1, 0), c(4, 1, 13, 2)), nrow=5)
 #' matrixtrim(m)
 #' matrixtrim(m, rowsfirst=FALSE)
 #' matrixtrim(m, prop=c(0.7, 0.7))

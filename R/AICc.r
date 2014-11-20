@@ -7,7 +7,7 @@
 #' ordered by either the uncorrected AIC (corr=FALSE) or the AIC corrected for small sample size (corr=TRUE).
 #' Columns include the number of observations (n), the number of parameters (p), the root mean squared error (rmse), 
 #' the uncorrected AIC (aic), the AIC corrected for small sample size (aicc),
-#' the delta AIC (daic or diacc), and the weights of evidence (aicw or aiccw).
+#' the delta AIC (daic or daicc), and the weights of evidence (aicw or aiccw).
 #' @export
 #' @examples 
 #' fit1 <- lm(hp ~ mpg + disp + wt, data=mtcars)

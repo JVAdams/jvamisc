@@ -6,7 +6,8 @@
 #' @docType		data
 #' @usage		mapL
 #' @format		One row for each point, consecutive rows with non-missing values for each line.
-#' @source		NOAA National Geophysical Data Center, Coastline Extractor, \strong{http://www.ngdc.noaa.gov/mgg/coast/}.
+#' @source		NOAA National Geophysical Data Center, (the now defunct) Coastline 
+#'	Extractor, \href{http://www.ngdc.noaa.gov/mgg/coast/}{ngdc.noaa.gov/mgg/coast}.
 #' @author		Rich Signell, USGS.
 NULL
 #' @name		map5
@@ -16,7 +17,8 @@ NULL
 #' @docType		data
 #' @usage		map5
 #' @format		One row for each point, consecutive rows with non-missing values for each line.
-#' @source		NOAA National Geophysical Data Center, Coastline Extractor, \strong{http://www.ngdc.noaa.gov/mgg/coast/}.
+#' @source		NOAA National Geophysical Data Center, (the now defunct) Coastline 
+#'	Extractor, \href{http://www.ngdc.noaa.gov/mgg/coast/}{ngdc.noaa.gov/mgg/coast}.
 #' @author		Rich Signell, USGS.
 NULL
 #' @name		Lakenames
@@ -40,6 +42,6 @@ NULL
 #' @usage		blindcolz
 #' @format		A character vector, length 9.
 #' @source		How to make figures and presentations that are friendly to color blind people, 
-#' 20 November 2002, \strong{http://jfly.iam.u-tokyo.ac.jp/html/color_blind/}.
+#' 20 November 2002, \href{http://jfly.iam.u-tokyo.ac.jp/html/color_blind/}{[link]}.
 #' @author		Masataka Okabe and Kei Ito.
 NULL

@@ -19,7 +19,7 @@ or all values should be returned (FALSE) though some may be unchanged, default T
 A vector the same length as \code{x} (unless \code{must.match=TRUE}), with \code{old} values replaced by \code{new} values.
 }
 \description{
-Recode the values of a vector.
+Assign new values to a vector.
 }
 \examples{
 recode(c(1,1,1,2,3,4,1,10,3), 1:3, 1001:1003)

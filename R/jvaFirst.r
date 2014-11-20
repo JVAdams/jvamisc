@@ -5,8 +5,8 @@
 #' @param ndec		Integer scalar, maximum width of fixed notation before switching to scientific notation, default 10. 
 #' @param cont		Character scalar, prompt used for lines which continue past first command line, default \code{"... "}.
 #' @param pkgs		Character vector, packages to be loaded, default
-#'	\code{c("rJava", "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "jvamisc")}.
-#' @param mirror	Character scalar, CRAN mirror, default \code{"http://streaming.stat.iastate.edu/CRAN/"}.
+#'	c("rJava", "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "jvamisc").
+#' @param mirror	Character scalar, CRAN mirror, default "http://streaming.stat.iastate.edu/CRAN/".
 #' @param helpt		Character scalar, type of help, default "html".
 #' @param fac		Logical scalar, use factors rather than character strings, default FALSE.
 #' @param noplots	Logical scalar, remove "saved" plots, e.g., from past runs of \code{\link[jvamisc]{plotdf}}, default TRUE.

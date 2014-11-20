@@ -20,18 +20,21 @@ Rotate coordinates clockwise around a pivot point.
 }
 \examples{
 # starting coordinates
-test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2, dimnames=list(LETTERS[1:3], NULL))
+test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2,
+	dimnames=list(LETTERS[1:3], NULL))
 coordplot(test)
-# rotate the coordinates clockwise 45 degrees around the first point (the origin)
+# rotate the coordinates clockwise 45 degrees
+# around the first point (the origin)
 rottest <- coordturn(test, test[1, ], rot=pi/4)
 coordplot(rottest)
-# rotate the coordinates counterclockwise 45 degrees around the first point (the origin)
+# rotate the coordinates counterclockwise 45 degrees
+# around the first point (the origin)
 rottest <- coordturn(test, test[1, ], rot=-pi/4)
 coordplot(rottest)
 }
 \references{
-Modification of code posted by \strong{Sage} on 3 March 2011 on the website
-\href{http://benn.org/2007/01/06/rotating-coordinates-around-a-centre/}{benn.org}.
+Modification of code posted by Sage on 3 March 2011 on the website benn.org
+\href{http://benn.org/2007/01/06/rotating-coordinates-around-a-centre/}{[link]}.
 }
 \seealso{
 \code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.

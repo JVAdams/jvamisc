@@ -8,7 +8,7 @@ addedvar(Y, X, main = "")
 \arguments{
 \item{Y}{A vector representing a single response.}
 
-\item{X}{Two or more predictor columns in a matrix or dataframe.}
+\item{X}{Two or more predictor columns in a matrix or data frame.}
 
 \item{main}{Subtitle for the plot.}
 }
@@ -19,6 +19,7 @@ A plot is sent to the current graphics device (no value is returned).
 Produces an added variable plot given 1 response and 2 or more predictors.
 }
 \examples{
-addedvar(Y=mtcars$hp, X=mtcars[, c("mpg", "disp", "wt")], main="Predicting horsepower from MPG, displacement, and weight")
+addedvar(Y=mtcars$hp, X=mtcars[, c("mpg", "disp", "wt")],
+	main="Predicting horsepower from MPG, displacement, and weight")
 }
 

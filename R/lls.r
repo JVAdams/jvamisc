@@ -5,6 +5,8 @@
 #' @param pat 	Regular expression pattern specifying which members to return, default "" for all members.
 #' @return 		A data frame with the name, class, dimension, and size of each member of the environment.
 #' @export
+#' @references 	Based on a method posted by Bendix Carstensen on 10 Jan 2007 on R-help 
+#' \href{https://stat.ethz.ch/pipermail/r-help/2007-January/123403.html}{[link]}.
 #' @examples
 #' \dontrun{
 #' lls()

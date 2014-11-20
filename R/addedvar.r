@@ -2,16 +2,17 @@
 #'
 #' Produces an added variable plot given 1 response and 2 or more predictors.
 #' @param Y 	A vector representing a single response.
-#' @param X 	Two or more predictor columns in a matrix or dataframe.
+#' @param X 	Two or more predictor columns in a matrix or data frame.
 #' @param main 	Subtitle for the plot.
 #' @return 		A plot is sent to the current graphics device (no value is returned).
 #' @export
-#' @examples addedvar(Y=mtcars$hp, X=mtcars[, c("mpg", "disp", "wt")], main="Predicting horsepower from MPG, displacement, and weight")
+#' @examples addedvar(Y=mtcars$hp, X=mtcars[, c("mpg", "disp", "wt")], 
+#'	main="Predicting horsepower from MPG, displacement, and weight")
 
 addedvar <- function(Y, X, main="") {
 	# Added variable plots of predictors
 	# Y is one response vector
-	# X is two or more predictor columns in a matrix or dataframe
+	# X is two or more predictor columns in a matrix or data frame
 	# main is a subtitle for the plot
 
 	# calculate the number of predictors, and assign them names

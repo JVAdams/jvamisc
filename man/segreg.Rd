@@ -8,7 +8,7 @@ segreg(x, y, k = NULL)
 \arguments{
 \item{x}{Numeric vector, the independent variable which will be "broken".}
 
-\item{y}{Numeric vector, the dependent variable which will be used to define the break proint.}
+\item{y}{Numeric vector, the dependent variable which will be used to define the break point.}
 
 \item{k}{Numeric scalar, the location of the break point, if known.  If NULL, the default, the optimal break point will be chosen from among all
 unique values of x except for the minimum and the maximum.}

@@ -6,7 +6,7 @@
 #' @param ... 	Additional arguments to the \code{\link{density}} function.
 #' @return 		The estimated mode of \code{x}.
 #' @export
-#' @references 	Based on a method posted by \strong{Peter Dalgaard} on 29 Aug 2008 on  
+#' @references 	Based on a method posted by Peter Dalgaard on 29 Aug 2008 on  
 #' \href{https://stat.ethz.ch/pipermail/r-help/2008-August/172319.html}{r-help}.
 #' @examples 
 #' x <- rnorm(100)

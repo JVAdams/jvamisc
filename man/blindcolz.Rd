@@ -6,7 +6,7 @@
 \format{A character vector, length 9.}
 \source{
 How to make figures and presentations that are friendly to color blind people,
-20 November 2002, \strong{http://jfly.iam.u-tokyo.ac.jp/html/color_blind/}.
+20 November 2002, \href{http://jfly.iam.u-tokyo.ac.jp/html/color_blind/}{[link]}.
 }
 \usage{
 blindcolz

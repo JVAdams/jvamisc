@@ -18,7 +18,8 @@ dat <- readWorksheet(wb, sheet=getSheets(wb)[1], startRow=1)
 
 ### Greek and math symbols ###
 # http://www.decodeunicode.org/
-plot(1, 1, xlab="Length  (\\U03BCm)", ylab="Temperature  (\\U00b0 C)", main="Lambda squared = \\\\U03BB\\\\U00B2 = \\U03BB\\U00B2")
+plot(1, 1, xlab="Length  (\\U03BCm)", ylab="Temperature  (\\U00b0 C)",
+	main="Lambda squared = \\\\U03BB\\\\U00B2 = \\U03BB\\U00B2")
 
 ### update package ###
 pkgup("jvamisc")
@@ -53,11 +54,11 @@ tt <- qt(1 - 0.05/2, fit$df.residual)
 pl <- pe + tt*p$se.fit
 pu <- pe - tt*p$se.fit
 
-### mulitple comparison Tukey test approach 1 ###
+### multiple comparison Tukey test approach 1 ###
 amod <- aov(breaks ~ tension, data = warpbreaks)
 TukeyHSD(amod)
 
-### mulitple comparison Tukey test approach 2 ###
+### multiple comparison Tukey test approach 2 ###
 library(multcomp)
 amod <- aov(breaks ~ tension, data = warpbreaks)
 mc <- glht(amod, linfct = mcp(tension = "Tukey"))
@@ -74,10 +75,12 @@ wht <- glht(fit, linfct = mcp(f1 = "Tukey", f2 = "Tukey"))
 # cf. Westfall et al. (1999, page 181)
 summary(wht, test = adjusted("Shaffer"))
 
-### label months on jday axis ###
+### label months on day of year or Julian day axis ###
 plot(101:200, rnorm(100), axes=FALSE)
-axis(1, at=julian(as.Date(paste(2005, 1:12, 1, sep="-")), origin=as.Date("2004-12-31"))-0.5, labels=FALSE)
-axis(1, at=julian(as.Date(paste(2005, 1:12, 15, sep="-")), origin=as.Date("2004-12-31")), labels=month.abb, tick=FALSE)
+axis(1, at=doy(as.Date(paste(2000, 1:12, 1, sep="-")))-0.5,
+	labels=FALSE)
+axis(1, at=doy(as.Date(paste(2000, 1:12, 15, sep="-"))),
+	labels=month.abb, tick=FALSE)
 axis(2)
 box()
 
@@ -90,19 +93,25 @@ contour(interp(x, y, z, duplicate="mean"))
 
 ### get lat longs for locations ###
 library(dismo)
-geocode(c("1600 Pennsylvania Ave NW, Washington DC", "Luca, Italy", "Kampala", "Antigo, WI"))
+geocode(c("1600 Pennsylvania Ave NW, Washington DC",
+	"Luca, Italy", "Kampala", "Antigo, WI"))
 
 ### get a lat long for a location ###
-# from R-help posting by Phil Spector, UC Berkeley, Mar 16, 2010; 3:57pm
+# from R-help post by Phil Spector, UC Berkeley, Mar 16, 2010
+# https://stat.ethz.ch/pipermail/r-help/2010-March/232090.html
 library(XML)
-root <- xmlRoot(xmlTreeParse(paste0("http://maps.google.com/maps/api/geocode/xml?address=", "Antigo, WI", "&sensor=false")))
+root <- xmlRoot(xmlTreeParse(
+	paste0("http://maps.google.com/maps/api/geocode/xml?address=",
+	"Antigo, WI", "&sensor=false")))
 lat <- xmlValue(root[["result"]][["geometry"]][["location"]][["lat"]])
 long <- xmlValue(root[["result"]][["geometry"]][["location"]][["lng"]])
 
 ### plot points on a map ###
 library(RgoogleMaps)
-MyMap <- GetMap.bbox(c(-80, -79), c(45, 46), maptype="terrain", destfile="junk.png", zoom=8)
-PlotOnStaticMap(MyMap, lat=seq(45, 46, 0.1), lon=seq(-80, -79, 0.1), col="red", pch=16)
+MyMap <- GetMap.bbox(c(-80, -79), c(45, 46), maptype="terrain",
+	destfile="junk.png", zoom=8)
+PlotOnStaticMap(MyMap, lat=seq(45, 46, 0.1), lon=seq(-80, -79, 0.1),
+col="red", pch=16)
 
 ### make a quick map ###
 library(ggmap)
@@ -115,6 +124,10 @@ project(xy, proj, inverse=FALSE, degrees=TRUE, silent=FALSE, ellps.default="sphe
 ### other map stuff of interest ###
 # http://cartodb.com/
 # https://github.com/Vizzuality/cartodb-r
+
+### see the details of a function
+methods(function)
+package:::function.default
 
 ### dendrogram reorder ###
 x <- sample(100, 10)
@@ -144,7 +157,8 @@ dimnames(comb)[[2]] <- var.names
 fits <- vector("list", dim(comb)[1])
 fits[[1]] <- lm(lpsa ~ 1, dat=train)
 for(i in 2:length(fits)) {
-	fits[[i]] <- lm(formula=paste("lpsa ~", paste(var.names[comb[i, ]==1], collapse=" + ")), dat=train)
+	fits[[i]] <- lm(formula=paste("lpsa ~",
+		paste(var.names[comb[i, ]==1], collapse=" + ")), dat=train)
 	}
 comb2 <- comb
 comb2$nx <- apply(comb, 1, sum)
@@ -190,17 +204,20 @@ cat(data, file="data.json")
 
 ### read in internet table ###
 library(XML)
-allTables <- readHTMLTable("http://en.wikipedia.org/wiki/United_States_presidential_election,_2012")
+allTables <- readHTMLTable(
+	"http://en.wikipedia.org/wiki/United_States_presidential_election,_2012")
 # Look at the allTables object to find the specific table we want
 str(allTables)
 # if you have problems reading the URL, you could try this ...
-mylines <- readLines(url("http://en.wikipedia.org/wiki/United_States_presidential_election,_2012"))
+mylines <- readLines(url(
+	"http://en.wikipedia.org/wiki/United_States_presidential_election,_2012"))
 closeAllConnections()
 mylist <- readHTMLTable(mylines, asText=TRUE)
 mytable <- mylist1$xTable
 
 ### allow users to browse to a file ###
-myfile <- file.choose()
+library(tcltk)
+myfile <- tk_choose.files(default="C:/JVA/*.csv")
 
 ### one slider ###
 library(rpanel)

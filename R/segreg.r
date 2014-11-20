@@ -2,7 +2,7 @@
 #'
 #' Fit a simple linear segmented regression (also known as changepoint, hockey stick, or broken line regression).  
 #' @param x 	Numeric vector, the independent variable which will be "broken".
-#' @param y 	Numeric vector, the dependent variable which will be used to define the break proint.
+#' @param y 	Numeric vector, the dependent variable which will be used to define the break point.
 #' @param k 	Numeric scalar, the location of the break point, if known.  If NULL, the default, the optimal break point will be chosen from among all
 #' unique values of x except for the minimum and the maximum. 
 #' @return 		List with three elements, fit: the resulting lm object, k, and pred: data frame with the unique values of x (and k) with predicted values.

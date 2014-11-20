@@ -5,7 +5,8 @@
 \title{Great Lakes Shorelines}
 \format{One row for each point, consecutive rows with non-missing values for each line.}
 \source{
-NOAA National Geophysical Data Center, Coastline Extractor, \strong{http://www.ngdc.noaa.gov/mgg/coast/}.
+NOAA National Geophysical Data Center, (the now defunct) Coastline
+	Extractor, \href{http://www.ngdc.noaa.gov/mgg/coast/}{ngdc.noaa.gov/mgg/coast}.
 }
 \usage{
 mapL

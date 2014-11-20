@@ -1,6 +1,6 @@
 #' Recode Values
 #'
-#' Recode the values of a vector.  
+#' Assign new values to a vector.  
 #' @param x 			A vector whose values will be recoded, can be character, numeric, or factor.
 #' @param old 			A vector of the unique values currently in the vector.
 #' @param new 			A vector of values which should replace the current ones.

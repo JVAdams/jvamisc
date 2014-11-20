@@ -14,7 +14,8 @@ circles(x, y, z, data.range = range(z, na.rm = TRUE),
 
 \item{z}{Numeric vector of data used to generate circles.}
 
-\item{data.range}{Numeric vector, length 2, minimum and maximum z data to plot, default \code{range(z, na.rm=TRUE)}.}
+\item{data.range}{Numeric vector, length 2, minimum and maximum \code{z}z data to plot,
+default \code{range(z, na.rm=TRUE)}.}
 
 \item{circle.size.range}{Numeric vector, length 2, minimum and maximum circle radii in inches, default 0.1 to 1.}
 
@@ -38,15 +39,16 @@ Draw circles on a plot, with control over circle size.
 }
 \details{
 The size of the circles plotted corresponds directly with the range of data.
-For example, if there is a z of size \code{data.range[1]}, it will be plotted as a circle with radius \code{circle.size.range[1]},
-and if there is a z of size \code{data.range[2]}, it will be plotted as a circle with radius \code{circle.size.range[2]}.
+For example, if there is a \code{z} of size \code{data.range[1]}, it will be plotted as a circle with radius \code{circle.size.range[1]},
+and if there is a \code{z}z of size \code{data.range[2]}, it will be plotted as a circle with radius \code{circle.size.range[2]}.
 
 The default of NA for \code{outx} and \code{outy} places unseen smallest and biggest circles at a location
 where the x and y coordinates are 10 times the range observed plus the maximum observed.
 In most instances this should be well beyond the figure margins.
 }
 \examples{
-circles(trees$Height, trees$Girth, sqrt(trees$Volume), data.range=sqrt(c(0, max(trees$Volume))),
-	circle.size.range=c(0, 0.3), xlab="Height (ft)", ylab="Diameter (in)", main="Tree Volume")
+circles(trees$Height, trees$Girth, sqrt(trees$Volume),
+	data.range=sqrt(c(0, max(trees$Volume))), circle.size.range=c(0, 0.3),
+	xlab="Height (ft)", ylab="Diameter (in)", main="Tree Volume")
 }
 

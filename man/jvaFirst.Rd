@@ -16,9 +16,9 @@ jvaFirst(maxp = 500, ndec = 10, cont = "... ", pkgs = c("rJava",
 \item{cont}{Character scalar, prompt used for lines which continue past first command line, default \code{"... "}.}
 
 \item{pkgs}{Character vector, packages to be loaded, default
-\code{c("rJava", "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "jvamisc")}.}
+c("rJava", "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "jvamisc").}
 
-\item{mirror}{Character scalar, CRAN mirror, default \code{"http://streaming.stat.iastate.edu/CRAN/"}.}
+\item{mirror}{Character scalar, CRAN mirror, default "http://streaming.stat.iastate.edu/CRAN/".}
 
 \item{helpt}{Character scalar, type of help, default "html".}
 
