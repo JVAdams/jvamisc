@@ -43,11 +43,6 @@ plotdf <- function(df, one=TRUE, ...) {
 	stats[no.entered<1] <- NA
 	out <- data.frame(no.entered, no.missing, no.unique, stats)
 	print(out)
-	answer <- readline("Do you want to delete the plots? ")
-	if (answer == "y") {
-		dev.off(which = dev.cur())
-		.SavedPlots <<- NULL
-		cat("Plots deleted.\n")
-		} else cat("Okay.  If you want to delete them later, use\n\n.SavedPlots <- NULL\n")
+	cat("\nIf you want to delete the saved plots, use\n.SavedPlots <- NULL\n")
 	invisible(out)
 	}
