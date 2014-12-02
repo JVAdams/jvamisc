@@ -4,7 +4,8 @@
 \title{Add a Table to an RTF Document}
 \usage{
 tabl(..., TAB = tab, rtf = doc, fontt = 8, row.names = TRUE,
-  tabc = tabcount, boldt = TRUE, newpage = "none", omi = c(1, 1, 1, 1))
+  tabc = jvamiscenv$tabcount, boldt = TRUE, newpage = "none", omi = c(1,
+  1, 1, 1))
 }
 \arguments{
 \item{...}{One or more character scalars (separated by commas) of text to use for the table caption.}
@@ -17,7 +18,7 @@ tabl(..., TAB = tab, rtf = doc, fontt = 8, row.names = TRUE,
 
 \item{row.names}{Logical scalar whether to include the row.names of \code{TAB} in the table, default TRUE.}
 
-\item{tabc}{Numeric scalar table number to use in caption, default \code{tabcount}.}
+\item{tabc}{Numeric scalar table number to use in caption, default \code{jvamiscenv$tabcount}.}
 
 \item{boldt}{Logical scalar indicating if table number should use bold font, default TRUE.}
 
@@ -27,7 +28,7 @@ tabl(..., TAB = tab, rtf = doc, fontt = 8, row.names = TRUE,
 \item{omi}{Numeric vector, length 4, width of document page margins in inches (bottom, left, top, right), default c(1, 1, 1, 1).}
 }
 \value{
-A 1 is added to the numeric vector of length 1, \code{tabcount}, stored in the working directory to keep track
+A 1 is added to the numeric vector of length 1, \code{jvamiscenv$tabcount}, stored in the working directory to keep track
 of the number of tables written to the rtf document, and label the captions accordingly.
 }
 \description{

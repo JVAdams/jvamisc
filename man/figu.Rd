@@ -3,9 +3,9 @@
 \alias{figu}
 \title{Add a Figure to an RTF Document}
 \usage{
-figu(..., FIG = fig, rtf = doc, figid = "Figure ", fign = figcount,
-  boldt = TRUE, capunder = TRUE, w = NULL, h = NULL, rf = 300,
-  newpage = "none", omi = c(1, 1, 1, 1))
+figu(..., FIG = fig, rtf = doc, figid = "Figure ",
+  fign = jvamiscenv$figcount, boldt = TRUE, capunder = TRUE, w = NULL,
+  h = NULL, rf = 300, newpage = "none", omi = c(1, 1, 1, 1))
 }
 \arguments{
 \item{...}{One or more character scalars (separated by commas) of text to use for the figure caption.}
@@ -16,7 +16,7 @@ figu(..., FIG = fig, rtf = doc, figid = "Figure ", fign = figcount,
 
 \item{figid}{Character scalar of caption identifier, default "Figure ".}
 
-\item{fign}{Numeric scalar of figure number to use in caption,, default \code{figcount}.}
+\item{fign}{Numeric scalar of figure number to use in caption,, default \code{jvamiscenv$figcount}.}
 
 \item{boldt}{Logical scalar indicating if figure number should use bold font, default TRUE.}
 
@@ -34,7 +34,7 @@ figu(..., FIG = fig, rtf = doc, figid = "Figure ", fign = figcount,
 \item{omi}{Numeric vector, length 4, width of document page margins in inches (bottom, left, top, right), default c(1, 1, 1, 1).}
 }
 \value{
-A 1 is added to the numeric vector of length 1, \code{figcount}, stored in the working directory to keep track
+A 1 is added to the numeric vector of length 1, \code{jvamiscenv$figcount}, stored in the working directory to keep track
 of the number of figures written to the rtf document, and label the captions accordingly.
 }
 \description{

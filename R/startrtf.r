@@ -38,8 +38,8 @@
 startrtf <- function(file=NULL, dir=getwd(), width=8.5, height=11, omi=c(1, 1, 1, 1), quiet=FALSE) {
 	# create a new RTF file readable by Word
 	# create two new variables to keep count of tables and figures
-	tabcount <<- 1
-	figcount <<- 1
+	jvamiscenv$tabcount <- 1
+	jvamiscenv$figcount <- 1
 	if(is.null(file)) file <- paste0("RGeneratedDocument", Sys.Date())
 	dirfiledoc <- if(length(grep(".doc", file))>0) paste(dir, file, sep="/") else paste(dir, paste0(file, ".doc"), sep="/")
 	if(!quiet) cat(paste0("New RTF document created, ", dirfiledoc, "\n"))

@@ -6,12 +6,12 @@
 #' @param rtf		An rtf object, default \code{doc}.
 #' @param fontt 	Numeric scalar font size for table caption, default 8.
 #' @param row.names	Logical scalar whether to include the row.names of \code{TAB} in the table, default TRUE.
-#' @param tabc 		Numeric scalar table number to use in caption, default \code{tabcount}.
+#' @param tabc 		Numeric scalar table number to use in caption, default \code{jvamiscenv$tabcount}.
 #' @param boldt 	Logical scalar indicating if table number should use bold font, default TRUE.
 #' @param newpage 	Character scalar indicating if the table should start on a new page in the document "port" for a new portrait page,
 #' "land" for a new landscape page, and "none" for no new page (the default).
 #' @param omi 		Numeric vector, length 4, width of document page margins in inches (bottom, left, top, right), default c(1, 1, 1, 1).
-#' @return			A 1 is added to the numeric vector of length 1, \code{tabcount}, stored in the working directory to keep track
+#' @return			A 1 is added to the numeric vector of length 1, \code{jvamiscenv$tabcount}, stored in the working directory to keep track
 #' of the number of tables written to the rtf document, and label the captions accordingly.
 #' @details 		The table and caption are written to the rtf file.
 #' The size of a new page is assumed to be 8.5 by 11 inches.
@@ -37,7 +37,7 @@
 #' endrtf()
 #' }
 
-tabl <- function(..., TAB=tab, rtf=doc, fontt=8, row.names=TRUE, tabc=tabcount, boldt=TRUE, newpage="none", omi=c(1, 1, 1, 1)) {
+tabl <- function(..., TAB=tab, rtf=doc, fontt=8, row.names=TRUE, tabc=jvamiscenv$tabcount, boldt=TRUE, newpage="none", omi=c(1, 1, 1, 1)) {
 	if(newpage=="port") addPageBreak(this=rtf, width=8.5, height=11, omi=omi)
 	if(newpage=="land") addPageBreak(this=rtf, width=11, height=8.5, omi=omi)
 	startParagraph(this=rtf)
@@ -47,5 +47,5 @@ tabl <- function(..., TAB=tab, rtf=doc, fontt=8, row.names=TRUE, tabc=tabcount, 
 	endParagraph(this=rtf)
 	addTable(this=rtf, TAB, font.size=fontt, row.names=row.names)
 	addNewLine(this=rtf)
-	tabcount <<- tabc + 1
+	jvamiscenv$tabcount <- tabc + 1
 	}
