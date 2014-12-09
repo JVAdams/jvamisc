@@ -6,9 +6,9 @@
 binomCI(x, y = NULL, na.rm = TRUE, alpha = 0.05, prob = TRUE)
 }
 \arguments{
-\item{x}{A vector of 0s and 1s, or (if \code{y} is also given) a scalar, the number of failures.}
+\item{x}{A vector of 0s and 1s, or (if \code{y} is also given) a scalar, the number of successes.}
 
-\item{y}{A scalar, the number of successes, default \code{NULL}.}
+\item{y}{A scalar, the number of failures, default \code{NULL}.}
 
 \item{na.rm}{A logical, whether to remove NAs from the data, default \code{TRUE}.}
 
@@ -26,7 +26,7 @@ Uses Louis (1981) if only failures or only successes were observed.
 }
 \examples{
 binomCI(c(0, 0, 0, 0, 1, 1))
-binomCI(4, 2, prob=FALSE)
+binomCI(2, 4, prob=FALSE)
 }
 \references{
 Thomas A. Louis. 1981.
