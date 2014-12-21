@@ -28,6 +28,12 @@ pkgin("jvamisc")
 "C:\\Program Files\\R\\R-3.1.1\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_2014-07.tar.gz
 pkgman("jvamisc")
 
+### map scale and north arrow ###
+library(GISTools)
+map("state", region= "ohio")
+maps::map.scale(x=-84, y=40, ratio=FALSE, relwidth=0.2)
+north.arrow(xb=-83.4, yb=40.4, len=0.05, lab="N")
+
 ### error bars ###
 x <- 1:10
 y <- sample(10)
