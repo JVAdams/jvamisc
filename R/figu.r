@@ -5,7 +5,7 @@
 #' @param FIG		A function to create a figure which will be added to the document, default \code{fig}.
 #' @param rtf		An rtf object, default \code{doc}.
 #' @param figid 	Character scalar of caption identifier, default "Figure ".
-#' @param fign 		Numeric scalar of figure number to use in caption,, default \code{jvamiscenv$figcount}.
+#' @param fign 		Numeric scalar of figure number to use in caption, default \code{jvamiscenv$figcount}.
 #' @param boldt 	Logical scalar indicating if figure number should use bold font, default TRUE.
 #' @param capunder 	Logical scalar indicating if caption should appear under the figure (TRUE, the default) or on top of the figure (FALSE).
 #' @param w 		Numeric scalar width of figure in inches, default 6.5.

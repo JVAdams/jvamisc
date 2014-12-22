@@ -16,7 +16,7 @@ figu(..., FIG = fig, rtf = doc, figid = "Figure ",
 
 \item{figid}{Character scalar of caption identifier, default "Figure ".}
 
-\item{fign}{Numeric scalar of figure number to use in caption,, default \code{jvamiscenv$figcount}.}
+\item{fign}{Numeric scalar of figure number to use in caption, default \code{jvamiscenv$figcount}.}
 
 \item{boldt}{Logical scalar indicating if figure number should use bold font, default TRUE.}
 
