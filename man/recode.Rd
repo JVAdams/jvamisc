@@ -3,7 +3,7 @@
 \alias{recode}
 \title{Recode Values}
 \usage{
-recode(x, old, new, must.match = TRUE)
+recode(x, old, new, must.match = FALSE)
 }
 \arguments{
 \item{x}{A vector whose values will be recoded, can be character, numeric, or factor.}
@@ -13,7 +13,7 @@ recode(x, old, new, must.match = TRUE)
 \item{new}{A vector of values which should replace the current ones.}
 
 \item{must.match}{A logical scalar indicating whether only those elements of the original vector with values in \code{old} should be returned (TRUE),
-or all values should be returned (FALSE) though some may be unchanged, default TRUE.}
+or all values should be returned (FALSE, default) though some may be unchanged.}
 }
 \value{
 A vector the same length as \code{x} (unless \code{must.match=TRUE}), with \code{old} values replaced by \code{new} values.
