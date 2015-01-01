@@ -16,17 +16,42 @@ library(XLConnect)
 wb <- loadWorkbook("c:/temp/junk.xlsx")
 dat <- readWorksheet(wb, sheet=getSheets(wb)[1], startRow=1)
 
-### Greek and math symbols ###
-# http://www.decodeunicode.org/
-plot(1, 1, xlab="Length  (\\U03BCm)", ylab="Temperature  (\\U00b0 C)",
-	main="Lambda squared = \\\\U03BB\\\\U00B2 = \\U03BB\\U00B2")
-
 ### update package ###
 pkgup("jvamisc")
 pkgin("jvamisc")
 "C:\\Program Files\\R\\R-3.1.1\\bin\\x64\\R.exe" CMD build C:\\JVA\\GitHub\\jvamisc --resave-data
 "C:\\Program Files\\R\\R-3.1.1\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_2014-07.tar.gz
 pkgman("jvamisc")
+
+
+### create a Word document ###
+today <- Sys.Date()
+doc <- startrtf(file=paste("Example", today), dir="C:/JVA")
+heading("Example")
+heading(paste("Jean V. Adams", today, sep=" - "), 2)
+
+para("This is how you reference a table (Table ", jvamiscenv$tabcount, ").")
+
+tab <- matrix(rnorm(20), ncol=5, dimnames=list(paste("Row", 1:4), paste("Column", 1:5)))
+tab <- prettytable(tab)
+tab <- format(round(tab, 2))
+tabl("A silly table.")
+
+para("And this is how you reference a figure (Figure ", jvamiscenv$figcount, ").")
+
+fig <- function() {
+	par(mar=c(4, 4, 1, 1))
+	plot(1:10, 1:10, xlab="X", ylab="Y")
+	}
+figu("A silly plot.", h=4, w=4)
+
+endrtf()
+
+
+### Greek and math symbols ###
+# http://www.decodeunicode.org/
+plot(1, 1, xlab="Length  (\\U03BCm)", ylab="Temperature  (\\U00b0 C)",
+	main="Lambda squared = \\\\U03BB\\\\U00B2 = \\U03BB\\U00B2")
 
 ### map scale and north arrow ###
 library(GISTools)

@@ -12,7 +12,7 @@
 #' prettytable(head(mtcars), 2)
 
 prettytable <- function(m, sigdig=3) {
-	mclass <- sapply(m, class)
+	mclass <- if(class(m)=="matrix") apply(m, 2, class) else sapply(m, class)
 	nc <- mclass %in% c("numeric", "integer")
 	if(sum(nc) > 0 ) {
 		for(i in (1:dim(m)[2])[nc]) {
