@@ -14,7 +14,7 @@
 #' pkgup("jvamisc")
 #' pkgin("jvamisc")
 #' "C:\Program Files\R\R-3.1.1\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
-#' "C:\Program Files\R\R-3.1.1\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_2014-07.tar.gz
+#' "C:\Program Files\R\R-3.1.1\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_2015-01.tar.gz
 #' pkgman("jvamisc")
 #' 
 #'
