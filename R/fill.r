@@ -9,9 +9,9 @@
 #' @details			Similar to \code{\link[zoo]{na.locf}} in the \code{zoo} package, but works for "" in character vectors as well.
 #' @examples 
 #' numvec <- c(NA, 1:5, NA, NA, NA, 10:12, NA)
-#' group <- rep(1:3, c(4, 4, 5))
+#' newgroup <- c(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
 #' fill(numvec)
-#' fill(numvec, first(group))
+#' fill(numvec, newgroup)
 #'
 #' charvec <- c("", letters[1:5], "", "", "", letters[10:12], "")
 #' fill(charvec)
