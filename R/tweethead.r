@@ -91,7 +91,7 @@ tweethead <- function(tweet=TRUE, username=NULL, website=NULL, credentials=NULL)
 
 	### grab latest tweets
 	adj <- getUser(Sys.getenv("username"))
-	oldtweets <- twListToDF(userTimeline(adj, n=5, excludeReplies=TRUE))[, c("text", "favoriteCount", "retweetCount", "created")]
+	oldtweets <- twListToDF(userTimeline(adj, n=15, excludeReplies=TRUE))[, c("text", "favoriteCount", "retweetCount", "created")]
 	names(oldtweets)[names(oldtweets)=="created"] <- "createdUTC"
 
 
