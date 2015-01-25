@@ -15,7 +15,9 @@ Imports:
     lubridate,
     seriation,
     survey,
-    devtools
+    devtools,
+	twitteR,
+	RCurl
 Description: jvamisc is a collection of miscellaneous functions.
 LazyData: TRUE
 License: GPL
