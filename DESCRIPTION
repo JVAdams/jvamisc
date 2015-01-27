@@ -17,6 +17,7 @@ Imports:
     survey,
     devtools,
 	twitteR,
+	rpart,
 	RCurl
 Description: jvamisc is a collection of miscellaneous functions.
 LazyData: TRUE
