@@ -46,7 +46,10 @@ tweethead <- function(tweet=TRUE, username=NULL, website=NULL, credentials=NULL)
 		}
 
 	# connect to Twitter
+	origop <- options("httr_oauth_cache")
+	options(httr_oauth_cache=TRUE)
 	setup_twitter_oauth(api_key, api_secret, access_token, access_token_secret)
+	options(httr_oauth_cache=origop)
 
 	# grab headlines from website
 	# read in html source code
