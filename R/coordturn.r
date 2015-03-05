@@ -1,24 +1,33 @@
 #' Rotate Coordinates
 #'
-#' Rotate coordinates clockwise around a pivot point.  
-#' @param pts 	A numeric matrix with two columns of x and y coordinates to be rotated.
-#' @param pvt 	A numeric vector of length 2, the x and y coordinates of the pivot point around which \code{pts} will be rotated.
-#' @param rot	A numeric scalar indicating the amount of clockwise rotation, in radians.
-#' @return 		A numeric matrix with same dimension as \code{pts} with the rotated x and y coordinates.
+#' Rotate coordinates clockwise around a pivot point.
+#' @param pts
+#'   A numeric matrix with two columns of x and y coordinates to be rotated.
+#' @param pvt
+#'   A numeric vector of length 2, the x and y coordinates of the pivot point
+#'   around which \code{pts} will be rotated.
+#' @param rot
+#'   A numeric scalar indicating the amount of clockwise rotation, in radians.
+#' @return
+#'   A numeric matrix with same dimension as \code{pts} with the rotated
+#'   x and y coordinates.
 #' @export
-#' @seealso		\code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
-#' @references Modification of code posted by Sage on 3 March 2011 on the website benn.org 
-#' \href{http://benn.org/2007/01/06/rotating-coordinates-around-a-centre/}{[link]}.
-#' @examples 
+#' @seealso
+#'   \code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}},
+#'   \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
+#' @references
+#'   Modification of code posted by Sage on 3 March 2011 on the website benn.org
+#'   \href{http://benn.org/2007/01/06/rotating-coordinates-around-a-centre/}{[link]}.
+#' @examples
 #' # starting coordinates
-#' test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2, 
+#' test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2,
 #'	dimnames=list(LETTERS[1:3], NULL))
 #' coordplot(test)
-#' # rotate the coordinates clockwise 45 degrees 
+#' # rotate the coordinates clockwise 45 degrees
 #' # around the first point (the origin)
 #' rottest <- coordturn(test, test[1, ], rot=pi/4)
 #' coordplot(rottest)
-#' # rotate the coordinates counterclockwise 45 degrees 
+#' # rotate the coordinates counterclockwise 45 degrees
 #' # around the first point (the origin)
 #' rottest <- coordturn(test, test[1, ], rot=-pi/4)
 #' coordplot(rottest)
@@ -30,4 +39,4 @@ coordturn <- function(pts, pvt, rot) {
 	m <- cbind(xRot, yRot)
 	dimnames(m) <- dimnames(pts)
 	m
-	}
+}

@@ -1,21 +1,29 @@
 #' Chi-Squared Test
 #'
 #' Performs chi-squared contingency table tests with informative output.
-#' @param x 	A numeric matrix.
-#' @param rpct 	A numeric scalar indicating the rounding used for printed output, default 0.
-#' @param print	A logical scalar indicating if output should be printed, default TRUE.
-#' @param plot	A logical scalar indicating if plot should be generated, default TRUE.
-#' @return 		A list with class "htest" containing the components described in \code{\link{chisq.test}}.
+#' @param x
+#'   A numeric matrix.
+#' @param rpct
+#'   A numeric scalar indicating the rounding used for printed output,
+#'   default 0.
+#' @param print
+#'   A logical scalar indicating if output should be printed, default TRUE.
+#' @param plot
+#'   A logical scalar indicating if plot should be generated, default TRUE.
+#' @return
+#'   A list with class "htest" containing the components described in
+#'   \code{\link{chisq.test}}.
 #' @export
-#' @seealso 	\code{\link{chisq.test}}.
-#' @examples 
+#' @seealso
+#'   \code{\link{chisq.test}}.
+#' @examples
 #' ## From Agresti(2007) p.39
 #' M <- as.table(rbind(c(762, 327, 468), c(484, 239, 477)))
-#' dimnames(M) <- list(gender = c("M", "F"), 
-#'	party = c("Democrat", "Independent", "Republican"))
+#' dimnames(M) <- list(gender=c("M", "F"),
+#'	party=c("Democrat", "Independent", "Republican"))
 #' chi(M)
 chi <- function(x, rpct=0, print=TRUE, plot=TRUE) {
-	if(plot | print) {
+	if (plot | print) {
 		sum1 <- apply(x, 1, sum)
 		sum2 <- apply(x, 2, sum)
 		exp <- outer(sum1, sum2)/sum(x) # contribution to chi square
@@ -23,11 +31,11 @@ chi <- function(x, rpct=0, print=TRUE, plot=TRUE) {
 		cutoff <- qchisq(p=0.95, df=prod(dim(x)-1))
 		cont.ord <- sort(as.vector(cont))
 		major <- rev(cont.ord[cumsum(cont.ord)>cutoff])
-		}
-	if(plot) {
-		plot(sort(cont), pch = 16)
-		}
-	if(print) {
+	}
+	if (plot) {
+		plot(sort(cont), pch=16)
+	}
+	if (print) {
 		cat("\nExpected percentages\n")
 		print(round((100 * exp)/apply(exp, 1, sum), rpct))
 		cat("\nObserved percentages\n")
@@ -38,6 +46,6 @@ chi <- function(x, rpct=0, print=TRUE, plot=TRUE) {
 		print(cutoff)
 		cat("\nMajor players\n")
 		print(major)
-		}
+	}
 	chisq.test(x)
 }

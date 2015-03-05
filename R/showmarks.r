@@ -1,8 +1,9 @@
 #' Show Marks
 #'
-#' Show marks used in graphing, including line types, plotting symbols, default colors, color blind friendly colors (`blindcolz`), and fonts.
+#' Show marks used in graphing, including line types, plotting symbols,
+#' default colors, color blind friendly colors (`blindcolz`), and fonts.
 #' @export
-#' @examples 
+#' @examples
 #' showmarks()
 
 showmarks <- function() {
@@ -30,5 +31,5 @@ showmarks <- function() {
 	for(i in 1:n[4]) points(x[i], -y[i], pch=22, cex=5, bg=blindcolz[i])
 
 	y <- rep(rowz[groupn==5], rep(10, rowsn[5]))
-	for(i in 1:n[5])   text(x[i], -y[i], "Font", font=i)
+	for(i in 1:n[5]) text(x[i], -y[i], "Font", font=i)
 	}

@@ -1,6 +1,7 @@
 #' Cheat Sheet
 #'
-#' A non-functioning function, which allows me to create a cheat sheet collection of examples.
+#' A non-functioning function, which allows me to create
+#' a cheat sheet collection of examples.
 #' @export
 #' @examples
 #' \dontrun{
@@ -16,36 +17,38 @@
 #' "C:\Program Files\R\R-3.1.1\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
 #' "C:\Program Files\R\R-3.1.1\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_2015-01.tar.gz
 #' pkgman("jvamisc")
-#' 
+#'
 #'
 #' ### create a Word document ###
 #' today <- Sys.Date()
 #' doc <- startrtf(file=paste("Example", today), dir="C:/JVA")
 #' heading("Example")
 #' heading(paste("Jean V. Adams", today, sep=" - "), 2)
-#' 
+#'
 #' para("This is how you reference a table (Table ", jvamiscenv$tabcount, ").")
-#' 
-#' tab <- matrix(rnorm(20), ncol=5, dimnames=list(paste("Row", 1:4), paste("Column", 1:5)))
+#'
+#' tab <- matrix(rnorm(20), ncol=5,
+#'  dimnames=list(paste("Row", 1:4), paste("Column", 1:5)))
 #' tab <- prettytable(tab)
 #' tab <- format(round(tab, 2))
 #' tabl("A silly table.")
-#' 
-#' para("And this is how you reference a figure (Figure ", jvamiscenv$figcount, ").")
-#' 
+#'
+#' para("And this is how you reference a figure (Figure ",
+#'  jvamiscenv$figcount, ").")
+#'
 #' fig <- function() {
 #' 	par(mar=c(4, 4, 1, 1))
 #' 	plot(1:10, 1:10, xlab="X", ylab="Y")
-#' 	}
+#' }
 #' figu("A silly plot.", h=4, w=4)
-#' 
+#'
 #' endrtf()
-#' 
+#'
 #'
 #' ### Greek and math symbols ###
 #' # http://www.decodeunicode.org/
-#' plot(1, 1, xlab="Length  (\U03BCm)", ylab="Temperature  (\U00b0 C)", 
-#'	main="Lambda squared = \\U03BB\\U00B2 = \U03BB\U00B2")
+#' plot(1, 1, xlab="Length  (\U03BCm)", ylab="Temperature  (\U00b0 C)",
+#'	main="Lambda squared=\\U03BB\\U00B2=\U03BB\U00B2")
 #'
 #' ### map scale and north arrow ###
 #' library(GISTools)
@@ -80,13 +83,13 @@
 #' pu <- pe - tt*p$se.fit
 #'
 #' ### multiple comparison Tukey test approach 1 ###
-#' amod <- aov(breaks ~ tension, data = warpbreaks)
+#' amod <- aov(breaks ~ tension, data=warpbreaks)
 #' TukeyHSD(amod)
 #'
 #' ### multiple comparison Tukey test approach 2 ###
 #' library(multcomp)
-#' amod <- aov(breaks ~ tension, data = warpbreaks)
-#' mc <- glht(amod, linfct = mcp(tension = "Tukey"))
+#' amod <- aov(breaks ~ tension, data=warpbreaks)
+#' mc <- glht(amod, linfct=mcp(tension="Tukey"))
 #' summary(amod)
 #' summary(mc)
 #' confint(mc)
@@ -96,15 +99,15 @@
 #' ### set up two-way ANOVA with interactions ###
 #' fit <- aov(y ~ f1 + f2 + f1:f2)
 #' # set up linear hypotheses for all-pairs of both factors
-#' wht <- glht(fit, linfct = mcp(f1 = "Tukey", f2 = "Tukey"))
+#' wht <- glht(fit, linfct=mcp(f1="Tukey", f2="Tukey"))
 #' # cf. Westfall et al. (1999, page 181)
-#' summary(wht, test = adjusted("Shaffer"))
+#' summary(wht, test=adjusted("Shaffer"))
 #'
 #' ### label months on day of year or Julian day axis ###
 #' plot(101:200, rnorm(100), axes=FALSE)
-#' axis(1, at=doy(as.Date(paste(2000, 1:12, 1, sep="-")))-0.5, 
+#' axis(1, at=doy(as.Date(paste(2000, 1:12, 1, sep="-")))-0.5,
 #'	labels=FALSE)
-#' axis(1, at=doy(as.Date(paste(2000, 1:12, 15, sep="-"))), 
+#' axis(1, at=doy(as.Date(paste(2000, 1:12, 15, sep="-"))),
 #'	labels=month.abb, tick=FALSE)
 #' axis(2)
 #' box()
@@ -118,24 +121,24 @@
 #'
 #' ### get lat longs for locations ###
 #' library(dismo)
-#' geocode(c("1600 Pennsylvania Ave NW, Washington DC", 
+#' geocode(c("1600 Pennsylvania Ave NW, Washington DC",
 #'	"Luca, Italy", "Kampala", "Antigo, WI"))
 #'
 #' ### get a lat long for a location ###
 #' # from R-help post by Phil Spector, UC Berkeley, Mar 16, 2010
 #' # https://stat.ethz.ch/pipermail/r-help/2010-March/232090.html
-#' library(XML) 
+#' library(XML)
 #' root <- xmlRoot(xmlTreeParse(
-#'	paste0("http://maps.google.com/maps/api/geocode/xml?address=", 
-#'	"Antigo, WI", "&sensor=false"))) 
-#' lat <- xmlValue(root[["result"]][["geometry"]][["location"]][["lat"]]) 
-#' long <- xmlValue(root[["result"]][["geometry"]][["location"]][["lng"]]) 
+#'	paste0("http://maps.google.com/maps/api/geocode/xml?address=",
+#'	"Antigo, WI", "&sensor=false")))
+#' lat <- xmlValue(root[["result"]][["geometry"]][["location"]][["lat"]])
+#' long <- xmlValue(root[["result"]][["geometry"]][["location"]][["lng"]])
 #'
 #' ### plot points on a map ###
-#' library(RgoogleMaps) 
-#' MyMap <- GetMap.bbox(c(-80, -79), c(45, 46), maptype="terrain", 
+#' library(RgoogleMaps)
+#' MyMap <- GetMap.bbox(c(-80, -79), c(45, 46), maptype="terrain",
 #'	destfile="junk.png", zoom=8)
-#' PlotOnStaticMap(MyMap, lat=seq(45, 46, 0.1), lon=seq(-80, -79, 0.1), 
+#' PlotOnStaticMap(MyMap, lat=seq(45, 46, 0.1), lon=seq(-80, -79, 0.1),
 #' col="red", pch=16)
 #'
 #' ### make a quick map ###
@@ -144,7 +147,7 @@
 #'
 #' ### convert between lat/long and projections ###
 #' library(proj4)
-#' project(xy, proj, inverse=FALSE, degrees=TRUE, 
+#' project(xy, proj, inverse=FALSE, degrees=TRUE,
 #'	silent=FALSE, ellps.default="sphere")
 #'
 #' ### other map stuff of interest ###
@@ -161,7 +164,7 @@
 #' hc <- hclust(dist(x))
 #' dd <- as.dendrogram(hc)
 #' dd.reorder <- reorder(dd, x, mean)
-#' par(mfcol = 1:2)
+#' par(mfcol=1:2)
 #' plot(dd, main="default dendrogram")
 #' plot(dd.reorder, main="reordered")
 #'
@@ -183,7 +186,7 @@
 #' fits <- vector("list", dim(comb)[1])
 #' fits[[1]] <- lm(lpsa ~ 1, dat=train)
 #' for(i in 2:length(fits)) {
-#' 	fits[[i]] <- lm(formula=paste("lpsa ~", 
+#' 	fits[[i]] <- lm(formula=paste("lpsa ~",
 #'		paste(var.names[comb[i, ]==1], collapse=" + ")), dat=train)
 #' 	}
 #' comb2 <- comb
@@ -222,7 +225,7 @@
 #' gsub("^[ \t]+|[ \t]+$", "", charvec)
 #' # change double spaces to single spaces
 #' gsub("[ \t]+", " ", charvec)
-#' 
+#'
 #' ### convert a data frame to json ###
 #' library(RJSONIO)
 #' data <- toJSON(y)
@@ -233,12 +236,12 @@
 #' allTables <- readHTMLTable(
 #'	"http://en.wikipedia.org/wiki/United_States_presidential_election,_2012")
 #' # Look at the allTables object to find the specific table we want
-#' str(allTables)  
+#' str(allTables)
 #' # if you have problems reading the URL, you could try this ...
 #' mylines <- readLines(url(
 #'	"http://en.wikipedia.org/wiki/United_States_presidential_election,_2012"))
-#' closeAllConnections() 
-#' mylist <- readHTMLTable(mylines, asText=TRUE) 
+#' closeAllConnections()
+#' mylist <- readHTMLTable(mylines, asText=TRUE)
 #' mytable <- mylist1$xTable
 #'
 #' ### allow users to browse to a file ###
@@ -248,11 +251,11 @@
 #' ### one slider ###
 #' library(rpanel)
 #' density.draw <- function(panel) {
-#' 	plot(density(panel$x, bw = panel$h))
+#' 	plot(density(panel$x, bw=panel$h))
 #' 	panel
 #' 	}
-#' panel <- rp.control(x = rnorm(50))
-#' rp.slider(panel, h, 0.5, 5, log = TRUE, action = density.draw)
+#' panel <- rp.control(x=rnorm(50))
+#' rp.slider(panel, h, 0.5, 5, log=TRUE, action=density.draw)
 #'
 #' ### two sliders ###
 #' library(rpanel)

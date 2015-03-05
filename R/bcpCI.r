@@ -1,15 +1,25 @@
 #' Bias-Corrected Percentile Confidence Interval
 #'
-#' Calculates the bias-corrected percentile confidence interval from a bootstrap sample.  
-#' @param tboot	A numeric vector of bootstrap estimates, typically \code{$t} from the output of the \code{\link{boot}} function.
-#' @param orig 	A numeric scalar, the original estimate from the data, typically \code{$t0} from the output of the \code{\link{boot}} function.
-#' @param alpha A numeric scalar, the desired significance level for 100*(1-\code{alpha})\% confidence limits, default 0.05.
-#' @return 		A named numeric vector of length 2, with the lower and upper confidence limits.
+#' Calculates the bias-corrected percentile confidence interval from
+#' a bootstrap sample.
+#' @param tboot
+#'   A numeric vector of bootstrap estimates, typically \code{$t} from
+#'   the output of the \code{\link{boot}} function.
+#' @param orig
+#'   A numeric scalar, the original estimate from the data,
+#'   typically \code{$t0} from the output of the \code{\link{boot}} function.
+#' @param alpha
+#'   A numeric scalar, the desired significance level for
+#'   100*(1-\code{alpha})\% confidence limits, default 0.05.
+#' @return
+#'   A named numeric vector of length 2, with the lower and
+#'   upper confidence limits.
 #' @export
-#' @references Manly, Bryan F. J.  1997.
-#'	Randomization, Bootstrap and Monte Carlo Methods in Biology.  Chapman & Hall, London.
-#' @examples 
-#'
+#' @references
+#'   Manly, Bryan F. J.  1997.
+#'	 Randomization, Bootstrap and Monte Carlo Methods in Biology.
+#'   Chapman & Hall, London.
+#' @examples
 #' bcpCI(exp(rnorm(20)), 1)
 #'
 #' \dontrun{
@@ -32,4 +42,4 @@ bcpCI <- function(tboot, orig, alpha=0.05) {
 	out <- quantile(tboot, c(lp, up))
 	names(out) <- paste(format(100*c(alpha/2, 1-alpha/2)), "%", sep="")
 	out
-	}
+}
