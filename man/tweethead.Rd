@@ -5,7 +5,7 @@
 \title{Tweet Headlines}
 \usage{
 tweethead(tweet = TRUE, username = NULL, website = NULL,
-  credorpath = "C:/JVA/R/Working Directory/.Renviron", envpath = NULL)
+  credOrPath = "C:/JVA/R/Working Directory/.Renviron")
 }
 \arguments{
 \item{tweet}{A logical scalar indicating if tweets should be posted, default TRUE.}
@@ -17,7 +17,7 @@ uses information stored in local .Renviron file (see Details).}
 headlines. The default, NULL, uses information stored in local .Renviron
 file (see Details).}
 
-\item{credorpath}{Either a character scalar giving the path of the environment where the
+\item{credOrPath}{Either a character scalar giving the path of the environment where the
 credentials are stored or a character vector of length four, giving the
 credentials themselves: twitter_api_key, twitter_api_secret,
 twitter_access_token, and twitter_access_token_secret.    The default is

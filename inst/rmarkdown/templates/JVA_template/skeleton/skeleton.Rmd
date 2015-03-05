@@ -1,0 +1,92 @@
+---
+title: "Title"
+subtitle: "Subtitle"
+author: "Author"
+date: "Date"
+output:
+  word_document:
+    fig_width: 4
+    fig_height: 4
+    reference_docx: JVAStyleReference.docx
+---
+
+# Introduction
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) template for creating a Word document
+
+```{r, echo=FALSE}
+# define two variables to keep track of Table and Figure numbers
+tabcount <- 1
+figcount <- 1
+```
+
+# Tables
+
+You can create tables using simple source code (Table `r tabcount`) or using the `knitr` function `kable` (Table `r tabcount + 1`).
+
+**Table `r tabcount`.** First few rows of `mtcars` using simple source code.
+```{r, comment=NA, echo=FALSE}
+head(mtcars)
+tabcount <- tabcount + 1
+```
+
+**Table `r tabcount`.** First few rows of `mtcars` using `kable`.
+```{r, results='asis', echo=FALSE}
+knitr::kable(head(mtcars))
+tabcount <- tabcount + 1
+```
+
+# Figures
+
+You create figures, either using the default size (Figure `r figcount`) or a custom size (Figure `r figcount + 1`).
+
+```{r, echo=FALSE}
+par(mar=c(4, 4, 1, 1), las=1)
+plot(cars)
+```
+
+**Figure `r figcount`.** Simple plot of `cars`, default size.
+
+```{r, echo=FALSE, fig.width = 3, fig.height = 3}
+figcount <- figcount + 1
+par(mar=c(4, 4, 1, 1), las=1)
+plot(cars)
+```
+
+**Figure `r figcount`.** Simple plot of `cars`, custom size.
+
+```{r, echo=FALSE}
+figcount <- figcount + 1
+```
+
+# Miscellany
+
+## Header fonts 
+### Header 3 
+#### Header 4 
+##### Header 5 
+###### Header 6 
+
+# Lists
+
+Unordered List:
+
+* This item
+* That item
+    + A that subitem
+
+Ordered List:
+
+1. Item 1
+    a. Sub item a
+    a. Sub item b
+1. Item 2
+    
+You can write [equations](https://support.rstudio.com/hc/en-us/articles/200486328-Equations-in-R-Markdown), either inline, $A = \pi*r^{2}$, or centered,
+$$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_{i}.$$
+
+You can write superscripts, R^2^, subscripts, X~ij~.  You can ~~cross things out~~.  And you can draw a horizontal line. 
+
+*** 
+
+> Block quote for a long piece of indented text. When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.

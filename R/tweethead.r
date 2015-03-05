@@ -10,7 +10,7 @@
 #'   A character scalar, giving the name of the website, from which to pull
 #'   headlines. The default, NULL, uses information stored in local .Renviron
 #'   file (see Details).
-#' @param credorpath
+#' @param credOrPath
 #'   Either a character scalar giving the path of the environment where the
 #'   credentials are stored or a character vector of length four, giving the
 #'   credentials themselves: twitter_api_key, twitter_api_secret,
@@ -46,18 +46,18 @@
 #' }
 
 tweethead <- function(tweet=TRUE, username=NULL, website=NULL,
-  credorpath="C:/JVA/R/Working Directory/.Renviron", envpath=NULL) {
-	if (length(credorpath)==1) {
-    readRenviron(credorpath)
+  credOrPath="C:/JVA/R/Working Directory/.Renviron") {
+	if (length(credOrPath)==1) {
+    readRenviron(credOrPath)
 		api_key <- Sys.getenv("twitter_api_key")
 		api_secret <- Sys.getenv("twitter_api_secret")
 		access_token <- Sys.getenv("twitter_access_token")
 		access_token_secret <- Sys.getenv("twitter_access_token_secret")
 	} else {
-		api_key <- credorpath[1]
-		api_secret <- credorpath[2]
-		access_token <- credorpath[3]
-		access_token_secret <- credorpath[4]
+		api_key <- credOrPath[1]
+		api_secret <- credOrPath[2]
+		access_token <- credOrPath[3]
+		access_token_secret <- credOrPath[4]
 	}
 
 	# connect to Twitter
