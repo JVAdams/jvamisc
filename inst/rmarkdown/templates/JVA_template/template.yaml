@@ -1,2 +1,3 @@
 name: JVA Template
-create_dir: true
+create_dir: false
+description: JVA's default template
