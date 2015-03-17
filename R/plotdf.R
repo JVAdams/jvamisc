@@ -3,9 +3,6 @@
 #' Plots each variable of a data frame.
 #' @param df
 #'   A data frame.
-#' @param one
-#'   A logical, whether to display all plots in a single graphics device,
-#'   default TRUE.
 #' @param ...
 #'   Other parameters to \code{par(...)}.
 #' @return
@@ -18,13 +15,9 @@
 #' @examples
 #' plotdf(mtcars)
 
-plotdf <- function(df, one=TRUE, ...) {
-	if (one) {
-    dev.new(record=TRUE)
-	}
+plotdf <- function(df, ...) {
 	par(...)
-	mcex <- 1 #as.numeric(par("cex"))*2
-	print(mcex)
+	mcex <- 1
 	# plot the columns of a data frame
 	for(i in 1:dim(df)[2]) {
 		x <- df[[i]]
@@ -86,8 +79,5 @@ plotdf <- function(df, one=TRUE, ...) {
     }
   })
 	stats[no.entered<1] <- NA
-	out <- data.frame(no.entered, no.missing, no.unique, stats)
-	print(out)
-	cat("\nIf you want to delete the saved plots, use\n.SavedPlots <- NULL\n")
-	invisible(out)
+	data.frame(no.entered, no.missing, no.unique, stats)
 }

@@ -4,13 +4,10 @@
 \alias{plotdf}
 \title{Plot Data Frame}
 \usage{
-plotdf(df, one = TRUE, ...)
+plotdf(df, ...)
 }
 \arguments{
 \item{df}{A data frame.}
-
-\item{one}{A logical, whether to display all plots in a single graphics device,
-default TRUE.}
 
 \item{...}{Other parameters to \code{par(...)}.}
 }

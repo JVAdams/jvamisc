@@ -17,8 +17,7 @@
 #' doy(x, "03-01")
 
 doy <- function(date, day1="01-01") {
-	sapply(1:length(date), function(i) {
-    as.numeric(julian(date[i],
-      origin=as.Date(paste(year(date[i]), day1, sep="-"))) + 1)
-  })
+  jdaydefault <- julian(date)
+  jdayorigin <- julian(as.Date(paste(year(date), day1, sep="-")))
+  as.numeric(jdaydefault - jdayorigin + 1)
 }
