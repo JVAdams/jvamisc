@@ -2,7 +2,7 @@
 % Please edit documentation in R/addhist.R
 \name{addhist}
 \alias{addhist}
-\title{Add a Histogram}
+\title{Add a Marginal Histogram}
 \usage{
 addhist(x, y = NULL, type = "xy", nclass = 20, newmar = 0:1,
   adj.fac = 1.05, xlab = "Frequency", ylab = "", fill = "gray")

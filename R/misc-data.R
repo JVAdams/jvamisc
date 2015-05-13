@@ -70,7 +70,7 @@ NULL
 #' @name
 #'   jvamiscenv
 #' @title
-#'   jvamisc package local environment
+#'   jvamisc Package Local Environment
 #' @description
 #'   An environment local to the jvamisc package, used to hold objects
 #'   outside of the individual package functions

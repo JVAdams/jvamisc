@@ -2,7 +2,7 @@
 % Please edit documentation in R/capwords.R
 \name{capwords}
 \alias{capwords}
-\title{Capitalize}
+\title{Capitalize Words}
 \usage{
 capwords(s, strict = TRUE)
 }

@@ -1,4 +1,4 @@
-#' Capitalize
+#' Capitalize Words
 #'
 #' Capitalize the first letter of every word.
 #' @param s

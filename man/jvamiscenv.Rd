@@ -2,7 +2,7 @@
 % Please edit documentation in R/misc-data.R
 \name{jvamiscenv}
 \alias{jvamiscenv}
-\title{jvamisc package local environment}
+\title{jvamisc Package Local Environment}
 \format{An environment.}
 \source{
 Post from Hadley Wickham to r-help on 2 Dec 2014

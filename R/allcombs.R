@@ -12,6 +12,10 @@
 #'   A matrix with rows corresponding to each possible combination and
 #'   columns corresponding to item number.
 #' @export
+#' @references
+#'   Based on a method posted by Petr Savicky on 20 Jul 2012 to R-help
+#'   \href{???}{[link]}.
+
 #' @examples
 #' allcombs(3)
 

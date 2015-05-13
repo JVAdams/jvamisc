@@ -4,7 +4,7 @@
 \name{jvamisc}
 \alias{jvamisc}
 \alias{jvamisc-package}
-\title{A Collection of Miscellaneous Functions}
+\title{A Collection of Utility Functions}
 \description{
 \pkg{jvamisc} is a collection of miscellaneous utility functions.
 Some of the more commonly used functions include

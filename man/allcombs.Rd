@@ -24,4 +24,8 @@ All possible combinations of the given number of items.
 \examples{
 allcombs(3)
 }
+\references{
+Based on a method posted by Petr Savicky on 20 Jul 2012 to R-help
+  \href{???}{[link]}.
+}
 

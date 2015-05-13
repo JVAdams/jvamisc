@@ -1,7 +1,7 @@
 jvamisc
 =======
 
-**jvamisc** is a package of miscellaneous functions for the [R programming language](http://www.r-project.org/).
+**jvamisc** is a package of miscellaneous utility functions for the [R programming language](http://www.r-project.org/).
 
 You should be able to access the functions by installing them directly from within R.
 

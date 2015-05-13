@@ -1,4 +1,4 @@
-#' A Collection of Miscellaneous Functions
+#' A Collection of Utility Functions
 #'
 #' \pkg{jvamisc} is a collection of miscellaneous utility functions.
 #' Some of the more commonly used functions include

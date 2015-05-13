@@ -1,4 +1,4 @@
-#' Add a Histogram
+#' Add a Marginal Histogram
 #'
 #' Add a marginal histogram to a plot.
 #' @param x
