@@ -23,9 +23,11 @@
 
 prettylog <- function(x, lead=c(1, 5), extra=5) {
   if (!is.numeric(x)) stop("x must be a numeric vector")
-  if (!is.integer(lead)) stop("lead must be an integer vector")
-  if (!is.integer(extra) | length(extra)!=1) stop(
-    "extra must be an integer scalar")
+  if (is.character(lead) | sum(abs(as.integer(lead) - lead))>0) {
+    stop("lead must be an integer vector")
+  }
+  if (is.character(extra) | abs(as.integer(extra) - extra)>0 |
+      length(extra)!=1) stop("extra must be an integer scalar")
 	urd <- function(d, x) {
 		lxd <- log10(x/d)
 		rlxd <- unique(c(floor(lxd), ceiling(lxd)))

@@ -14,7 +14,7 @@
 #' @export
 #' @references
 #'   Based on a method posted by Petr Savicky on 20 Jul 2012 to R-help
-#'   \href{???}{[link]}.
+#'   \href{https://stat.ethz.ch/pipermail/r-help/2012-July/319001.html}{[link]}.
 
 #' @examples
 #' allcombs(3)
