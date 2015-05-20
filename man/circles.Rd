@@ -13,7 +13,10 @@ circles(x, y, z, data.range = range(z, na.rm = TRUE),
 
 \item{y}{Numeric vector of y coordinates.}
 
-\item{z}{Numeric vector of data used to generate circles.}
+\item{z}{Numeric vector of data used to inform the radii of the drawn circles.
+In general, this should be the square root of the quantity that you want
+to represent, because viewers will tend to judge the circles by their area
+not their radii.}
 
 \item{data.range}{Numeric vector, length 2, minimum and maximum \code{z}z data to plot,
 default \code{range(z, na.rm=TRUE)}.}
@@ -48,7 +51,7 @@ The size of the circles plotted corresponds directly with the range of
   data.
   For example, if there is a \code{z} of size \code{data.range[1]},
   it will be plotted as a circle with radius \code{circle.size.range[1]},
-  and if there is a \code{z}z of size \code{data.range[2]},
+  and if there is a \code{z} of size \code{data.range[2]},
   it will be plotted as a circle with radius \code{circle.size.range[2]}.
 
   The default of NA for \code{outx} and \code{outy} places unseen smallest

@@ -1,5 +1,5 @@
 Package: jvamisc
-Version: 0.0.0.9002
+Version: 0.0.0.9003
 Title: A Collection of Utility Functions
 Authors@R: person(given="Jean V.", family="Adams", email="jvadams@usgs.gov",
     role=c("aut", "cre"))

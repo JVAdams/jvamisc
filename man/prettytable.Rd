@@ -4,25 +4,33 @@
 \alias{prettytable}
 \title{Prettify the Numeric Columns of a Table}
 \usage{
-prettytable(m, sigdig = 3)
+prettytable(df, digits = 2, rounds = TRUE, bigseps = ",")
 }
 \arguments{
-\item{m}{Two dimensional data frame, matrix, or table to be prettified.}
+\item{df}{A data frame to be prettified.}
 
-\item{sigdig}{Integer scalar, number of significant digits to be used, default 3.}
+\item{digits}{Integer vector of either length 1 or the number of columns in \code{df},
+number of digits to be used, default 2.  See \code{round}.}
+
+\item{rounds}{Logical vector of either length 1 or the number of columns in \code{df},
+indicating whether numbers should be rounded to \code{digits} decimal
+places (TRUE, the default), rounded to \code{digits} significant digits
+(FALSE), or not rounded at all (NULL).}
+
+\item{bigseps}{Character vector of either length 1 or the number of columns in
+\code{df}, giving the character to be used as a mark between
+every three digits before the decimal, default ",".}
 }
 \value{
-A data frame, matrix, or table, the same dimensions as \code{m} with
-  the numeric columns rounded to \code{sigdig} significant digits.
+A data frame the same dimensions as \code{df} with
+  the numeric columns converted to character columns, formated as specified.
 }
 \description{
-Prettify the numeric columns of a table for printing.
+Prettify the numeric columns of a table, by formating them and
+converting them to character columns for printing.
 }
 \examples{
 head(mtcars)
-prettytable(head(mtcars), 2)
-}
-\seealso{
-\code{\link{signif}}.
+prettytable(head(mtcars))
 }
 

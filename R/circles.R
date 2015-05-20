@@ -6,7 +6,10 @@
 #' @param y
 #'   Numeric vector of y coordinates.
 #' @param z
-#'   Numeric vector of data used to generate circles.
+#'   Numeric vector of data used to inform the radii of the drawn circles.  
+#'   In general, this should be the square root of the quantity that you want
+#'   to represent, because viewers will tend to judge the circles by their area
+#'   not their radii.
 #' @param data.range
 #'   Numeric vector, length 2, minimum and maximum \code{z}z data to plot,
 #'	default \code{range(z, na.rm=TRUE)}.
@@ -36,7 +39,7 @@
 #'   data.
 #'   For example, if there is a \code{z} of size \code{data.range[1]},
 #'   it will be plotted as a circle with radius \code{circle.size.range[1]},
-#'   and if there is a \code{z}z of size \code{data.range[2]},
+#'   and if there is a \code{z} of size \code{data.range[2]},
 #'   it will be plotted as a circle with radius \code{circle.size.range[2]}.
 #'
 #'   The default of NA for \code{outx} and \code{outy} places unseen smallest
