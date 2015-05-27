@@ -4,10 +4,9 @@
 \alias{jvaFirst}
 \title{Startup}
 \usage{
-jvaFirst(maxp = 500, ndec = 10, cont = "... ", pkgs = c("rJava",
-  "XLConnect", "maps", "mapproj", "RColorBrewer", "mgcv", "MASS", "jvamisc"),
+jvaFirst(maxp = 500, ndec = 10, cont = "... ",
   mirror = "http://streaming.stat.iastate.edu/CRAN/", helpt = "html",
-  fac = FALSE, noplots = TRUE, show = TRUE)
+  fac = FALSE)
 }
 \arguments{
 \item{maxp}{Integer scalar, maximum number of lines printed, default 500.}
@@ -18,20 +17,12 @@ scientific notation, default 10.}
 \item{cont}{Character scalar, prompt used for lines which continue past
 first command line, default \code{"... "}.}
 
-\item{pkgs}{Character vector, packages to be loaded, default c("rJava", "XLConnect",
-"maps", "mapproj", "RColorBrewer", "mgcv", "jvamisc").}
-
 \item{mirror}{Character scalar, CRAN mirror, default
 "http://streaming.stat.iastate.edu/CRAN/".}
 
 \item{helpt}{Character scalar, type of help, default "html".}
 
 \item{fac}{Logical scalar, use factors rather than character strings, default FALSE.}
-
-\item{noplots}{Logical scalar, remove "saved" plots, e.g., from past runs of
-\code{\link[jvamisc]{plotdf}}, default TRUE.}
-
-\item{show}{Logical scalar, list objects in current environment, default TRUE.}
 }
 \description{
 One function with all the commands I typically want run at the start of
