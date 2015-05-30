@@ -68,6 +68,34 @@ NULL
 #'   Masataka Okabe and Kei Ito.
 NULL
 #' @name
+#'   states
+#' @title
+#'   United States State Boundaries Map
+#' @description
+#'   Geographical data base for the state boundaries of the US,
+#'   generated from US Department of the Census data.
+#' @format
+#'   A list (of class map) with elements x, y, range, and names.
+#'   The x and y vectors have longitude (x) and latitude (y) coordinates of
+#'   successive state polygons, separated by NAs.
+#' @source
+#'   A copy of the \code{state} data base from the \code{maps} package.
+NULL
+#' @name
+#'   counties
+#' @title
+#'   United States County Boundaries Map
+#' @description
+#'   Geographical data base for the county boundaries of the US,
+#'   generated from US Department of the Census data.
+#' @format
+#'   A list (of class map) with elements x, y, range, and names.
+#'   The x and y vectors have longitude (x) and latitude (y) coordinates of
+#'   successive county polygons, separated by NAs.
+#' @source
+#'   A copy of the \code{county} data base from the \code{maps} package.
+NULL
+#' @name
 #'   jvamiscenv
 #' @title
 #'   jvamisc Package Local Environment

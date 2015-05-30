@@ -13,6 +13,11 @@ blindcolz <- rgb(c(0, 230, 86, 0, 240, 0, 213, 204, 255),
 names(blindcolz) <- paste(1:9, c("black", "orange", "sky blue", "bluish green", 
   "yellow", "blue", "vermillion", "reddish purple", "white"))
 
+# states and counties with lat/longs
+library(maps)
+states <- map("state", fill=TRUE, plot=FALSE)
+counties <- map("county", fill=TRUE, plot=FALSE)
+
 jvamiscenv <- new.env(parent = emptyenv())
 
 save(list=ls(all=FALSE), file="C:/JVA/GitHub/jvamisc/data/misc.RData")
