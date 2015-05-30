@@ -21,11 +21,9 @@
 #'   Based on a method posted by Josh O'Brien on 6 Jan 2012 on stackoverflow
 #'   \href{http://stackoverflow.com/questions/8751497/latitude-longitude-coordinates-to-state-code-in-r/8751965#8751965}{[link]}.
 #' @examples
-#' \dontrun{
 #' testPoints <- data.frame(x=c(-90, -120), y=c(44, 44), z=c("a", "b"))
 #' latlong2(testPoints, to="state")
 #' latlong2(testPoints, to="county")
-#' }
 
 latlong2 <- function(pointsDF, to=c("state", "county")[1]) {
   if (!(to %in% c("state", "county")))
@@ -38,8 +36,6 @@ latlong2 <- function(pointsDF, to=c("state", "county")[1]) {
   if (to == "state") {
     # Prepare SpatialPolygons object with one SpatialPolygon
     # per state (plus DC, minus HI & AK)
-#    states <- map('state', fill=TRUE, col="transparent", plot=FALSE)
-#    states <- jvamisc::states
     IDs <- sapply(strsplit(states$names, ":"), function(x) x[1])
     states_sp <- map2SpatialPolygons(states, IDs=IDs,
       proj4string=CRS("+proj=longlat +datum=WGS84"))
@@ -51,8 +47,6 @@ latlong2 <- function(pointsDF, to=c("state", "county")[1]) {
   } else {
     # Prepare SpatialPolygons object with one SpatialPolygon
     # per county (plus DC, minus HI & AK)
-#    counties <- map('county', fill=TRUE, col="transparent", plot=FALSE)
-#    counties <- jvamisc::counties
     IDs <- sapply(strsplit(counties$names, ":"), function(x) x[1])
     counties_sp <- map2SpatialPolygons(counties, IDs=IDs,
       proj4string=CRS("+proj=longlat +datum=WGS84"))

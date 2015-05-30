@@ -25,11 +25,9 @@ Convert latitude and longitude coordinates to US states or US states
 and counties.
 }
 \examples{
-\dontrun{
 testPoints <- data.frame(x=c(-90, -120), y=c(44, 44), z=c("a", "b"))
 latlong2(testPoints, to="state")
 latlong2(testPoints, to="county")
-}
 }
 \references{
 Based on a method posted by Josh O'Brien on 6 Jan 2012 on stackoverflow
