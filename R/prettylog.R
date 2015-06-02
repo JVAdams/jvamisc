@@ -37,5 +37,5 @@ prettylog <- function(x, lead=c(1, 5), extra=5) {
 	if (extra>0) {
 		out <- sort(unique(c(out, pretty(x, n=extra))))
 	}
-	out
+	out[out>0]
 }

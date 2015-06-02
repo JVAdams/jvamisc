@@ -5,7 +5,7 @@
 \title{Plot a Matrix of Correlations}
 \usage{
 plotcor(r, addtext = TRUE, atcex = NULL, incdiag = FALSE, rorder = TRUE,
-  ...)
+  plot = TRUE, ...)
 }
 \arguments{
 \item{r}{A matrix of correlations (need not be symmetrical) with values ranging
@@ -24,6 +24,8 @@ values of the matrix (if symmetric), default FALSE.}
 \item{rorder}{A logical scalar indicating whether the columns and rows of the matrix
 should be reordered using seriation, default TRUE.}
 
+\item{plot}{A logical scalar indicating whether the plot should be drawn, default TRUE.}
+
 \item{...}{Additional parameters to \code{\link{par}}.}
 }
 \value{
@@ -35,14 +37,12 @@ Plot a matrix of correlations using white ellipses
 (representing the measured correlation) overlaid on colored circles.
 }
 \details{
-Each ellipse is sized so that the proportion of the colored circle visible
-  beyond the ellipse is equal to the squared correlation.
-  Each ellipse is oriented northeast for positive correlation and northwest
-  for negative correlation.
-  The color of each circle ranges from cyan (for correlation=-1) to
-  magenta (for correlation=1) through white (for correlation=0).
-  Similarly, the transparency of each correlation value (if addtext=TRUE)
-  ranges from 1 (for correlation=0) to 0 (for absolute correlation=1).
+Correlation is represented as a white ellipse over a colored circle, sized
+  so that the proportion of the colored circle visible beyond the ellipse is
+  equal to the squared correlation (r^2). The color of each circle ranges
+  from cyan (for r = -1) to magenta (for r = 1) through white (for r = 0).
+  Similarly, the transparency of each printed correlation value (if
+  addtext=TRUE) ranges from 1 (for r = 0) to 0 (for |r| = 1).
 }
 \examples{
 # example using a symmetric matrix
