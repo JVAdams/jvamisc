@@ -11,6 +11,5 @@ Post from Hadley Wickham to r-help on 2 Dec 2014
 \description{
 An environment local to the jvamisc package, used to hold objects
   outside of the individual package functions
-	(e.g., the table and figure counts for the rtf functions).
 }
 

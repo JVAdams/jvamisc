@@ -16,35 +16,8 @@
 #' pkgin("jvamisc")
 #' del C:\Users\jvadams\*.gz
 #' "C:\Program Files\R\R-3.1.3\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
-#' "C:\Program Files\R\R-3.1.3\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_0.0.0.9004.tar.gz
+#' "C:\Program Files\R\R-3.1.3\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_0.0.0.9005.tar.gz
 #' pkgman("jvamisc")
-#'
-#'
-#' ### create a Word document ###
-#' today <- Sys.Date()
-#' doc <- startrtf(file=paste("Example", today), dir="C:/JVA")
-#' heading("Example")
-#' heading(paste("Jean V. Adams", today, sep=" - "), 2)
-#'
-#' para("This is how you reference a table (Table ", jvamiscenv$tabcount, ").")
-#'
-#' tab <- matrix(rnorm(20), ncol=5,
-#'  dimnames=list(paste("Row", 1:4), paste("Column", 1:5)))
-#' tab <- prettytable(tab)
-#' tab <- format(round(tab, 2))
-#' tabl("A silly table.")
-#'
-#' para("And this is how you reference a figure (Figure ",
-#'  jvamiscenv$figcount, ").")
-#'
-#' fig <- function() {
-#' 	par(mar=c(4, 4, 1, 1))
-#' 	plot(1:10, 1:10, xlab="X", ylab="Y")
-#' }
-#' figu("A silly plot.", h=4, w=4)
-#'
-#' endrtf()
-#'
 #'
 #' ### Greek and math symbols ###
 #' # http://www.decodeunicode.org/

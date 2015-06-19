@@ -1,5 +1,6 @@
 Package: jvamisc
-Version: 0.0.0.9004
+Version: 0.0.0.9005
+Date: 2015-06-02
 Title: A Collection of Utility Functions
 Authors@R: person(given="Jean V.", family="Adams", email="jvadams@usgs.gov",
     role=c("aut", "cre"))
@@ -15,7 +16,6 @@ Imports:
   plotrix,
 	RCurl,
 	rpart,
-  rtf,
   seriation,
   sp,
   survey,
