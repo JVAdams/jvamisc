@@ -22,8 +22,8 @@ dat <- readWorksheet(wb, sheet=getSheets(wb)[1], startRow=1)
 pkgup("jvamisc")
 pkgin("jvamisc")
 del C:\\Users\\jvadams\\*.gz
-"C:\\Program Files\\R\\R-3.1.3\\bin\\x64\\R.exe" CMD build C:\\JVA\\GitHub\\jvamisc --resave-data
-"C:\\Program Files\\R\\R-3.1.3\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_0.0.0.9005.tar.gz
+"C:\\Program Files\\R\\R-3.2.1\\bin\\x64\\R.exe" CMD build C:\\JVA\\GitHub\\jvamisc --resave-data
+"C:\\Program Files\\R\\R-3.2.1\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_0.0.0.9006.tar.gz
 pkgman("jvamisc")
 
 ### Greek and math symbols ###

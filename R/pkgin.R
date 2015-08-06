@@ -6,7 +6,7 @@
 #'   A character scalar, package name.
 #' @param ld
 #'   A character scalar, R library directory,
-#'   default "C:/Users/jvadams/Documents/R/win-library/3.1".
+#'   default "C:/Users/jvadams/Documents/R/win-library/3.2".
 #' @param lv
 #'   A character scalar, R library directory version number,
 #'   default "max", which uses the latest version in \code{ld}.
