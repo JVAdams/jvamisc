@@ -34,6 +34,24 @@ NULL
 #'   Rich Signell, USGS.
 NULL
 #' @name
+#'   mapSMR
+#' @title
+#'   St. Marys River Shoreline
+#' @description
+#'   Data frame with longitude and latitude coordinates
+#'   of the St. Marys River shoreline (the connecting channel between
+#'   Lakes Superior and Huron in the Great Lakes basin).
+#' @format
+#'   One row for each point, consecutive rows with non-missing values for
+#'   each line.
+#' @source
+#'   NOAA National Geophysical Data Center, (the now defunct) Coastline
+#'	 Extractor,
+#'   \href{http://www.ngdc.noaa.gov/mgg/coast/}{ngdc.noaa.gov/mgg/coast}.
+#' @author
+#'   Rich Signell, USGS.
+NULL
+#' @name
 #'   Lakenames
 #' @title
 #'   Great Lakes Names
