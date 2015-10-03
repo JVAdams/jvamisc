@@ -23,28 +23,28 @@
 #' @examples
 #' jvaFirst()
 jvaFirst <- function(maxp=500, ndec=10, cont="... ",
-	  mirror="http://streaming.stat.iastate.edu/CRAN/",
-	  helpt="html", fac=FALSE) {
+    mirror="http://streaming.stat.iastate.edu/CRAN/",
+    helpt="html", fac=FALSE) {
 
-	# don't print more than maxp rows
-	options(max.print=maxp)
+  # don't print more than maxp rows
+  options(max.print=maxp)
 
-	# prefer long decimals rather than scientific notation
-	options(scipen=ndec)
+  # prefer long decimals rather than scientific notation
+  options(scipen=ndec)
 
-	# make it more obvious when line of code is continued on the next line
-	# from Tony Fischetti,
+  # make it more obvious when line of code is continued on the next line
+  # from Tony Fischetti,
   #   http://www.onthelambda.com/2014/09/17/fun-with-rprofile-and-customizing-r-startup/
-	options(continue=cont)
+  options(continue=cont)
 
-	# set CRAN mirror
-	repo <- getOption("repos")
-	repo["CRAN"] <- mirror
-	options(repos=repo)
+  # set CRAN mirror
+  repo <- getOption("repos")
+  repo["CRAN"] <- mirror
+  options(repos=repo)
 
-	# prefer compiled HTML help
-	options(help_type=helpt)
+  # prefer compiled HTML help
+  options(help_type=helpt)
 
-	# prefer characters rather than factors
-	options(stringsAsFactors=fac)
+  # prefer characters rather than factors
+  options(stringsAsFactors=fac)
 }

@@ -11,7 +11,7 @@
 #'   each line.
 #' @source
 #'   NOAA National Geophysical Data Center, (the now defunct) Coastline
-#'	 Extractor,
+#'   Extractor,
 #'   \href{http://www.ngdc.noaa.gov/mgg/coast/}{ngdc.noaa.gov/mgg/coast}.
 #' @author
 #'   Rich Signell, USGS.
@@ -28,7 +28,7 @@ NULL
 #'   each line.
 #' @source
 #'   NOAA National Geophysical Data Center, (the now defunct) Coastline
-#'	 Extractor,
+#'   Extractor,
 #'   \href{http://www.ngdc.noaa.gov/mgg/coast/}{ngdc.noaa.gov/mgg/coast}.
 #' @author
 #'   Rich Signell, USGS.
@@ -46,7 +46,7 @@ NULL
 #'   each line.
 #' @source
 #'   NOAA National Geophysical Data Center, (the now defunct) Coastline
-#'	 Extractor,
+#'   Extractor,
 #'   \href{http://www.ngdc.noaa.gov/mgg/coast/}{ngdc.noaa.gov/mgg/coast}.
 #' @author
 #'   Rich Signell, USGS.
@@ -124,5 +124,5 @@ NULL
 #'   An environment.
 #' @source
 #'   Post from Hadley Wickham to r-help on 2 Dec 2014
-#'	\href{https://stat.ethz.ch/pipermail/r-help/2014-December/423847.html}{[link]}.
+#'  \href{https://stat.ethz.ch/pipermail/r-help/2014-December/423847.html}{[link]}.
 NULL

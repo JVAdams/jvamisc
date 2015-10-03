@@ -21,7 +21,7 @@
 #' @examples
 #' # starting coordinates
 #' test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2,
-#'	dimnames=list(LETTERS[1:3], NULL))
+#'  dimnames=list(LETTERS[1:3], NULL))
 #' coordplot(test)
 #' # rotate the coordinates clockwise 45 degrees
 #' # around the first point (the origin)
@@ -33,10 +33,10 @@
 #' coordplot(rottest)
 
 coordturn <- function(pts, pvt, rot) {
-	r1 <- -rot
-	xRot <- pvt[1] + cos(r1) * (pts[, 1] - pvt[1]) - sin(r1) * (pts[, 2] - pvt[2])
- 	yRot <- pvt[2] + sin(r1) * (pts[, 1] - pvt[1]) + cos(r1) * (pts[, 2] - pvt[2])
-	m <- cbind(xRot, yRot)
-	dimnames(m) <- dimnames(pts)
-	m
+  r1 <- -rot
+  xRot <- pvt[1] + cos(r1) * (pts[, 1] - pvt[1]) - sin(r1) * (pts[, 2] - pvt[2])
+   yRot <- pvt[2] + sin(r1) * (pts[, 1] - pvt[1]) + cos(r1) * (pts[, 2] - pvt[2])
+  m <- cbind(xRot, yRot)
+  dimnames(m) <- dimnames(pts)
+  m
 }

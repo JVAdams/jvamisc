@@ -23,6 +23,6 @@
 #' coordplot(mtest)
 
 coordmove <- function(pts, from, to) {
-	adj <- to - from
-	t(t(pts) + adj)
+  adj <- to - from
+  t(t(pts) + adj)
 }

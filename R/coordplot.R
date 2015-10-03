@@ -16,13 +16,13 @@
 #' coordplot(test)
 
 coordplot <- function(pts) {
-	dev.new(rescale="fit")
-	par(mar=0.5 + c(2, 2, 1, 1))
-	eqscplot(pts[, 1], pts[, 2], type="n", las=1, xlab="", ylab="")
-	labs <- if (is.null(dimnames(pts)[[1]])) {
+  dev.new(rescale="fit")
+  par(mar=0.5 + c(2, 2, 1, 1))
+  eqscplot(pts[, 1], pts[, 2], type="n", las=1, xlab="", ylab="")
+  labs <- if (is.null(dimnames(pts)[[1]])) {
       1:dim(pts)[1] 
     } else {
       dimnames(pts)[[1]]
     }
-	text(pts[, 1], pts[, 2], labs)
+  text(pts[, 1], pts[, 2], labs)
 }

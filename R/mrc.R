@@ -25,18 +25,18 @@
 #' mrc(100, 10, 1000)
 #' @references
 #' D. G. Chapman.  1954.
-#'	 The estimation of biological populations.
-#'	 Annals of Mathematical Statistics 25:1-15.
+#'   The estimation of biological populations.
+#'   Annals of Mathematical Statistics 25:1-15.
 #'   \href{http://projecteuclid.org/euclid.aoms/1177728844}{[link]}.
 #'
 #' W. E. Ricker.  1975.
-#'	 Computation and interpretation of biological statistics of
+#'   Computation and interpretation of biological statistics of
 #'     fish populations.
-#'	 Fisheries Research Board of Canada Bulletin. 191.
+#'   Fisheries Research Board of Canada Bulletin. 191.
 
 mrc <- function(m, r, c, alpha=0.05) {
-	U <- binomCI(r, m-r, alpha=alpha)[1:3]
-	N <- (m+1) * (c+1) / (r+1) - 1
-	CI <- (m+1) * (c+1) / (r+1+(c(1, -1)*qnorm(1-alpha/2)*sqrt(r))) - 1
-	c(U=U, N=N, N.L=CI[1], N.U=CI[2])
-	}
+  U <- binomCI(r, m-r, alpha=alpha)[1:3]
+  N <- (m+1) * (c+1) / (r+1) - 1
+  CI <- (m+1) * (c+1) / (r+1+(c(1, -1)*qnorm(1-alpha/2)*sqrt(r))) - 1
+  c(U=U, N=N, N.L=CI[1], N.U=CI[2])
+  }

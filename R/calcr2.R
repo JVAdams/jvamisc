@@ -22,9 +22,9 @@ calcr2 <- function(fitted, observed, nparam) {
   # from the fitted values, the observed values, and the number of parameters
   # formulas from Weisberg 1985 Applied Linear Regression
   resid <- observed - fitted
-	ss <- function(x) {
+  ss <- function(x) {
     sum((x - mean(x))^2)
-	}
+  }
   r2 <- 1 - sum(resid^2)/ss(observed)
   adjr2 <- 1 - (length(observed) - 1)/(length(observed) - nparam)*(1 - r2)
   c(r2, adjr2)

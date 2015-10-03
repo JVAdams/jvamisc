@@ -42,9 +42,9 @@ CI <- function(x, alpha=0.05, keepMean=TRUE, limits=TRUE, prefix="",
     0
   }
   if (limits) {
-  	z <- c(mean(y), mean(y) + c(-1, 1) * ci)
-  	names(z) <- paste0(prefix, c("mean", "lo", "hi"))
-  	if (keepMean) {
+    z <- c(mean(y), mean(y) + c(-1, 1) * ci)
+    names(z) <- paste0(prefix, c("mean", "lo", "hi"))
+    if (keepMean) {
       z 
     } else {
       z[2:3]

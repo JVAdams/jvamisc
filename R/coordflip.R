@@ -26,16 +26,16 @@
 #' coordplot(ftest)
 
 coordflip <- function(pts, seg) {
-	# equation of line through seg
-	# slope=delta y / delta x
+  # equation of line through seg
+  # slope=delta y / delta x
   m <- (seg[2, 2] - seg[1, 2]) / (seg[2, 1] - seg[1, 1])
-	# intercept=y - mx
-	b <- seg[1, 2] - m * seg[1, 1]
-	# "flip" coordinates around line
-	d <- (pts[, 1] + (pts[, 2] - b)*m) / (1 + m^2)
-	newx <- 2*d - pts[, 1]
-	newy <- 2*d*m - pts[, 2] + 2*b
-	m <- cbind(newx, newy)
-	dimnames(m) <- dimnames(pts)
-	m
+  # intercept=y - mx
+  b <- seg[1, 2] - m * seg[1, 1]
+  # "flip" coordinates around line
+  d <- (pts[, 1] + (pts[, 2] - b)*m) / (1 + m^2)
+  newx <- 2*d - pts[, 1]
+  newy <- 2*d*m - pts[, 2] + 2*b
+  m <- cbind(newx, newy)
+  dimnames(m) <- dimnames(pts)
+  m
 }

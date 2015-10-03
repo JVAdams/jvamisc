@@ -13,6 +13,6 @@
 #'   \code{\link{pkgin}}
 
 pkgup <- function(package, dir="C:/JVA/GitHub/") {
-	setwd(paste0(dir, package))
-	document()
-	}
+  setwd(paste0(dir, package))
+  document()
+  }

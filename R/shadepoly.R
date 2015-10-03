@@ -42,18 +42,18 @@
 
 shadepoly <- function(x, ymd, ylo, yhi, subsel=NULL, kol="#000000",
   opq=c(20, 50), addline=TRUE) {
-	if (is.null(subsel)) {
-		subsel2 <- !is.na(ymd)
-	} else {
-		subsel2 <- subsel & !is.na(ymd)
-	}
-	a <- spline(x[subsel2], ylo[subsel2], n=100)
-	b <- spline(x[subsel2], yhi[subsel2], n=100)
-	polygon(c(a$x, rev(b$x)), c(a$y, rev(b$y)), col=paste0(kol, opq[1]),
+  if (is.null(subsel)) {
+    subsel2 <- !is.na(ymd)
+  } else {
+    subsel2 <- subsel & !is.na(ymd)
+  }
+  a <- spline(x[subsel2], ylo[subsel2], n=100)
+  b <- spline(x[subsel2], yhi[subsel2], n=100)
+  polygon(c(a$x, rev(b$x)), c(a$y, rev(b$y)), col=paste0(kol, opq[1]),
     border=NA)
-	if (addline) {
+  if (addline) {
     lines(spline(x[subsel2], ymd[subsel2], n=100),
       col=paste0(kol, opq[2]), lwd=2)
-	}
-	invisible()
+  }
+  invisible()
 }

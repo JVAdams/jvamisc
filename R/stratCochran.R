@@ -30,19 +30,19 @@
 #' stratCochran(yhi=catch, hi=stratum)
 
 stratCochran <- function(yhi, hi, Wh=NULL, N=NULL) {
-	nh <- table(hi)
-	ybarh <- tapply(yhi, hi, mean)
-	s2h <- tapply(yhi, hi, var)
-	if(is.null(Wh)) Wh <- rep(1/length(nh), length(nh))
-	ybarst <- sum(Wh*ybarh)
-	seybarst <- sqrt(sum(Wh^2*s2h/nh))
-	if(!is.null(N)) {
-		ytotst <- N*ybarst
-		seytotst <- N*seybarst
-	} else {
-		N <- NA
-		ytotst <- NA
-		seytotst <- NA
-	}
-	c(ybarst=ybarst, seybarst=seybarst, ytotst=ytotst, seytotst=seytotst)
-	}
+  nh <- table(hi)
+  ybarh <- tapply(yhi, hi, mean)
+  s2h <- tapply(yhi, hi, var)
+  if(is.null(Wh)) Wh <- rep(1/length(nh), length(nh))
+  ybarst <- sum(Wh*ybarh)
+  seybarst <- sqrt(sum(Wh^2*s2h/nh))
+  if(!is.null(N)) {
+    ytotst <- N*ybarst
+    seytotst <- N*seybarst
+  } else {
+    N <- NA
+    ytotst <- NA
+    seytotst <- NA
+  }
+  c(ybarst=ybarst, seybarst=seybarst, ytotst=ytotst, seytotst=seytotst)
+  }

@@ -29,53 +29,53 @@
 #' binomCI(2, 4, prob=FALSE)
 
 binomCI <- function(x, y=NULL, na.rm=TRUE, alpha=0.05, prob=TRUE) {
-	# calculate mean proportion of successes with confidence limits
-	# if only x is given, it is assumed to be a vector of 0s and 1s
-	# if x and y are given, they are assumed to be
+  # calculate mean proportion of successes with confidence limits
+  # if only x is given, it is assumed to be a vector of 0s and 1s
+  # if x and y are given, they are assumed to be
   #   counts of successes and failures
-	if (!is.null(y)) {
-		if (is.na(x) | is.na(y)) {
+  if (!is.null(y)) {
+    if (is.na(x) | is.na(y)) {
       z1 <- NA
     } else {
       z1 <- rep(1:0, c(x, y))
     }
-	} else {
-		z1 <- x
-	}
-	if (na.rm) {
+  } else {
+    z1 <- x
+  }
+  if (na.rm) {
     z1 <- z1[!is.na(z1)]
-	}
-	n <- length(z1)
-	if (n==0) {
-		out <- c(Mean=NA, L=NA, U=NA, N=n)
-	} else {
-		xbar <- sum(z1)/n
-		if (xbar==0) {
-			out1 <- c(Mean=xbar, L=0, U=1 - alpha^(1/n), N=n)
-		} else {
-			if (xbar==1) {
-				out1 <- c(Mean=xbar, L=alpha^(1/n), U=1, N=n)
-			} else {
-				sd <- sqrt(xbar*(1-xbar)/n)
-				ci <- qnorm(1 - alpha/2)*sd
-				lower <- if (ci>xbar) {
+  }
+  n <- length(z1)
+  if (n==0) {
+    out <- c(Mean=NA, L=NA, U=NA, N=n)
+  } else {
+    xbar <- sum(z1)/n
+    if (xbar==0) {
+      out1 <- c(Mean=xbar, L=0, U=1 - alpha^(1/n), N=n)
+    } else {
+      if (xbar==1) {
+        out1 <- c(Mean=xbar, L=alpha^(1/n), U=1, N=n)
+      } else {
+        sd <- sqrt(xbar*(1-xbar)/n)
+        ci <- qnorm(1 - alpha/2)*sd
+        lower <- if (ci>xbar) {
           0
         } else {
           xbar-ci
         }
-				upper <- if (ci>(1-xbar)) {
+        upper <- if (ci>(1-xbar)) {
           1
         } else {
           xbar+ci
         }
-				out1 <- c(Mean=xbar, L=lower, U=upper, N=n)
-			}
-		}
-		if (prob) {
-			out <- out1
-			} else {
-			out <- c(out1[1:3]*n, out1[4])
-			}
-	}
-	out
+        out1 <- c(Mean=xbar, L=lower, U=upper, N=n)
+      }
+    }
+    if (prob) {
+      out <- out1
+      } else {
+      out <- c(out1[1:3]*n, out1[4])
+      }
+  }
+  out
 }

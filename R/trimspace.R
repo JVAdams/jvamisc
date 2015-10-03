@@ -12,5 +12,5 @@
 #' trimspace(" Harriet and    June    ")
 
 trimspace <- function(charvec) {
-	gsub("(^ +)|( +$)", "", charvec)
+  gsub("(^ +)|( +$)", "", charvec)
 }

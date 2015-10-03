@@ -40,37 +40,37 @@
 formatdf <- function(df, numercol=NULL, round2=0, ndec=round2, comma=",",
   characol=NULL, align="left", keepnum=TRUE) {
   dfclass <- sapply(df, class)
-	df2 <- df
-	numercol <- if (is.null(numercol)) {
+  df2 <- df
+  numercol <- if (is.null(numercol)) {
     dfclass %in% c("numeric", "integer")
-	}
-	characol <- if (is.null(characol)) {
+  }
+  characol <- if (is.null(characol)) {
     dfclass %in% c("character", "factor")
-	}
-	nn <- sum(numercol)
+  }
+  nn <- sum(numercol)
   if (nn > 0) {
-  	colz <- (1:dim(df)[2])[numercol]
+    colz <- (1:dim(df)[2])[numercol]
     for(j in 1:nn) {
-  	  i <- colz[j]
-  	  if (keepnum) {
-  		  df2[, i] <- round(df[, i], rep(round2, length=nn)[j])
-  		} else {
-  		  df2[, i] <- format(round(df[, i], rep(round2, length=nn)[j]), nsmall=rep(ndec, length=nn)[j], big.mark=rep(comma, length=nn)[j])
-  		}
-  	}
-	}
-	nc <- sum(characol)
+      i <- colz[j]
+      if (keepnum) {
+        df2[, i] <- round(df[, i], rep(round2, length=nn)[j])
+      } else {
+        df2[, i] <- format(round(df[, i], rep(round2, length=nn)[j]), nsmall=rep(ndec, length=nn)[j], big.mark=rep(comma, length=nn)[j])
+      }
+    }
+  }
+  nc <- sum(characol)
   if (nc > 0) {
-	  colz <- (1:dim(df)[2])[characol]
+    colz <- (1:dim(df)[2])[characol]
     for(j in 1:nc) {
-  		i <- colz[j]
-  		y <- if (dfclass[i]=="factor") {
+      i <- colz[j]
+      y <- if (dfclass[i]=="factor") {
         as.character(df[, i])
       } else {
         df[, i]
       }
       df2[, i] <- format(y, justify=rep(align, length=nc)[j])
-  	}
-	}
+    }
+  }
   df2
 }

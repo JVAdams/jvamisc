@@ -13,9 +13,9 @@
 #'   \code{\link{savehistory}}, \code{\link{Sys.setenv}}.
 
 jvaLast <- function(file=".Rhistory", nlines=10000) {
-	if (interactive()) {
-		Sys.setenv(R_HISTSIZE=nlines)
-		cat("\nSession ended at ...............................", date(), "\n")
-		try(savehistory(file))
-	}
+  if (interactive()) {
+    Sys.setenv(R_HISTSIZE=nlines)
+    cat("\nSession ended at ...............................", date(), "\n")
+    try(savehistory(file))
+  }
 }

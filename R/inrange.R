@@ -8,7 +8,7 @@
 #' @param open
 #'   A logical scalar indicating if the range interval is open
 #'   (excludes endpoints, TRUE, default) or
-#'	closed (includes endpoints, FALSE).
+#'  closed (includes endpoints, FALSE).
 #' @return
 #'   A logical vector, the same length as \code{x} indicating if values fall
 #'   within the specified range.
@@ -18,10 +18,10 @@
 #' inrange(4:6, c(4, 5.5), FALSE)
 
 inrange <- function(x, r, open=TRUE) {
-	if (open) {
-		sel <- !is.na(x) & (x > r[1] & x < r[2])
-	} else {
-		sel <- !is.na(x) & x >= r[1] & x <= r[2]
-	}
-	sel
+  if (open) {
+    sel <- !is.na(x) & (x > r[1] & x < r[2])
+  } else {
+    sel <- !is.na(x) & x >= r[1] & x <= r[2]
+  }
+  sel
 }

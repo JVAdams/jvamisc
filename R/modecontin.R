@@ -18,12 +18,12 @@
 #' modecontin(x, TRUE)
 
 modecontin <- function(x, plot=FALSE, ...) {
-	dd <- density(x, ...)
-	mode <- dd$x[which.max(dd$y)]
-	if (plot) {
-		plot(dd)
-		rug(x)
-		abline(v=mode)
-	}
-	return(mode)
+  dd <- density(x, ...)
+  mode <- dd$x[which.max(dd$y)]
+  if (plot) {
+    plot(dd)
+    rug(x)
+    abline(v=mode)
+  }
+  return(mode)
 }

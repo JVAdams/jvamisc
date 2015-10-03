@@ -17,7 +17,7 @@
 #' @export
 #' @references
 #'   Manly, Bryan F. J.  1997.
-#'	 Randomization, Bootstrap and Monte Carlo Methods in Biology.
+#'   Randomization, Bootstrap and Monte Carlo Methods in Biology.
 #'   Chapman & Hall, London.
 #' @examples
 #' bcpCI(exp(rnorm(20)), 1)
@@ -32,14 +32,14 @@
 #' }
 
 bcpCI <- function(tboot, orig, alpha=0.05) {
-	# Bias-corrected percentile 100*(1-alpha)% confidence limits
-	tboot <- tboot[!is.na(tboot)]
-	z0 <- qnorm(1-mean(tboot > orig))
-	# proportion of times the bootstrap estimate exceeds the original estimate
-	qn <- qnorm(1-alpha/2)
-	lp <- pnorm(2 * z0 - qn)
-	up <- pnorm(2 * z0 + qn)
-	out <- quantile(tboot, c(lp, up))
-	names(out) <- paste(format(100*c(alpha/2, 1-alpha/2)), "%", sep="")
-	out
+  # Bias-corrected percentile 100*(1-alpha)% confidence limits
+  tboot <- tboot[!is.na(tboot)]
+  z0 <- qnorm(1-mean(tboot > orig))
+  # proportion of times the bootstrap estimate exceeds the original estimate
+  qn <- qnorm(1-alpha/2)
+  lp <- pnorm(2 * z0 - qn)
+  up <- pnorm(2 * z0 + qn)
+  out <- quantile(tboot, c(lp, up))
+  names(out) <- paste(format(100*c(alpha/2, 1-alpha/2)), "%", sep="")
+  out
 }

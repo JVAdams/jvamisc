@@ -33,15 +33,15 @@ drawcell <- function(title, r, c, text.cex=1,
   } else {
     bcol='black'
   }
-	rect((2*(c - 1) + .5), -(r - .5), (2*c + .5), -(r + .5), col=bg.col,
+  rect((2*(c - 1) + .5), -(r - .5), (2*c + .5), -(r + .5), col=bg.col,
     border=bcol)
-	if (c==1) {
-		text((2*(c - 1) + .5), -r, title, adj=0, cex=text.cex)
-	} else {
+  if (c==1) {
+    text((2*(c - 1) + .5), -r, title, adj=0, cex=text.cex)
+  } else {
     if (r==1 ) {
-			text((2*(c - 1) + .5), -r, title, adj=0, cex=text.cex)
-		} else {
-			text((2*c + .5), -r, title, adj=1, cex=text.cex)
-		}
-	}
+      text((2*(c - 1) + .5), -r, title, adj=0, cex=text.cex)
+    } else {
+      text((2*c + .5), -r, title, adj=1, cex=text.cex)
+    }
+  }
 }

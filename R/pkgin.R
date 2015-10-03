@@ -20,14 +20,14 @@
 
 pkgin <- function(package, ld="C:/Users/jvadams/Documents/R/win-library",
   lv="max", pd="C:/JVA/GitHub") {
-	# install from local folder
-	setwd(pd)
-	install(package)
-	# set the library folder as the working directory
+  # install from local folder
+  setwd(pd)
+  install(package)
+  # set the library folder as the working directory
   if (lv=="max") {
     lv <- max(list.files(ld))
   }
-	setwd(paste(ld, lv, sep="/"))
-	# save installed package to zip archive
-	zip(paste0(pd, "/", package, "/", package, ".zip"), package)
+  setwd(paste(ld, lv, sep="/"))
+  # save installed package to zip archive
+  zip(paste0(pd, "/", package, "/", package, ".zip"), package)
 }

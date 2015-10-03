@@ -24,5 +24,5 @@
 #' plotblank(xlim=c(1, 100))
 
 plotblank <- function(x=0:1, y=0:1, xlab="", ylab="", las=1, ...) {
-	plot(x, y, type="n", xlab=xlab, ylab=ylab, las=las, ...)
+  plot(x, y, type="n", xlab=xlab, ylab=ylab, las=las, ...)
 }

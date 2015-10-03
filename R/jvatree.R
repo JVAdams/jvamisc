@@ -21,13 +21,13 @@
 #' text(fit, use.n=TRUE)
 
 jvatree <- function(...) {
-	tree1 <- rpart(...)
-	tab <- tree1$cptable
-	xerror <- tab[, "xerror"]
-	xstd <- tab[, "xstd"]
-	CP <- tab[, "CP"]
-	indx.min.xerror <- which.min(xerror)
-	chosen.cp <- CP[xerror < (xerror + xstd)[indx.min.xerror]][1]
-	tree2 <- prune(tree1, cp=chosen.cp)
-	tree2
+  tree1 <- rpart(...)
+  tab <- tree1$cptable
+  xerror <- tab[, "xerror"]
+  xstd <- tab[, "xstd"]
+  CP <- tab[, "CP"]
+  indx.min.xerror <- which.min(xerror)
+  chosen.cp <- CP[xerror < (xerror + xstd)[indx.min.xerror]][1]
+  tree2 <- prune(tree1, cp=chosen.cp)
+  tree2
 }

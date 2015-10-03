@@ -26,21 +26,21 @@
 #' abline(v=sr$k, lty=2)
 
 segreg <- function(x, y, k=NULL) {
-	if (is.null(k)) {
-		rsscp <- function(K, X, Y) {
-			obj <- lm(Y ~ X + I((X>K)*(X-K)))
-			sum(obj$residuals^2)
-		}
-		xes <- sort(unique(x))
-		somexes <- xes[2:(length(xes)-1)]
-		k <- optimize(rsscp, interval=somexes, X=x, Y=y)[[1]]
-	}
-	z <- I((x>k)*(x-k))
-	class(z) <- "numeric"
-	fit <- lm(y ~ x + z)
-	xk <- c(x, k)
-	newd <- data.frame(x=xk[!duplicated(xk)], z=c(z, 0)[!duplicated(xk)])
-	newd <- newd[order(newd$x), ]
-	p <- predict(fit, newdata=newd)
-	list(fit=fit, k=k, pred=data.frame(x=newd$x, y=p))
+  if (is.null(k)) {
+    rsscp <- function(K, X, Y) {
+      obj <- lm(Y ~ X + I((X>K)*(X-K)))
+      sum(obj$residuals^2)
+    }
+    xes <- sort(unique(x))
+    somexes <- xes[2:(length(xes)-1)]
+    k <- optimize(rsscp, interval=somexes, X=x, Y=y)[[1]]
+  }
+  z <- I((x>k)*(x-k))
+  class(z) <- "numeric"
+  fit <- lm(y ~ x + z)
+  xk <- c(x, k)
+  newd <- data.frame(x=xk[!duplicated(xk)], z=c(z, 0)[!duplicated(xk)])
+  newd <- newd[order(newd$x), ]
+  p <- predict(fit, newdata=newd)
+  list(fit=fit, k=k, pred=data.frame(x=newd$x, y=p))
 }

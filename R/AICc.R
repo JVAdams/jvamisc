@@ -24,31 +24,31 @@
 #' AICc(list(fit1, fit2, fit3, fit4))
 
 AICc <- function(fitlist, corr=TRUE) {
-	modnamz <- if (is.null(names(fitlist))) {
+  modnamz <- if (is.null(names(fitlist))) {
     seq(fitlist)
   } else {
     names(fitlist)
   }
-	res <- data.frame(model=modnamz, n=NA, p=NA, rmse=NA, aic=NA, aicc=NA)
-	for(i in seq(fitlist)) {
-		fit <- fitlist[[i]]
-		n <- length(fit$fitted)
-		p <- n - fit$df.residual
-		rmse <- sqrt(mean(fit$resid^2))
-		aic <- AIC(fit)
-		aicc <- aic + 2*p*(p+1)/(n-p-1)
-		res[i, 2:6] <- c(n, p, rmse, aic, aicc)
-	}
-	if (corr) {
-		res <- res[order(res$aicc), ]
-		res$daicc <- res$aicc - res$aicc[1]
-		edaicc <- exp(-res$daicc/2)
-		res$aiccw <- edaicc/sum(edaicc)
-	} else {
-		res <- res[order(res$aic), ]
-		res$daic <- res$aic - res$aic[1]
-		edaic <- exp(-res$daic/2)
-		res$aicw <- edaic/sum(edaic)
-	}
-	res
+  res <- data.frame(model=modnamz, n=NA, p=NA, rmse=NA, aic=NA, aicc=NA)
+  for(i in seq(fitlist)) {
+    fit <- fitlist[[i]]
+    n <- length(fit$fitted)
+    p <- n - fit$df.residual
+    rmse <- sqrt(mean(fit$resid^2))
+    aic <- AIC(fit)
+    aicc <- aic + 2*p*(p+1)/(n-p-1)
+    res[i, 2:6] <- c(n, p, rmse, aic, aicc)
+  }
+  if (corr) {
+    res <- res[order(res$aicc), ]
+    res$daicc <- res$aicc - res$aicc[1]
+    edaicc <- exp(-res$daicc/2)
+    res$aiccw <- edaicc/sum(edaicc)
+  } else {
+    res <- res[order(res$aic), ]
+    res$daic <- res$aic - res$aic[1]
+    edaic <- exp(-res$daic/2)
+    res$aicw <- edaic/sum(edaic)
+  }
+  res
 }

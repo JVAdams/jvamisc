@@ -22,9 +22,9 @@
 #' predAntilog(fit, npk)
 
 predAntilog <- function(aovfit, xdata, logbase=exp(1), k=0) {
-	mse <- rev(as.matrix(summary(aovfit)[[1]])[, "Mean Sq"])[1]
-	plpe <- predict(aovfit, newdata=xdata, se.fit=T)
-	m <- plpe$fit
-	v <- plpe$se.fit^2 + mse
-	logbase^(m + v/2) - k
-	}
+  mse <- rev(as.matrix(summary(aovfit)[[1]])[, "Mean Sq"])[1]
+  plpe <- predict(aovfit, newdata=xdata, se.fit=T)
+  m <- plpe$fit
+  v <- plpe$se.fit^2 + mse
+  logbase^(m + v/2) - k
+  }

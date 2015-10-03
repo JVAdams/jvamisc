@@ -57,32 +57,32 @@
 
 addhist <- function(x, y=NULL, type="xy", nclass=20, newmar=0:1, adj.fac=1.05,
   xlab="Frequency", ylab="", fill="gray") {
-	oldmar <- par("mar")
-	oldusr <- par("usr")
-	xhist <- hist(x, nclass=nclass, plot=FALSE)
-	if (type=="xy" | type=="x") {
-		par(mar=c(newmar[1], oldmar[2], newmar[2], oldmar[4]), xaxs="i", yaxs="i")
-		plot(xhist$mids, xhist$counts, type="n", xlim=oldusr[1:2],
+  oldmar <- par("mar")
+  oldusr <- par("usr")
+  xhist <- hist(x, nclass=nclass, plot=FALSE)
+  if (type=="xy" | type=="x") {
+    par(mar=c(newmar[1], oldmar[2], newmar[2], oldmar[4]), xaxs="i", yaxs="i")
+    plot(xhist$mids, xhist$counts, type="n", xlim=oldusr[1:2],
       ylim=adj.fac*c(0, max(xhist$counts)), axes=FALSE, xlab=xlab, ylab=ylab)
-		symbols(xhist$mids, xhist$counts/2,
+    symbols(xhist$mids, xhist$counts/2,
       rectangles=cbind(diff(xhist$mids)[1], xhist$counts), inches=FALSE,
       bg=fill, add=TRUE)
-		px <- pretty(xhist$counts)
-		axis(2, at=px[-1])
-		box()
-	}
-	if (type=="xy" | type=="y") {
-		if (type=="xy") xhist <- hist(y, nclass=nclass, plot=FALSE)
-		par(mar=c(oldmar[1], newmar[1], oldmar[3], newmar[2]), xaxs="i", yaxs="i")
-		plot(xhist$counts/2, xhist$mids, type="n",
+    px <- pretty(xhist$counts)
+    axis(2, at=px[-1])
+    box()
+  }
+  if (type=="xy" | type=="y") {
+    if (type=="xy") xhist <- hist(y, nclass=nclass, plot=FALSE)
+    par(mar=c(oldmar[1], newmar[1], oldmar[3], newmar[2]), xaxs="i", yaxs="i")
+    plot(xhist$counts/2, xhist$mids, type="n",
       xlim=adj.fac*c(0, max(xhist$counts)), ylim=oldusr[3:4], axes=FALSE,
       xlab=xlab, ylab=ylab)
-		symbols(xhist$counts/2, xhist$mids,
+    symbols(xhist$counts/2, xhist$mids,
       rectangles=cbind(xhist$counts, diff(xhist$mids)[1]), inches=FALSE,
       bg=fill, add=TRUE)
-		px <- pretty(xhist$counts)
-		axis(1, at=px[-1])
-		box()
-	}
-	invisible()
+    px <- pretty(xhist$counts)
+    axis(1, at=px[-1])
+    box()
+  }
+  invisible()
 }

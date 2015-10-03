@@ -13,5 +13,5 @@
 #' jvanames(c("Conc_mgL", "Conc_mgL", "Temp"))
 
 jvanames <- function(charvec) {
-	make.names(casefold(charvec), unique=TRUE, allow_=FALSE)
+  make.names(casefold(charvec), unique=TRUE, allow_=FALSE)
 }

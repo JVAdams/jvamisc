@@ -12,7 +12,7 @@
 #'   not their radii.
 #' @param data.range
 #'   Numeric vector, length 2, minimum and maximum \code{z}z data to plot,
-#'	default \code{range(z, na.rm=TRUE)}.
+#'  default \code{range(z, na.rm=TRUE)}.
 #' @param circle.size.range
 #'   Numeric vector, length 2, minimum and maximum circle radii in inches,
 #'   default 0.1 to 1.
@@ -49,37 +49,37 @@
 #' @export
 #' @examples
 #' circles(trees$Height, trees$Girth, sqrt(trees$Volume),
-#'	data.range=sqrt(c(0, max(trees$Volume))), circle.size.range=c(0, 0.3),
-#'	xlab="Height (ft)", ylab="Diameter (in)", main="Tree Volume")
+#'  data.range=sqrt(c(0, max(trees$Volume))), circle.size.range=c(0, 0.3),
+#'  xlab="Height (ft)", ylab="Diameter (in)", main="Tree Volume")
 
 circles <- function(x, y, z, data.range=range(z, na.rm=TRUE),
     circle.size.range=c(0.1, 1), outx=NA, outy=NA, add=FALSE,
     xlim=NULL, ylim=NULL, ...) {
-	# control the plotting of circles
-	# fix the data range to be plotted (data.range)
-	# and fix the corresponding range of circle sizes (circle.size.range)
-	# rescale data range so it matches circle size range
-	newz <- ((z - data.range[1])/diff(data.range)) * diff(circle.size.range) +
+  # control the plotting of circles
+  # fix the data range to be plotted (data.range)
+  # and fix the corresponding range of circle sizes (circle.size.range)
+  # rescale data range so it matches circle size range
+  newz <- ((z - data.range[1])/diff(data.range)) * diff(circle.size.range) +
     circle.size.range[1]
-	# add two data points that plot the min and max circle sizes
+  # add two data points that plot the min and max circle sizes
   #   outside the plot area
-	if (is.na(outx)) {
+  if (is.na(outx)) {
     outx <- max(x) + 10 * diff(range(x))
-	}
-	if (is.na(outy)) {
+  }
+  if (is.na(outy)) {
     outy <- max(y) + 10 * diff(range(y))
-	}
-	addx <- c(x, outx, outx)
-	addy <- c(y, outy, outy)
-	addz <- c(newz, circle.size.range)
-	# plot the circles
-	if (add) {
-		symbols(addx, addy, circles=addz, inches=circle.size.range[2],
+  }
+  addx <- c(x, outx, outx)
+  addy <- c(y, outy, outy)
+  addz <- c(newz, circle.size.range)
+  # plot the circles
+  if (add) {
+    symbols(addx, addy, circles=addz, inches=circle.size.range[2],
       add=TRUE, ...)
-	} else {
-		if (is.null(xlim)) xlim <- extendrange(x, f=0.1)
-		if (is.null(ylim)) ylim <- extendrange(y, f=0.1)
-		symbols(addx, addy, xlim=xlim, ylim=ylim, circles=addz,
+  } else {
+    if (is.null(xlim)) xlim <- extendrange(x, f=0.1)
+    if (is.null(ylim)) ylim <- extendrange(y, f=0.1)
+    symbols(addx, addy, xlim=xlim, ylim=ylim, circles=addz,
       inches=circle.size.range[2], add=FALSE, ...)
-	}
+  }
 }

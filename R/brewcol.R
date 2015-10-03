@@ -22,6 +22,6 @@
 
 brewcol <- function(x, n=9,
   name=c("YlGnBu", "Oranges", "Greens", "Blues", "Greys", "Dark2")[1]) {
-	y <- cut(x, breaks=n, labels=FALSE)
-	brewer.pal(n, name)[y]
-	}
+  y <- cut(x, breaks=n, labels=FALSE)
+  brewer.pal(n, name)[y]
+  }

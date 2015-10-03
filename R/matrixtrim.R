@@ -28,36 +28,36 @@
 #' matrixtrim(m, prop=c(0.7, 0.7))
 
 matrixtrim <- function(m, prop=c(1, 1), rowsfirst=TRUE) {
-	# trim the rows and columns of a 0/1 (or FALSE/TRUE) matrix
-	# until every row and column has at least "prop" proportion of 1's (TRUE's)
-	# method1 tends to delete columns first
-	# method2 tends delete rows first
-	newm <- m
-	rmin <- 0
-	cmin <- 0
-	while(rmin < prop[1] | cmin < prop[2]) {
-		rowmeans <- apply(newm, 1, mean)
-		rmin <- min(rowmeans)
-		rowofmin <- which(rowmeans==rmin)
-		colmeans <- apply(newm, 2, mean)
-		cmin <- min(colmeans)
-		colofmin <- which(colmeans==cmin)
-		if (rmin >= prop[1] & cmin >= prop[2]) {
+  # trim the rows and columns of a 0/1 (or FALSE/TRUE) matrix
+  # until every row and column has at least "prop" proportion of 1's (TRUE's)
+  # method1 tends to delete columns first
+  # method2 tends delete rows first
+  newm <- m
+  rmin <- 0
+  cmin <- 0
+  while(rmin < prop[1] | cmin < prop[2]) {
+    rowmeans <- apply(newm, 1, mean)
+    rmin <- min(rowmeans)
+    rowofmin <- which(rowmeans==rmin)
+    colmeans <- apply(newm, 2, mean)
+    cmin <- min(colmeans)
+    colofmin <- which(colmeans==cmin)
+    if (rmin >= prop[1] & cmin >= prop[2]) {
       break()
-		}
-		if (rmin < cmin) {
-			newm <- newm[-rowofmin, ]
-		} else {
-			if (rmin > cmin) {
-				newm <- newm[, -colofmin]
-			} else {
-				if (rowsfirst) {
-					newm <- newm[-rowofmin, ]
-				} else {
-					newm <- newm[, -colofmin]
-				}
-			}
-		}
-	}
-	list(trim=newm, dim=dim(newm), n=sum(newm))
+    }
+    if (rmin < cmin) {
+      newm <- newm[-rowofmin, ]
+    } else {
+      if (rmin > cmin) {
+        newm <- newm[, -colofmin]
+      } else {
+        if (rowsfirst) {
+          newm <- newm[-rowofmin, ]
+        } else {
+          newm <- newm[, -colofmin]
+        }
+      }
+    }
+  }
+  list(trim=newm, dim=dim(newm), n=sum(newm))
 }
