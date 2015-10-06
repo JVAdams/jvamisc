@@ -27,7 +27,7 @@ Performs chi-squared contingency table tests with informative output.
 ## From Agresti(2007) p.39
 M <- as.table(rbind(c(762, 327, 468), c(484, 239, 477)))
 dimnames(M) <- list(gender=c("M", "F"),
-	party=c("Democrat", "Independent", "Republican"))
+ party=c("Democrat", "Independent", "Republican"))
 chi(M)
 }
 \seealso{

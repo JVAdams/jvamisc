@@ -24,7 +24,7 @@ Rotate coordinates clockwise around a pivot point.
 \examples{
 # starting coordinates
 test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2,
-	dimnames=list(LETTERS[1:3], NULL))
+ dimnames=list(LETTERS[1:3], NULL))
 coordplot(test)
 # rotate the coordinates clockwise 45 degrees
 # around the first point (the origin)

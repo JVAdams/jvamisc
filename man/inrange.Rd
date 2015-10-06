@@ -12,8 +12,8 @@ inrange(x, r, open = TRUE)
 \item{r}{A numeric vector of length 2 specifying the range.}
 
 \item{open}{A logical scalar indicating if the range interval is open
-(excludes endpoints, TRUE, default) or
-  closed (includes endpoints, FALSE).}
+ (excludes endpoints, TRUE, default) or
+closed (includes endpoints, FALSE).}
 }
 \value{
 A logical vector, the same length as \code{x} indicating if values fall

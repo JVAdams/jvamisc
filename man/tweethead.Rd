@@ -20,7 +20,7 @@ file (see Details).}
 \item{credOrPath}{Either a character scalar giving the path of the environment where the
 credentials are stored or a character vector of length four, giving the
 credentials themselves: twitter_api_key, twitter_api_secret,
-twitter_access_token, and twitter_access_token_secret.    The default is
+twitter_access_token, and twitter_access_token_secret.  The default is
 "C:/JVA/R/Working Directory/.Renviron" (see Details).}
 }
 \value{

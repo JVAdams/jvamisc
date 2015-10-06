@@ -11,8 +11,8 @@ colr(x, fromcolname, tocolname)
 
 \item{fromcolname}{A character or numeric scalar, indicating the color to use for the
 lowest value in \code{x}.
-   Either a color name (as listed by \code{\link{colors}()},
-   a hexadecimal string of the form "#rrggbb" or "#rrggbbaa"
+Either a color name (as listed by \code{\link{colors}()},
+a hexadecimal string of the form "#rrggbb" or "#rrggbbaa"
 (see \code{\link{rgb}}), or a positive integer i meaning
 \code{\link{palette}()[i]}.}
 

@@ -21,6 +21,6 @@ Produces an added variable plot given 1 response and 2 or more predictors.
 }
 \examples{
 addedvar(Y=mtcars$hp, X=mtcars[, c("mpg", "disp", "wt")],
-	main="Predicting horsepower from MPG, displacement, and weight")
+ main="Predicting horsepower from MPG, displacement, and weight")
 }
 

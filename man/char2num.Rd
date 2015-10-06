@@ -23,7 +23,7 @@ non-numeric values, default FALSE.}
 \value{
 By default, a list of length two with the converted numeric vector and
   the comment vector.
-	 If justindex=TRUE, a character vector the same length as x,
+  If justindex=TRUE, a character vector the same length as x,
   indicating the elements with non-numeric values.
 }
 \description{
@@ -39,8 +39,8 @@ char2num(a, pmissing=c("NA", "missing", "."))
 char2num(a, justindex=TRUE)
 
 df <- data.frame(
-	x1=c(NA, 8.2, 8.2, 8.2, 8.6, 8.1, 8.2),
-	x2=c(NA, "83", "*", "83", "79-80", "NA", "83"),
+  x1=c(NA, 8.2, 8.2, 8.2, 8.6, 8.1, 8.2),
+  x2=c(NA, "83", "*", "83", "79-80", "NA", "83"),
  x3=c(NA, NA, NA, "9.4", "?", ">10", "6.6"))
 vars <- c("x2", "x3")
 tonum <- lapply(vars, function(v) char2num(df[, v], varname=v))

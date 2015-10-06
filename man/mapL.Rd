@@ -7,7 +7,7 @@
   each line.}
 \source{
 NOAA National Geophysical Data Center, (the now defunct) Coastline
-	 Extractor,
+  Extractor,
   \href{http://www.ngdc.noaa.gov/mgg/coast/}{ngdc.noaa.gov/mgg/coast}.
 }
 \description{

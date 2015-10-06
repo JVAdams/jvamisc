@@ -16,7 +16,7 @@ default 1.}
 }
 \value{
 A named vector with the sum of the numerators, the sum of the denominators,
-  the ratio of the sums,	the number of non-missing input pairs, and
+  the ratio of the sums,  the number of non-missing input pairs, and
   the standard deviation and 95% confidence interval of the ratio.
 }
 \description{
@@ -30,12 +30,12 @@ All records with a missing value in either the numerator or
 # Size, weekly income, and food cost of 33 families from
 # Cochran's (1977) Sampling Techniques.
 familysize <- c(2, 3, 3, 5, 4, 7, 2, 4, 2, 5, 3, 6, 4, 4,
-	2, 5, 3, 4, 2, 4, 2, 5, 3, 4, 7, 3, 3, 6, 2, 2, 6, 4, 2)
+ 2, 5, 3, 4, 2, 4, 2, 5, 3, 4, 7, 3, 3, 6, 2, 2, 6, 4, 2)
 income <- c(62, 62, 87, 65, 58, 92, 88, 79, 83, 62, 63, 62, 60, 75, 90,
-	75, 69, 83, 85, 73, 66, 58, 77, 69, 65, 77, 69, 95, 77, 69, 69, 67, 63)
+  75, 69, 83, 85, 73, 66, 58, 77, 69, 65, 77, 69, 95, 77, 69, 69, 67, 63)
 foodcost <- c(14.3, 20.8, 22.7, 30.5, 41.2, 28.2, 24.2, 30, 24.2, 44.4,
-	13.4, 19.8, 29.4, 27.1, 22.2, 37.7, 22.6, 36, 20.6, 27.7, 25.9, 23.5,
-	39.8, 16.8, 37.8, 34.8, 28.7, 63, 19.5, 21.6, 18.2, 20.1, 20.7)
+  13.4, 19.8, 29.4, 27.1, 22.2, 37.7, 22.6, 36, 20.6, 27.7, 25.9, 23.5,
+  39.8, 16.8, 37.8, 34.8, 28.7, 63, 19.5, 21.6, 18.2, 20.1, 20.7)
 # weekly expenditure on food per person
 ratest(foodcost, familysize)
 # percentage of income spent on food

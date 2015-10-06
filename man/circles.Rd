@@ -61,7 +61,7 @@ The size of the circles plotted corresponds directly with the range of
 }
 \examples{
 circles(trees$Height, trees$Girth, sqrt(trees$Volume),
-	data.range=sqrt(c(0, max(trees$Volume))), circle.size.range=c(0, 0.3),
-	xlab="Height (ft)", ylab="Diameter (in)", main="Tree Volume")
+ data.range=sqrt(c(0, max(trees$Volume))), circle.size.range=c(0, 0.3),
+ xlab="Height (ft)", ylab="Diameter (in)", main="Tree Volume")
 }
 

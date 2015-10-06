@@ -16,7 +16,7 @@ should be written over the ellipses, default TRUE.}
 
 \item{atcex}{A numeric scalar giving the magnification of the added ellipse text
 relative to that set in \code{\link{par}},
-   default NULL results in atcex=8/maximum dimension of \code{r}.}
+default NULL results in atcex=8/maximum dimension of \code{r}.}
 
 \item{incdiag}{A logical scalar indicating whether to plot circles for the diagonal
 values of the matrix (if symmetric), default FALSE.}

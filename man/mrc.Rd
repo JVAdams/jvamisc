@@ -33,14 +33,14 @@ mrc(100, 10, 1000)
 }
 \references{
 D. G. Chapman.  1954.
-	 The estimation of biological populations.
-	 Annals of Mathematical Statistics 25:1-15.
+  The estimation of biological populations.
+  Annals of Mathematical Statistics 25:1-15.
   \href{http://projecteuclid.org/euclid.aoms/1177728844}{[link]}.
 
 W. E. Ricker.  1975.
-	 Computation and interpretation of biological statistics of
+  Computation and interpretation of biological statistics of
     fish populations.
-	 Fisheries Research Board of Canada Bulletin. 191.
+  Fisheries Research Board of Canada Bulletin. 191.
 }
 \seealso{
 \code{\link{binomCI}}

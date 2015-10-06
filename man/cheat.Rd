@@ -29,7 +29,7 @@ pkgman("jvamisc")
 ### Greek and math symbols ###
 # http://www.decodeunicode.org/
 plot(1, 1, xlab="Length  (\\U03BCm)", ylab="Temperature  (\\U00b0 C)",
-	main="Lambda squared=\\\\U03BB\\\\U00B2=\\U03BB\\U00B2")
+ main="Lambda squared=\\\\U03BB\\\\U00B2=\\U03BB\\U00B2")
 
 ### map scale and north arrow ###
 library(GISTools)
@@ -87,9 +87,9 @@ summary(wht, test=adjusted("Shaffer"))
 ### label months on day of year or Julian day axis ###
 plot(101:200, rnorm(100), axes=FALSE)
 axis(1, at=doy(as.Date(paste(2000, 1:12, 1, sep="-")))-0.5,
-	labels=FALSE)
+ labels=FALSE)
 axis(1, at=doy(as.Date(paste(2000, 1:12, 15, sep="-"))),
-	labels=month.abb, tick=FALSE)
+ labels=month.abb, tick=FALSE)
 axis(2)
 box()
 
@@ -103,22 +103,22 @@ contour(interp(x, y, z, duplicate="mean"))
 ### get lat longs for locations ###
 library(dismo)
 geocode(c("1600 Pennsylvania Ave NW, Washington DC",
-	"Luca, Italy", "Kampala", "Antigo, WI"))
+ "Luca, Italy", "Kampala", "Antigo, WI"))
 
 ### get a lat long for a location ###
 # from R-help post by Phil Spector, UC Berkeley, Mar 16, 2010
 # https://stat.ethz.ch/pipermail/r-help/2010-March/232090.html
 library(XML)
 root <- xmlRoot(xmlTreeParse(
-	paste0("http://maps.google.com/maps/api/geocode/xml?address=",
-	"Antigo, WI", "&sensor=false")))
+ paste0("http://maps.google.com/maps/api/geocode/xml?address=",
+ "Antigo, WI", "&sensor=false")))
 lat <- xmlValue(root[["result"]][["geometry"]][["location"]][["lat"]])
 long <- xmlValue(root[["result"]][["geometry"]][["location"]][["lng"]])
 
 ### plot points on a map ###
 library(RgoogleMaps)
 MyMap <- GetMap.bbox(c(-80, -79), c(45, 46), maptype="terrain",
-	destfile="junk.png", zoom=8)
+ destfile="junk.png", zoom=8)
 PlotOnStaticMap(MyMap, lat=seq(45, 46, 0.1), lon=seq(-80, -79, 0.1),
 col="red", pch=16)
 
@@ -129,7 +129,7 @@ qmap("Antigo, Wisconsin", zoom=14)
 ### convert between lat/long and projections ###
 library(proj4)
 project(xy, proj, inverse=FALSE, degrees=TRUE,
-	silent=FALSE, ellps.default="sphere")
+ silent=FALSE, ellps.default="sphere")
 
 ### other map stuff of interest ###
 # http://cartodb.com/
@@ -167,9 +167,9 @@ dimnames(comb)[[2]] <- var.names
 fits <- vector("list", dim(comb)[1])
 fits[[1]] <- lm(lpsa ~ 1, dat=train)
 for(i in 2:length(fits)) {
-	fits[[i]] <- lm(formula=paste("lpsa ~",
-		paste(var.names[comb[i, ]==1], collapse=" + ")), dat=train)
-	}
+  fits[[i]] <- lm(formula=paste("lpsa ~",
+   paste(var.names[comb[i, ]==1], collapse=" + ")), dat=train)
+  }
 comb2 <- comb
 comb2$nx <- apply(comb, 1, sum)
 # AIC
@@ -215,12 +215,12 @@ cat(data, file="data.json")
 ### read in internet table ###
 library(XML)
 allTables <- readHTMLTable(
-	"http://en.wikipedia.org/wiki/United_States_presidential_election,_2012")
+ "http://en.wikipedia.org/wiki/United_States_presidential_election,_2012")
 # Look at the allTables object to find the specific table we want
 str(allTables)
 # if you have problems reading the URL, you could try this ...
 mylines <- readLines(url(
-	"http://en.wikipedia.org/wiki/United_States_presidential_election,_2012"))
+ "http://en.wikipedia.org/wiki/United_States_presidential_election,_2012"))
 closeAllConnections()
 mylist <- readHTMLTable(mylines, asText=TRUE)
 mytable <- mylist1$xTable
@@ -232,29 +232,29 @@ myfile <- tk_choose.files(default="C:/JVA/*.csv")
 ### one slider ###
 library(rpanel)
 density.draw <- function(panel) {
-	plot(density(panel$x, bw=panel$h))
-	panel
-	}
+  plot(density(panel$x, bw=panel$h))
+  panel
+  }
 panel <- rp.control(x=rnorm(50))
 rp.slider(panel, h, 0.5, 5, log=TRUE, action=density.draw)
 
 ### two sliders ###
 library(rpanel)
 loess.draw <- function(panel) {
-	plot(panel$x, panel$y)
-	lines(loess.smooth(panel$x, panel$y, span=panel$s, degree=panel$d))
-	panel
-	}
+  plot(panel$x, panel$y)
+  lines(loess.smooth(panel$x, panel$y, span=panel$s, degree=panel$d))
+  panel
+  }
 panel <- rp.control(x=rnorm(50), y=rnorm(50), s=rep(3, 50), d=1)
 rp.slider(panel, s, 0.1, 10, showvalue=TRUE, action=loess.draw)
 rp.slider(panel, d, 1, 2, showvalue=TRUE, action=loess.draw)
 
 ### animation ###
 for(i in 1:10) {
-	dev.new()
-	plot(1:10, 1:10, type="l")
-	points(i, i, pch=16, cex=2)
-	savePlot(filename=paste("Rplot", i), type="bmp")
+  dev.new()
+  plot(1:10, 1:10, type="l")
+  points(i, i, pch=16, cex=2)
+  savePlot(filename=paste("Rplot", i), type="bmp")
 }
 cat(paste("Plots saved to", getwd()), "\\n")
 # GIF Construction Set

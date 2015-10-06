@@ -38,7 +38,7 @@ bcpCI(results$t, results$t0, 0.1)
 }
 \references{
 Manly, Bryan F. J.  1997.
-	 Randomization, Bootstrap and Monte Carlo Methods in Biology.
+  Randomization, Bootstrap and Monte Carlo Methods in Biology.
   Chapman & Hall, London.
 }
 
