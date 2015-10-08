@@ -5,11 +5,15 @@
 #' @param yhi
 #'   A numeric vector of values obtained from the ith unit (in stratum h).
 #' @param hi
-#'   A numeric vector of stratum ids, the same length as yhi.
+#'   A vector of stratum ids, the same length as \code{yhi}.
+#' @param uh
+#'   A vector of unique stratum ids.
 #' @param Wh
-#'   A numeric vector of stratum weights, with length equal to the number
-#'   of unique stratum ids (nh), ordered by stratum id.  If NULL (the default),
-#'   weights are assumed to be equal for all strata (1/nh).
+#'   A numeric vector of stratum weights, the same length as and in the same
+#'   order as \code{uh}.  By default,
+#'   equal weights are assumed for all strata \code{(1/length(uh))}.
+#'   Need not sum to one, the input values will be adjusted automatically
+#'   to do so.
 #' @param N
 #'   Total of the quantities used for the stratum weights across all strata,
 #'   used to expand estimated means to estimated totals.  If NULL (the
@@ -29,13 +33,23 @@
 #' stratCochran(yhi=catch, hi=stratum, Wh=area/sum(area), N=sum(area))
 #' stratCochran(yhi=catch, hi=stratum)
 
-stratCochran <- function(yhi, hi, Wh=NULL, N=NULL) {
+stratCochran <- function(yhi, hi, uh=sort(unique(hi)),
+  Wh=rep(1/length(uh), length(uh)), N=NULL) {
+  if(length(yhi) != length(hi)) stop(
+    "yhi and hi should be the same length")
   nh <- table(hi)
   ybarh <- tapply(yhi, hi, mean)
   s2h <- tapply(yhi, hi, var)
-  if(is.null(Wh)) Wh <- rep(1/length(nh), length(nh))
-  ybarst <- sum(Wh*ybarh)
-  seybarst <- sqrt(sum(Wh^2*s2h/nh))
+  if(length(nh) != length(uh)) stop(
+    "The number of unique values in hi should be equal to the length of uh")
+  if(length(nh) != length(Wh)) stop(
+    "The number of unique values in hi should be equal to the length of Wh")
+  if(length(uh) != length(Wh)) stop(
+    "uh and Wh should be the same length")
+  ord <- order(uh)
+  Wh.o <- Wh[ord]/sum(Wh)
+  ybarst <- sum(Wh.o*ybarh)
+  seybarst <- sqrt(sum(Wh.o^2*s2h/nh))
   if(!is.null(N)) {
     ytotst <- N*ybarst
     seytotst <- N*seybarst

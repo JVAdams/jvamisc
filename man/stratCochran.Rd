@@ -4,16 +4,21 @@
 \alias{stratCochran}
 \title{Stratified Random Sampling Estimates}
 \usage{
-stratCochran(yhi, hi, Wh = NULL, N = NULL)
+stratCochran(yhi, hi, uh = sort(unique(hi)), Wh = rep(1/length(uh),
+  length(uh)), N = NULL)
 }
 \arguments{
 \item{yhi}{A numeric vector of values obtained from the ith unit (in stratum h).}
 
-\item{hi}{A numeric vector of stratum ids, the same length as yhi.}
+\item{hi}{A vector of stratum ids, the same length as \code{yhi}.}
 
-\item{Wh}{A numeric vector of stratum weights, with length equal to the number
-of unique stratum ids (nh), ordered by stratum id.  If NULL (the default),
-weights are assumed to be equal for all strata (1/nh).}
+\item{uh}{A vector of unique stratum ids.}
+
+\item{Wh}{A numeric vector of stratum weights, the same length as and in the same
+order as \code{uh}.  By default,
+equal weights are assumed for all strata \code{(1/length(uh))}.
+Need not sum to one, the input values will be adjusted automatically
+to do so.}
 
 \item{N}{Total of the quantities used for the stratum weights across all strata,
 used to expand estimated means to estimated totals.  If NULL (the
