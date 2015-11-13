@@ -9,19 +9,20 @@ Maintainer: Jean V. Adams <jvadams@usgs.gov>
 Depends:
     R (>= 3.2.2)
 Imports:
-  devtools,
-  lubridate,
-  maptools,
-  MASS,
-  plotrix,
-  RColorBrewer,
-	RCurl,
-	rpart,
-  seriation,
-  sp,
-  survey,
-	twitteR
+    devtools,
+    lubridate,
+    maptools,
+    MASS,
+    plotrix,
+    RColorBrewer,
+    RCurl,
+    rpart,
+    seriation,
+    sp,
+    survey,
+    twitteR
 Description: A collection of miscellaneous utility functions.
 LazyData: TRUE
 License: GPL
 URL: https://github.com/JVAdams/jvamisc
+RoxygenNote: 5.0.1
