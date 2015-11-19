@@ -72,20 +72,20 @@ wedges <- function(x0, y0, x1, y1, ybase=0.03*diff(par("usr")[3:4]),
   # step 2
   dy <- -cos(A)*ybase/2
   # wedge base coordinates
-  newwbx1 <- newx1+dx
-  newwbx2 <- newx1-dx
-  wby1 <- y1+dy
-  wby2 <- y1-dy
+  newwbx1 <- newx0+dx
+  newwbx2 <- newx0-dx
+  wby1 <- y0+dy
+  wby2 <- y0-dy
   # convert wedge base x coordinates back to x scale
   wbx1 <- newwbx1/x2y
   wbx2 <- newwbx2/x2y
   # draw the wedge
   if(length(x0)>1) {
-    px <- as.vector(rbind(x0, wbx1, wbx2, div=NA))
-    py <- as.vector(rbind(y0, wby1, wby2, div=NA))
+    px <- as.vector(rbind(wbx1, wbx2, x1, div=NA))
+    py <- as.vector(rbind(wby1, wby2, y1, div=NA))
   } else {
-    px <- c(x0, wbx1, wbx2)
-    py <- c(y0, wby1, wby2)
+    px <- c(wbx1, wbx2, x1)
+    py <- c(wby1, wby2, y1)
   }
   polygon(px, py, border=pborder, col=pcol, ...)
 }
