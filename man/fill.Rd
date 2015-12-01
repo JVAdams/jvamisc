@@ -34,4 +34,8 @@ fill(numvec, newgroup)
 charvec <- c("", letters[1:5], "", "", "", letters[10:12], "")
 fill(charvec)
 }
+\references{
+This is a copy of the \code{fill} function from the
+  \href{https://github.com/JVAdams/LW1949}{[LW1949]} package.
+}
 

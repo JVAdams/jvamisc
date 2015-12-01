@@ -48,9 +48,9 @@ with(df, wedges(x[1], y[1], x[2], y[2], ybase=1))
 # draw several wedges from point to point
 s <- seq(length(df$x)-1)
 plot(df)
-with(df, lapply(s, function(i)
+with(df, invisible(lapply(s, function(i)
  wedges(x[i], y[i], x[i+1], y[i+1], pborder=(5:2)[i], pcol=(2:5)[i])
-))
+)))
 
 }
 \seealso{

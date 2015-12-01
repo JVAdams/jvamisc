@@ -17,7 +17,6 @@
 #' del C:\Users\jvadams\*.gz
 #' "C:\Program Files\R\R-3.2.2\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
 #' "C:\Program Files\R\R-3.2.2\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_0.2.1.9000.tar.gz
-#' pkgman("jvamisc")
 #'
 #' ### Greek and math symbols ###
 #' # http://www.decodeunicode.org/

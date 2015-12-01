@@ -23,7 +23,7 @@
 #'   Based on a function posted by Stanislav on 13 May 2015 on stackoverflow
 #'   \href{http://stackoverflow.com/questions/18639967/converting-latitude-and-longitude-points-to-utm}{[link]}.
 #' @import
-#'   sp rgdal
+#'   sp
 #' @examples
 #' longitude <- c(-82.27, -83.42, -81.01)
 #' latitude <- c(44.76, 45.41, 45.45)

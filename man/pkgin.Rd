@@ -19,8 +19,7 @@ default "max", which uses the latest version in \code{ld}.}
 \item{pd}{A character scalar, R package directory, default "C:/JVA/GitHub".}
 }
 \description{
-Install a package from local files, load the library, and
-save installed package to zip archive.
+Install a package from local files and load the library.
 }
 \seealso{
 \code{\link{pkgup}}

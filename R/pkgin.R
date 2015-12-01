@@ -1,7 +1,6 @@
 #' Install a Package
 #'
-#' Install a package from local files, load the library, and
-#' save installed package to zip archive.
+#' Install a package from local files and load the library.
 #' @param package
 #'   A character scalar, package name.
 #' @param ld
@@ -28,6 +27,4 @@ pkgin <- function(package, ld="C:/Users/jvadams/Documents/R/win-library",
     lv <- max(list.files(ld))
   }
   setwd(paste(ld, lv, sep="/"))
-  # save installed package to zip archive
-  zip(paste0(pd, "/", package, "/", package, ".zip"), package)
 }
