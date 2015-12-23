@@ -10,27 +10,38 @@ output:
     reference_docx: JVAStyleReference.docx
 ---
 
-# Introduction
+```{r setup, echo=FALSE} 
+showcode <- TRUE
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) template for creating a Word document
+library(knitr) 
+opts_chunk$set(echo=showcode, warning=FALSE, message=FALSE, fig.path='Figs/')
 
-```{r, echo=FALSE}
+if(showcode) {
+  phrase <- "All programming code in [R](http://www.r-project.org/) is shown."
+} else {
+  phrase <- "For clarity, I don't show the programming code in [R](http://www.r-project.org/), but I'm happy to provide it upon request."
+}
+
 # define two variables to keep track of Table and Figure numbers
 tabcount <- 1
 figcount <- 1
 ```
 
+# Introduction
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) template for creating a Word document.  `r phrase`
+
 # Tables
 
-You can create tables using simple source code (Table `r tabcount`) or using the `knitr` function `kable` (Table `r tabcount + 1`).
+You can create tables using simple source code (Table `r tabcount`) or using the *knitr* function *kable* (Table `r tabcount + 1`).
 
-**Table `r tabcount`.** First few rows of `mtcars` using simple source code.
+**Table `r tabcount`.** First few rows of *mtcars* using simple source code.
 ```{r, comment=NA, echo=FALSE}
 head(mtcars)
 tabcount <- tabcount + 1
 ```
 
-**Table `r tabcount`.** First few rows of `mtcars` using `kable`.
+**Table `r tabcount`.** First few rows of *mtcars* using *kable*.
 ```{r, results='asis', echo=FALSE}
 knitr::kable(head(mtcars))
 tabcount <- tabcount + 1
@@ -40,24 +51,33 @@ tabcount <- tabcount + 1
 
 You create figures, either using the default size (Figure `r figcount`) or a custom size (Figure `r figcount + 1`).
 
-```{r, echo=FALSE}
+
+
+```{r, echo=showcode}
 par(mar=c(4, 4, 1, 1), las=1)
 plot(cars)
 ```
 
-**Figure `r figcount`.** Simple plot of `cars`, default size.
-
-```{r, echo=FALSE, fig.width = 3, fig.height = 3}
-figcount <- figcount + 1
-par(mar=c(4, 4, 1, 1), las=1)
-plot(cars)
-```
-
-**Figure `r figcount`.** Simple plot of `cars`, custom size.
+**Figure `r figcount`.** Simple plot of *cars*, default size.
 
 ```{r, echo=FALSE}
 figcount <- figcount + 1
 ```
+
+
+
+```{r, echo=showcode, fig.width=3, fig.height=3}
+par(mar=c(4, 4, 1, 1), las=1)
+plot(cars)
+```
+
+**Figure `r figcount`.** Simple plot of *cars*, custom size.
+
+```{r, echo=FALSE}
+figcount <- figcount + 1
+```
+
+
 
 # Miscellany
 
@@ -85,7 +105,7 @@ Ordered List:
 You can write [equations](https://support.rstudio.com/hc/en-us/articles/200486328-Equations-in-R-Markdown), either inline, $A = \pi*r^{2}$, or centered,
 $$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_{i}.$$
 
-You can write superscripts, R^2^, subscripts, X~ij~.  You can ~~cross things out~~.  And you can draw a horizontal line. 
+You can write **bold**, *italics*, superscripts, R^2^, subscripts, X~ij~.  You can ~~cross things out~~.  And you can draw a horizontal line. 
 
 *** 
 

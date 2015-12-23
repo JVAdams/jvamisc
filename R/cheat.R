@@ -16,7 +16,7 @@
 #' pkgin("jvamisc")
 #' del C:\Users\jvadams\*.gz
 #' "C:\Program Files\R\R-3.2.2\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
-#' "C:\Program Files\R\R-3.2.2\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_0.2.1.9000.tar.gz
+#' "C:\Program Files\R\R-3.2.2\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_0.2.1.9001.tar.gz
 #'
 #' ### Greek and math symbols ###
 #' # http://www.decodeunicode.org/
@@ -97,7 +97,7 @@
 #' geocode(c("1600 Pennsylvania Ave NW, Washington DC",
 #'  "Luca, Italy", "Kampala", "Antigo, WI"))
 #'
-#' ### get a lat long for a location ###
+#' ### get a lat lon for a location ###
 #' # from R-help post by Phil Spector, UC Berkeley, Mar 16, 2010
 #' # https://stat.ethz.ch/pipermail/r-help/2010-March/232090.html
 #' library(XML)
@@ -105,7 +105,7 @@
 #'  paste0("http://maps.google.com/maps/api/geocode/xml?address=",
 #'  "Antigo, WI", "&sensor=false")))
 #' lat <- xmlValue(root[["result"]][["geometry"]][["location"]][["lat"]])
-#' long <- xmlValue(root[["result"]][["geometry"]][["location"]][["lng"]])
+#' lon <- xmlValue(root[["result"]][["geometry"]][["location"]][["lng"]])
 #'
 #' ### plot points on a map ###
 #' library(RgoogleMaps)
@@ -118,7 +118,7 @@
 #' library(ggmap)
 #' qmap("Antigo, Wisconsin", zoom=14)
 #'
-#' ### convert between lat/long and projections ###
+#' ### convert between lat/lon and projections ###
 #' library(proj4)
 #' project(xy, proj, inverse=FALSE, degrees=TRUE,
 #'  silent=FALSE, ellps.default="sphere")

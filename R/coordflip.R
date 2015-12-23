@@ -15,7 +15,7 @@
 #'   \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordtri}}.
 #' @references
 #'   Based on a method posted by Il-Bhima on 22 July 2010 on stackoverflow
-#'   \href{http://stackoverflow.com/questions/3306838/algorithm-for-reflecting-a-point-across-a-line}{[link]}.
+#'   \href{http://stackoverflow.com/a/3307181/2140956}{[link]}.
 #' @examples
 #' # starting coordinates
 #' test <- matrix(c(0, 4, 1, 0, 2, 3), ncol=2,

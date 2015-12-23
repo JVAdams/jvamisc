@@ -30,7 +30,7 @@ coordplot(ftest)
 }
 \references{
 Based on a method posted by Il-Bhima on 22 July 2010 on stackoverflow
-  \href{http://stackoverflow.com/questions/3306838/algorithm-for-reflecting-a-point-across-a-line}{[link]}.
+  \href{http://stackoverflow.com/a/3307181/2140956}{[link]}.
 }
 \seealso{
 \code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}},

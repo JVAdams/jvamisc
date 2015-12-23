@@ -60,8 +60,8 @@ plotmatrix(sqrt(m), m)
 plotmatrix(m, mrange=c(0, 50))
 }
 \references{
-Based on a method posted by Henrik on 16 September 2013 on stackoverflow
-  \href{http://stackoverflow.com/questions/18663159/conditional-coloring-of-cells-in-table}{[link]}.
+Based on a method posted by Henrik on 6 September 2013 on stackoverflow
+  \href{http://stackoverflow.com/a/18665994/2140956}{[link]}.
 }
 \seealso{
 \code{\link[plotrix]{color2D.matplot}}

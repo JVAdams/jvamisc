@@ -31,6 +31,6 @@ latlong2(testPoints, to="county")
 }
 \references{
 Based on a method posted by Josh O'Brien on 6 Jan 2012 on stackoverflow
-  \href{http://stackoverflow.com/questions/8751497/latitude-longitude-coordinates-to-state-code-in-r/8751965#8751965}{[link]}.
+  \href{http://stackoverflow.com/a/8751965/2140956}{[link]}.
 }
 
