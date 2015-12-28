@@ -19,11 +19,15 @@ wb <- loadWorkbook("c:/temp/junk.xlsx")
 dat <- readWorksheet(wb, sheet=getSheets(wb)[1], startRow=1)
 
 ### update package ###
-pkgup("jvamisc")
-pkgin("jvamisc")
+myPkg <- "jvamisc"
+pkgup(myPkg)
+pkgin(myPkg)
 del C:\\Users\\jvadams\\*.gz
 "C:\\Program Files\\R\\R-3.2.2\\bin\\x64\\R.exe" CMD build C:\\JVA\\GitHub\\jvamisc --resave-data
-"C:\\Program Files\\R\\R-3.2.2\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_0.2.1.9001.tar.gz
+"C:\\Program Files\\R\\R-3.2.2\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_0.2.1.9002.tar.gz
+char <- paste0("package:", myPkg)
+library(mvbutils)
+foodweb(where=char, charlim=50)
 
 ### Greek and math symbols ###
 # http://www.decodeunicode.org/

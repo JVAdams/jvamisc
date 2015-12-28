@@ -24,8 +24,10 @@ twitter_access_token, and twitter_access_token_secret.  The default is
 "C:/JVA/R/Working Directory/.Renviron" (see Details).}
 }
 \value{
-A named vector with the \code{Mean}, lower and upper confidence limits
-  (\code{L} and \code{U}), and the number of observations \code{N}.
+A list of length 3.  The first element is a data frame of old tweets
+  with text, favoriteCount, retweetCount, and createdUTC (date/time) as
+  columns.  The second and third elements are character strings of the
+  current headlines (currentheads) and the latests items to tweet (totweet).
 }
 \description{
 Tweet the latest headlines from the specified website.
