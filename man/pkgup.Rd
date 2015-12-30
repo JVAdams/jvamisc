@@ -14,6 +14,7 @@ default "C:/JVA/GitHub/".}
 }
 \description{
 Document a package from local files.
+\pkg{devtools} package required.
 }
 \seealso{
 \code{\link{pkgin}}

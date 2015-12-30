@@ -20,6 +20,7 @@ default "max", which uses the latest version in \code{ld}.}
 }
 \description{
 Install a package from local files and load the library.
+\pkg{devtools} package required.
 }
 \seealso{
 \code{\link{pkgup}}

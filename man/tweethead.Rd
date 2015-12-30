@@ -31,6 +31,7 @@ A list of length 3.  The first element is a data frame of old tweets
 }
 \description{
 Tweet the latest headlines from the specified website.
+\pkg{twitteR} and \pkg{RCurl} packages required.
 }
 \details{
 This function is customized to work on a particular website.

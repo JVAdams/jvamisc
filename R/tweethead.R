@@ -1,6 +1,7 @@
 #' Tweet Headlines
 #'
 #' Tweet the latest headlines from the specified website.
+#' \pkg{twitteR} and \pkg{RCurl} packages required.
 #' @param tweet
 #'   A logical scalar indicating if tweets should be posted, default TRUE.
 #' @param username
@@ -28,8 +29,6 @@
 #'   "twitter_api_key=xxx", "twitter_api_secret=xxx",
 #'   "twitter_access_token=xxx", "twitter_access_token_secret=xxx"),
 #'   file.path(getwd(), ".Renviron"))}.
-#' @import
-#'   twitteR RCurl
 #' @export
 #' @references
 #'
@@ -49,6 +48,12 @@
 
 tweethead <- function(tweet=TRUE, username=NULL, website=NULL,
   credOrPath="C:/JVA/R/Working Directory/.Renviron") {
+  if (!requireNamespace("twitteR", quietly=TRUE)) {
+    stop("twitteR must be installed.", call.=FALSE)
+  }
+  if (!requireNamespace("RCurl", quietly=TRUE)) {
+    stop("RCurl must be installed.", call.=FALSE)
+  }
   if (length(credOrPath)==1) {
     readRenviron(credOrPath)
     api_key <- Sys.getenv("twitter_api_key")

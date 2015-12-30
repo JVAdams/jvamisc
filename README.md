@@ -27,9 +27,9 @@ encouraged me to create my first R package._
 
 - - -
 
-_U.S. Geological Survey_ (USGS) Computer Program **jvamisc** version 0.2.1.9002. 
+_U.S. Geological Survey_ (USGS) Computer Program **jvamisc** version 0.2.1.9003. 
 Written by Jean V. Adams, [USGS - Great Lakes Science Center](http://www.glsc.usgs.gov/), Ann Arbor, Michigan, USA. 
-Written in programming language R (R Core Team, 2015, www.R-project.org), version 3.2.2. 
+Written in programming language R (R Core Team, 2015, www.R-project.org), version 3.2.3. 
 Run on a PC with Intel(R) Core(TM) I7-4600m CPU, 2.90 GHz processor, 16.0 GB RAM, and Microsoft Windows 7 Enterprise operating system 2009 Service Pack 1. 
 Source code is available from Jean V. Adams on [GitHub](https://github.com/JVAdams/jvamisc), _jvadams (at) usgs (dot) gov_.
 
