@@ -1,5 +1,5 @@
 Package: jvamisc
-Version: 0.2.1.9003
+Version: 0.2.1.9004
 Date: 2015-12-30
 Title: A Collection of Utility Functions
 Authors@R: person(given="Jean V.", family="Adams", email="jvadams@usgs.gov",

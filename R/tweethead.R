@@ -114,13 +114,14 @@ tweethead <- function(tweet=TRUE, username=NULL, website=NULL,
   # get new tweets ready
   m <- do.call(rbind, lapply(more.urls, pull))
   currentheads <- apply(m[, 2:1], 1, paste, collapse=". ")
+  currentheads <- gsub("&#39;", "'", currentheads)
 
   ### grab latest tweets
   adj <- getUser(Sys.getenv("username"))
   oldtweets <- twListToDF(userTimeline(adj, n=15, excludeReplies=TRUE))[,
     c("text", "favoriteCount", "retweetCount", "created")]
   names(oldtweets)[names(oldtweets)=="created"] <- "createdUTC"
-
+  oldtweets$text <- gsub("&#39;", "'", oldtweets$text)
 
   ### tweet all new tweets that haven't been tweeted before
   totweet <- currentheads[!(substring(currentheads, 1, 30) %in%
