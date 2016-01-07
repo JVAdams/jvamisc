@@ -4,11 +4,11 @@
 \alias{tweethead}
 \title{Tweet Headlines}
 \usage{
-tweethead(tweet = TRUE, username = NULL, website = NULL,
+tweethead(posttweet = TRUE, username = NULL, website = NULL,
   credOrPath = "C:/JVA/R/Working Directory/.Renviron")
 }
 \arguments{
-\item{tweet}{A logical scalar indicating if tweets should be posted, default TRUE.}
+\item{posttweet}{A logical scalar indicating if tweets should be posted, default TRUE.}
 
 \item{username}{A character scalar, giving the name of the twitter user. The default, NULL,
 uses information stored in local .Renviron file (see Details).}

@@ -2,7 +2,7 @@
 #'
 #' Tweet the latest headlines from the specified website.
 #' \pkg{twitteR} and \pkg{RCurl} packages required.
-#' @param tweet
+#' @param posttweet
 #'   A logical scalar indicating if tweets should be posted, default TRUE.
 #' @param username
 #'   A character scalar, giving the name of the twitter user. The default, NULL,
@@ -46,7 +46,7 @@
 #' tweethead()
 #' }
 
-tweethead <- function(tweet=TRUE, username=NULL, website=NULL,
+tweethead <- function(posttweet=TRUE, username=NULL, website=NULL,
   credOrPath="C:/JVA/R/Working Directory/.Renviron") {
   if (!requireNamespace("twitteR", quietly=TRUE)) {
     stop("twitteR must be installed.", call.=FALSE)
@@ -70,13 +70,14 @@ tweethead <- function(tweet=TRUE, username=NULL, website=NULL,
   # connect to Twitter
   origop <- options("httr_oauth_cache")
   options(httr_oauth_cache=TRUE)
-  setup_twitter_oauth(api_key, api_secret, access_token, access_token_secret)
+  twitteR::setup_twitter_oauth(api_key, api_secret, access_token,
+    access_token_secret)
   options(httr_oauth_cache=origop)
 
   # grab headlines from website
   # read in html source code
   base.url <- Sys.getenv("website")
-  base.html <- getURLContent(base.url)[[1]]
+  base.html <- RCurl::getURLContent(base.url)[[1]]
 
   # pull off links that say "More"
   links <- strsplit(base.html, "ID=")[[1]]
@@ -86,7 +87,7 @@ tweethead <- function(tweet=TRUE, username=NULL, website=NULL,
 
   # pull off headline, photo url, photo caption
   pull <- function(thisurl) {
-    thishtml <- getURLContent(thisurl)[[1]]
+    thishtml <- RCurl::getURLContent(thisurl)[[1]]
     # headline
     headlong <- strsplit(thishtml, "<font size=6><b>")[[1]][2]
     head <- strsplit(headlong, "</b>")[[1]][1]
@@ -117,8 +118,9 @@ tweethead <- function(tweet=TRUE, username=NULL, website=NULL,
   currentheads <- gsub("&#39;", "'", currentheads)
 
   ### grab latest tweets
-  adj <- getUser(Sys.getenv("username"))
-  oldtweets <- twListToDF(userTimeline(adj, n=15, excludeReplies=TRUE))[,
+  adj <- twitteR::getUser(Sys.getenv("username"))
+  oldtweets <- twitteR::twListToDF(
+    twitteR::userTimeline(adj, n=15, excludeReplies=TRUE))[,
     c("text", "favoriteCount", "retweetCount", "created")]
   names(oldtweets)[names(oldtweets)=="created"] <- "createdUTC"
   oldtweets$text <- gsub("&#39;", "'", oldtweets$text)
@@ -128,10 +130,10 @@ tweethead <- function(tweet=TRUE, username=NULL, website=NULL,
       substring(oldtweets$text, 1, 30))]
 
   if (length(totweet) > 0) {
-    if (tweet) {
+    if (posttweet) {
       lapply(rev(totweet), updateStatus, lat=45.141473, long=-89.152339)
     } else {
-      cat(paste("\n\n***  This is what would be posted if tweet=TRUE.\n\n"))
+      cat(paste("\n\n***  This is what would be posted if posttweet=TRUE.\n\n"))
       print(totweet)
       cat("\n\n")
     }

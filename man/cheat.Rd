@@ -24,10 +24,16 @@ pkgup(myPkg)
 pkgin(myPkg)
 del C:\\Users\\jvadams\\*.gz
 "C:\\Program Files\\R\\R-3.2.3\\bin\\x64\\R.exe" CMD build C:\\JVA\\GitHub\\jvamisc --resave-data
-"C:\\Program Files\\R\\R-3.2.3\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_0.2.1.9004.tar.gz
-char <- paste0("package:", myPkg)
+"C:\\Program Files\\R\\R-3.2.3\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_0.2.1.9005.tar.gz
+
+### package and function connections ###
 library(mvbutils)
-foodweb(where=char, charlim=50)
+library(jvamisc)
+foodweb(where="package:jvamisc", charlim=50)
+library(sp)
+library(maptools)
+foodweb(where="package:sp", prune="latlong2")
+foodweb(where="package:maptools", prune="latlong2")
 
 ### Greek and math symbols ###
 # http://www.decodeunicode.org/
