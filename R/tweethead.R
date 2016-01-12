@@ -131,7 +131,7 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL,
 
   if (length(totweet) > 0) {
     if (posttweet) {
-      lapply(rev(totweet), updateStatus, lat=45.141473, long=-89.152339)
+      lapply(rev(totweet), twitteR::updateStatus, lat=45.141473, long=-89.152339)
     } else {
       cat(paste("\n\n***  This is what would be posted if posttweet=TRUE.\n\n"))
       print(totweet)
