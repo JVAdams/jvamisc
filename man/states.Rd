@@ -13,4 +13,3 @@ A copy of the \code{state} data base from the \code{maps} package.
 Geographical data base for the state boundaries of the US,
   generated from US Department of the Census data.
 }
-

@@ -24,4 +24,3 @@ capwords(c("using AIC", "for MODEL selection"), strict=FALSE)
 \seealso{
 \code{\link{casefold}}, from which the function was derived.
 }
-

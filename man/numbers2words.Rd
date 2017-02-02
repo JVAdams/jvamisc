@@ -32,4 +32,3 @@ John Fox.  2005.
   Rnews Volume 5(1):51-54.
   \href{http://cran.r-project.org/doc/Rnews/Rnews_2005-1.pdf}{[link]}.
 }
-

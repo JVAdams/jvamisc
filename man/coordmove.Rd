@@ -32,4 +32,3 @@ coordplot(mtest)
 \code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordturn}},
   \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
 }
-

@@ -37,4 +37,3 @@ t distribution.
 \examples{
 CI(1:10)
 }
-

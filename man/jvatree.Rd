@@ -28,4 +28,3 @@ par(xpd=NA) # otherwise on some devices the text is clipped
 plot(fit)
 text(fit, use.n=TRUE)
 }
-

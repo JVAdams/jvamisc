@@ -29,4 +29,3 @@ x <- 1:20
 mycol <- brewcol(x, 4, "Dark2")
 plot(x, x, col=mycol, pch=16, cex=3)
 }
-

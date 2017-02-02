@@ -57,4 +57,3 @@ mydat <- data.frame(
 fill0(df=mydat, effvars=c("year", "plot"), grpvars=c("tree", "size"),
   measvars="number")
 }
-

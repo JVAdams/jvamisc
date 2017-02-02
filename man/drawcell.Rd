@@ -36,4 +36,3 @@ This is part of group of function to plot tables, modifications of
 Systmatic Investor Toolbox.
   \emph{https://github.com/systematicinvestor/SIT}
 }
-

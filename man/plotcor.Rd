@@ -59,4 +59,3 @@ lr[lord[[1]], lord[[2]]]
   based, \code{\link[seriation]{seriate}}, and
   \code{\link[plotrix]{draw.ellipse}}.
 }
-

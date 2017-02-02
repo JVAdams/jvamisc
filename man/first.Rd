@@ -21,4 +21,3 @@ Identify the first elements of series of repeated values.
 \examples{
 first(c(1, 2, 1, 2, 2, 1, 1, 3))
 }
-

@@ -22,4 +22,3 @@ jvanames(c("Conc_mgL", "Conc_mgL", "Temp"))
 \seealso{
 \code{\link{make.names}}
 }
-

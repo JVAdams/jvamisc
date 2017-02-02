@@ -18,4 +18,3 @@ List of five data frames, one for each Great Lake
 \author{
 Rich Signell, USGS.
 }
-

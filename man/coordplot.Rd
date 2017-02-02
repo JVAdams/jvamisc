@@ -22,4 +22,3 @@ coordplot(test)
 \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordmove}},
   \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
 }
-

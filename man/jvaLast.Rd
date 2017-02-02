@@ -20,4 +20,3 @@ R session.
 \seealso{
 \code{\link{savehistory}}, \code{\link{Sys.setenv}}.
 }
-

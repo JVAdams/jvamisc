@@ -38,4 +38,3 @@ Thomas A. Louis. 1981.
   The American Statistician 35(3):154.
   \emph{http://amstat.tandfonline.com/doi/abs/10.1080/00031305.1981.10479337?journalCode=utas20#.U3t2EvldX64}
 }
-

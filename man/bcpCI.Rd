@@ -41,4 +41,3 @@ Manly, Bryan F. J.  1997.
   Randomization, Bootstrap and Monte Carlo Methods in Biology.
   Chapman & Hall, London.
 }
-

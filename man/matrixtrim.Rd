@@ -36,4 +36,3 @@ matrixtrim(m)
 matrixtrim(m, rowsfirst=FALSE)
 matrixtrim(m, prop=c(0.7, 0.7))
 }
-

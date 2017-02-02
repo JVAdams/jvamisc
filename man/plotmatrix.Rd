@@ -66,4 +66,3 @@ Based on a method posted by Henrik on 6 September 2013 on stackoverflow
 \seealso{
 \code{\link[plotrix]{color2D.matplot}}
 }
-

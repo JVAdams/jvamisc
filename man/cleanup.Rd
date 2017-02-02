@@ -12,4 +12,3 @@ Removes all objects from the current working directory.
 \details{
 User is prompted for response.  If the first letter of the response is "y" or "Y", all objects are removed from the current working directory.
 }
-

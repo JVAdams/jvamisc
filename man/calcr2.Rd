@@ -26,4 +26,3 @@ calcr2(fit1$fitted, mtcars$mpg, 3)
 fit2 <- lm(mpg ~ cyl + disp + wt, data=mtcars)
 calcr2(fit2$fitted, mtcars$mpg, 4)
 }
-

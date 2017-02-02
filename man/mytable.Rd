@@ -20,4 +20,3 @@ incorporating missing values by default.
 mytable(c(1, 1, 1, 2, NA, 3, 4, 1, 10, 3))
 
 }
-

@@ -29,4 +29,3 @@ lls()
 Based on a method posted by Bendix Carstensen on 10 Jan 2007 on R-help
   \href{https://stat.ethz.ch/pipermail/r-help/2007-January/123403.html}{[link]}.
 }
-

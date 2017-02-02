@@ -51,4 +51,3 @@ shadepoly(x, y, y-noise, y+noise)
 \seealso{
 \code{\link{polygon}}, \code{\link{lines}}.
 }
-

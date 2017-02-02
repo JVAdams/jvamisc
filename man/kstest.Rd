@@ -44,4 +44,3 @@ kstest(x=myX, y=myY)
 \seealso{
 \code{\link{ks.test}}.
 }
-

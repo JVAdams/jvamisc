@@ -18,4 +18,3 @@ Data frame with longitude and latitude coordinates
 \author{
 Rich Signell, USGS.
 }
-

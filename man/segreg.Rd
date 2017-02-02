@@ -35,4 +35,3 @@ plot(indvar, depvar)
 lines(sr$pred)
 abline(v=sr$k, lty=2)
 }
-

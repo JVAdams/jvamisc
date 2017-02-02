@@ -27,4 +27,3 @@ modecontin(x, TRUE)
 Based on a method posted by Peter Dalgaard on 29 Aug 2008 on
   \href{https://stat.ethz.ch/pipermail/r-help/2008-August/172319.html}{r-help}.
 }
-

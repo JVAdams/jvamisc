@@ -56,4 +56,3 @@ Simon Munzert.  21 Dec 2014.
 How to conduct a tombola with R.
 \emph{www.r-datacollection.com/blog/How-to-conduct-a-tombola-with-R/}
 }
-

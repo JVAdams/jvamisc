@@ -16,4 +16,3 @@ A vector with nine color-blind friendly colors in hex code.
 \author{
 Masataka Okabe and Kei Ito.
 }
-

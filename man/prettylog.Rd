@@ -34,4 +34,3 @@ prettylog(vals, c(1, 2, 5))
 This is a copy of the \code{prettylog} function from the
   \href{https://github.com/JVAdams/LW1949}{[LW1949]} package.
 }
-

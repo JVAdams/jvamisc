@@ -40,4 +40,3 @@ stringin("ar", txt)
 \seealso{
 \code{\link{grep}}.
 }
-

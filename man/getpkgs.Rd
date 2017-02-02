@@ -14,4 +14,3 @@ getpkgs(want, ...)
 \description{
 Installs (if necessary) and attaches the specified packages.
 }
-

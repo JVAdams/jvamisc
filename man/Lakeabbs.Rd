@@ -7,4 +7,3 @@
 \description{
 A vector with the first initials of the five Great Lakes.
 }
-

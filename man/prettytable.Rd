@@ -34,4 +34,3 @@ head(mtcars)
 prettytable(head(mtcars))
 
 }
-

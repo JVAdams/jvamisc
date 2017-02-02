@@ -18,4 +18,3 @@ Read in a data frame from text pasted to the clipboard.
 \seealso{
 \code{\link{read.table}}.
 }
-

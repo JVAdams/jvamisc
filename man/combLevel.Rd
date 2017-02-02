@@ -24,4 +24,3 @@ combLevel(4)
 Based on a method posted to the Adamistics blog 1 March 2016
   \href{http://adamistics.blogspot.com/2016/03/generating-combinations-of-levels.html}{[link]}.
 }
-

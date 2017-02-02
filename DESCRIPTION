@@ -1,6 +1,6 @@
 Package: jvamisc
-Version: 0.5.2.9000
-Date: 2017-01-04
+Version: 0.5.3.9000
+Date: 2017-02-02
 Title: A Collection of Utility Functions
 Authors@R: person(given="Jean V.", family="Adams", email="jvadams@usgs.gov",
     role=c("aut", "cre"))
@@ -26,4 +26,4 @@ Description: A collection of miscellaneous utility functions.
 LazyData: TRUE
 License: GPL
 URL: https://github.com/JVAdams/jvamisc
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.0

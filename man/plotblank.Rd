@@ -31,4 +31,3 @@ plotblank(xlim=c(1, 100))
 \seealso{
 \code{\link{plot}}, \code{\link{title}}, \code{\link{par}}
 }
-

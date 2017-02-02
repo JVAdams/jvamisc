@@ -43,4 +43,3 @@ Modification of code posted by Sage on 3 March 2011 on the website benn.org
 \code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}},
   \code{\link[jvamisc]{coordflip}}, \code{\link[jvamisc]{coordtri}}.
 }
-

@@ -20,4 +20,3 @@ Install a package from local files and load the library.
 \seealso{
 \code{\link{pkgup}}
 }
-

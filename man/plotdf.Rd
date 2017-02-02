@@ -25,4 +25,3 @@ plotdf(mtcars)
 \seealso{
 \code{\link{par}}.
 }
-

@@ -36,4 +36,3 @@ Based on a method posted by Il-Bhima on 22 July 2010 on stackoverflow
 \code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordmove}},
   \code{\link[jvamisc]{coordturn}}, \code{\link[jvamisc]{coordtri}}.
 }
-

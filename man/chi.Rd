@@ -33,4 +33,3 @@ chi(M)
 \seealso{
 \code{\link{chisq.test}}.
 }
-

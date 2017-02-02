@@ -26,4 +26,3 @@ Test to see if value falls within specified range.
 inrange(4:6, c(4, 5.5))
 inrange(4:6, c(4, 5.5), FALSE)
 }
-

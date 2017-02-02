@@ -13,4 +13,3 @@ default colors, color blind friendly colors (`blindcolz`), and fonts.
 \examples{
 showmarks()
 }
-

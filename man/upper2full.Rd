@@ -27,4 +27,3 @@ upper2full(m)
 upper2full(m, 0)
 upper2full(m, 1:4)
 }
-

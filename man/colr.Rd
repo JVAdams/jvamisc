@@ -29,4 +29,3 @@ plot(x, x, pch=16, col=colr(x, "blue", "yellow"), cex=4)
 \seealso{
 \code{\link{colors}}, \code{\link{palette}}.
 }
-

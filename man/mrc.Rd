@@ -45,4 +45,3 @@ W. E. Ricker.  1975.
 \seealso{
 \code{\link{binomCI}}
 }
-

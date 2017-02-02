@@ -19,4 +19,3 @@ Document a package from local files.
 \seealso{
 \code{\link{pkgin}}
 }
-

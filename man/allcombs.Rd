@@ -28,4 +28,3 @@ allcombs(3)
 Based on a method posted by Petr Savicky on 20 Jul 2012 to R-help
   \href{https://stat.ethz.ch/pipermail/r-help/2012-July/319001.html}{[link]}.
 }
-

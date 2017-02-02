@@ -65,4 +65,3 @@ addhist(xx, yy, type="xy")
 \seealso{
 \code{\link{hist}}.
 }
-

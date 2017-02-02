@@ -20,4 +20,3 @@ Trim leading and trailing whitespace from a character vector.
 trimspace("    Bob   and Alice")
 trimspace(" Harriet and    June    ")
 }
-

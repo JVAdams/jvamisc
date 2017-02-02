@@ -44,4 +44,3 @@ ratest(foodcost, income, 100)
 \seealso{
 \code{\link[survey]{svydesign}}, \code{\link[survey]{svyratio}}.
 }
-

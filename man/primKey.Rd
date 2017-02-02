@@ -43,4 +43,3 @@ primKey(mydat2[, c("group", "id")])
 # two primary keys, each made up of two variables
 primKey(mydat3[, c("group", "name", "id")])
 }
-

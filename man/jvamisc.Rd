@@ -13,4 +13,3 @@ Some of the more commonly used functions include
 to a plot, and
 \code{\link{AICc}} to compare models using Akaike's Information Criterion.
 }
-

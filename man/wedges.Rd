@@ -56,4 +56,3 @@ with(df, invisible(lapply(s, function(i)
 \seealso{
 \code{\link{segments}}, \code{\link{arrows}}, \code{\link{polygon}}.
 }
-

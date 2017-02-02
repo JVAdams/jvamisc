@@ -23,4 +23,3 @@ GitHub folder.
 \seealso{
 \code{\link{pkgin}}
 }
-

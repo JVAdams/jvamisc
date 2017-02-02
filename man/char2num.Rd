@@ -50,4 +50,3 @@ df2[, vars] <- data.frame(sapply(tonum, "[", 1))
 df2$comment <- apply(do.call(cbind, sapply(tonum, "[", 2)), 1,
  paste, collapse="")
 }
-

@@ -13,4 +13,3 @@ A copy of the \code{county} data base from the \code{maps} package.
 Geographical data base for the county boundaries of the US,
   generated from US Department of the Census data.
 }
-

@@ -50,4 +50,3 @@ coordplot(rbind(C, AB))
 \code{\link[jvamisc]{coordplot}}, \code{\link[jvamisc]{coordturn}},
   \code{\link[jvamisc]{coordmove}}, \code{\link[jvamisc]{coordflip}}.
 }
-

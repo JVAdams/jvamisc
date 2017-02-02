@@ -38,4 +38,3 @@ fill(charvec)
 This is a copy of the \code{fill} function from the
   \href{https://github.com/JVAdams/LW1949}{[LW1949]} package.
 }
-

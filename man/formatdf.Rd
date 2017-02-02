@@ -49,4 +49,3 @@ formatdf(head(mtcars))
 \seealso{
 \code{\link{format}}.
 }
-

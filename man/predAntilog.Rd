@@ -30,4 +30,3 @@ variance model with a log transformed response.
 fit <- aov(log(yield) ~ block + N * P + K, npk)
 predAntilog(fit, npk)
 }
-

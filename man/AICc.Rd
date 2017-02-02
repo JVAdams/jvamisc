@@ -32,4 +32,3 @@ fit3 <- lm(hp ~ mpg + wt, data=mtcars)
 fit4 <- lm(hp ~ disp + wt, data=mtcars)
 AICc(list(fit1, fit2, fit3, fit4))
 }
-
