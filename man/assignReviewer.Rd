@@ -39,7 +39,7 @@ test2 <- assignReviewer(data=test, Unitvar="Source",
  prefOrd=paste("Group", 1:5))
 test
 test2
-addmargins(with(test2, table(Reviewer, Source)))
+with(test2, addmargins(table(Reviewer, Source)))
 }
 \seealso{
 \code{\link{format}}.
