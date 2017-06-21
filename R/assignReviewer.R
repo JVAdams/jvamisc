@@ -31,7 +31,7 @@
 #'  prefOrd=paste("Group", 1:5))
 #' test
 #' test2
-#' addmargins(with(test2, table(Reviewer, Source)))
+#' with(test2, addmargins(table(Reviewer, Source)))
 
 assignReviewer <- function(data, Unitvar,
     prefOrd=c("LSBS", "HBBS", "LMERS", "Coastal", "LMichigan", "LHuron",
@@ -54,7 +54,7 @@ assignReviewer <- function(data, Unitvar,
   M <- matrix(0, nrow=nU, ncol=nU)
   for(i in 1:nU) {
     # load up the next column's zero first
-    ord <- order(M[, min(nU, i+1)], apply(M, 1, sum))
+    ord <- order((1:8)!=(i+1), apply(M, 1, sum))
     ord <- ord[ord!=i]
     M[ord, i] <- m[, i]
   }
