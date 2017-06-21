@@ -4,24 +4,28 @@
 \alias{mrc}
 \title{Estimates from Mark-Recapture Studies}
 \usage{
-mrc(m, r, c, alpha = 0.05)
+mrc(M, R, C, alpha = 0.05, ...)
 }
 \arguments{
-\item{m}{A numeric scalar, the number of individuals marked and released.}
+\item{M}{A numeric scalar, the number of individuals marked and released.}
 
-\item{r}{A numeric scalar, the number of marked individuals recaptured.}
+\item{R}{A numeric scalar, the number of marked individuals recaptured.}
 
-\item{c}{A numeric scalar, the number of individuals checked for marks.}
+\item{C}{A numeric scalar, the number of individuals checked for marks.}
 
 \item{alpha}{A scalar, the desired confidence level, default \code{0.05}.}
+
+\item{...}{Not in use, added for use with \code{plyr::mdply()} function.}
 }
 \value{
 A named vector with the estimated recovery rate \code{U} with
   lower and upper 100*(1-\code{alpha})\% confidence limits from
-  \code{\link{binomCI}}, and the number of observations \code{N}
+  \code{\link{binomCI}}, and the population estimate \code{N} and associated
+  variance \code{V}
   (the bias-corrected Petersen estimator from Chapman 1954 Table 3)
-  with lower and upper 100*(1-\code{alpha})\% confidence limits from
-  the normal approximation of the Poisson for \code{r} (Ricker 1975).
+  with the coefficient of variation \code{CV} and the
+  lower and upper 100*(1-\code{alpha})\% confidence limits from
+  the normal approximation of the Poisson for \code{R} (Ricker 1975).
 }
 \description{
 Estimates the recovery rate and abundance of a closed population from
@@ -30,6 +34,8 @@ a single recapture event.
 }
 \examples{
 mrc(100, 10, 1000)
+df <- data.frame(Year=2001:2003, M=(1:3)*100, C=(2:4)*1000, R=(3:5)*10)
+plyr::mdply(df, mrc)
 }
 \references{
 D. G. Chapman.  1954.

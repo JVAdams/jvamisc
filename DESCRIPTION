@@ -1,18 +1,18 @@
 Package: jvamisc
-Version: 0.5.3.9001
-Date: 2017-05-24
+Version: 1.0.0.9001
+Date: 2017-06-20
 Title: A Collection of Utility Functions
 Authors@R: person(given="Jean V.", family="Adams", email="jvadams@usgs.gov",
     role=c("aut", "cre"))
 Author: Jean V. Adams [aut, cre]
 Maintainer: Jean V. Adams <jvadams@usgs.gov>
 Depends:
-    R (>= 3.3.3),
+    R (>= 3.4.0),
 Imports:
-    lubridate,
     maptools,
     MASS,
     plotrix,
+    plyr,
     RColorBrewer,
     rpart,
     seriation,
@@ -21,6 +21,7 @@ Imports:
     survey
 Suggests:
     devtools,
+    lubridate,
     RCurl,
     twitteR
 Description: A collection of miscellaneous utility functions.

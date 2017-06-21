@@ -8,8 +8,6 @@
 #'   use "01-01", the default, to get the Julian day.
 #' @return
 #'   A numeric vector the same length as \code{date} giving the day of the year.
-#' @import
-#'   lubridate
 #' @export
 #' @examples
 #' x <- as.Date(c("1963-01-15", "1972-07-20", "1999-03-10"))
@@ -18,6 +16,6 @@
 
 doy <- function(date, day1="01-01") {
   jdaydefault <- julian(date)
-  jdayorigin <- julian(as.Date(paste(year(date), day1, sep="-")))
+  jdayorigin <- julian(as.Date(paste(lubridate::year(date), day1, sep="-")))
   as.numeric(jdaydefault - jdayorigin + 1)
 }
