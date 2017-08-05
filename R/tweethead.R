@@ -94,7 +94,7 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL) {
   adj <- rtweet::get_timeline(Sys.getenv("username"), n=15, include_rts=FALSE)
   oldtweets <- adj[1:15,
     c("text", "favorite_count", "retweet_count", "created_at")]
-  names(oldtweets)[names(oldtweets)=="created"] <- "createdUTC"
+  names(oldtweets)[names(oldtweets)=="created_at"] <- "createdUTC"
   oldtweets$text <- gsub("&#39;", "'", oldtweets$text)
 
   ### tweet all new tweets that haven't been tweeted before
