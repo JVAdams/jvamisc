@@ -4,24 +4,17 @@
 \alias{tweethead}
 \title{Tweet Headlines}
 \usage{
-tweethead(posttweet = TRUE, username = NULL, website = NULL,
-  credOrPath = "C:/JVA/R/Working Directory/.Renviron")
+tweethead(posttweet = TRUE, username = NULL, website = NULL)
 }
 \arguments{
 \item{posttweet}{A logical scalar indicating if tweets should be posted, default TRUE.}
 
 \item{username}{A character scalar, giving the name of the twitter user. The default, NULL,
-uses information stored in local .Renviron file (see Details).}
+uses information stored in local .Renviron file.}
 
 \item{website}{A character scalar, giving the name of the website, from which to pull
 headlines. The default, NULL, uses information stored in local .Renviron
-file (see Details).}
-
-\item{credOrPath}{Either a character scalar giving the path of the environment where the
-credentials are stored or a character vector of length four, giving the
-credentials themselves: twitter_api_key, twitter_api_secret,
-twitter_access_token, and twitter_access_token_secret.  The default is
-"C:/JVA/R/Working Directory/.Renviron" (see Details).}
+file.}
 }
 \value{
 A list of length 3.  The first element is a data frame of old tweets
@@ -31,15 +24,11 @@ A list of length 3.  The first element is a data frame of old tweets
 }
 \description{
 Tweet the latest headlines from the specified website.
-\pkg{twitteR} and \pkg{RCurl} packages required.
+\pkg{rtweet} and \pkg{RCurl} packages required.
 }
 \details{
 This function is customized to work on a particular website.
-  It's not for general use. To store information in local .Renviron file,
-  use \code{writeLines(c("username=xxx", "website=xxx",
-  "twitter_api_key=xxx", "twitter_api_secret=xxx",
-  "twitter_access_token=xxx", "twitter_access_token_secret=xxx"),
-  file.path(getwd(), ".Renviron"))}.
+  It's not for general use.
 }
 \examples{
 \dontrun{

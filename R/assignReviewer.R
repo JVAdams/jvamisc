@@ -54,7 +54,7 @@ assignReviewer <- function(data, Unitvar,
   M <- matrix(0, nrow=nU, ncol=nU)
   for(i in 1:nU) {
     # load up the next column's zero first
-    ord <- order((1:8)!=(i+1), apply(M, 1, sum))
+    ord <- order((1:nU)!=(i+1), apply(M, 1, sum))
     ord <- ord[ord!=i]
     M[ord, i] <- m[, i]
   }

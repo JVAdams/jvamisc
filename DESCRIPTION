@@ -1,6 +1,6 @@
 Package: jvamisc
-Version: 1.0.0.9001
-Date: 2017-06-20
+Version: 1.0.1.9000
+Date: 2017-08-05
 Title: A Collection of Utility Functions
 Authors@R: person(given="Jean V.", family="Adams", email="jvadams@usgs.gov",
     role=c("aut", "cre"))
@@ -23,7 +23,7 @@ Suggests:
     devtools,
     lubridate,
     RCurl,
-    twitteR
+    rtweet
 Description: A collection of miscellaneous utility functions.
 LazyData: TRUE
 License: GPL

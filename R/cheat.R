@@ -17,7 +17,7 @@
 #' pkgin(myPkg)
 #' del C:\Users\jvadams\*.gz
 #' "C:\Program Files\R\R-3.4.0\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
-#' "C:\Program Files\R\R-3.4.0\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_1.0.0.9001.tar.gz
+#' "C:\Program Files\R\R-3.4.0\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_1.0.1.9000.tar.gz
 #'
 #' ### package and function connections ###
 #' # to see all of the functions and their interdependencies in WHERE

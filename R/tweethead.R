@@ -1,22 +1,16 @@
 #' Tweet Headlines
 #'
 #' Tweet the latest headlines from the specified website.
-#' \pkg{twitteR} and \pkg{RCurl} packages required.
+#' \pkg{rtweet} and \pkg{RCurl} packages required.
 #' @param posttweet
 #'   A logical scalar indicating if tweets should be posted, default TRUE.
 #' @param username
 #'   A character scalar, giving the name of the twitter user. The default, NULL,
-#'   uses information stored in local .Renviron file (see Details).
+#'   uses information stored in local .Renviron file.
 #' @param website
 #'   A character scalar, giving the name of the website, from which to pull
 #'   headlines. The default, NULL, uses information stored in local .Renviron
-#'   file (see Details).
-#' @param credOrPath
-#'   Either a character scalar giving the path of the environment where the
-#'   credentials are stored or a character vector of length four, giving the
-#'   credentials themselves: twitter_api_key, twitter_api_secret,
-#'   twitter_access_token, and twitter_access_token_secret.  The default is
-#'   "C:/JVA/R/Working Directory/.Renviron" (see Details).
+#'   file.
 #' @return
 #'   A list of length 3.  The first element is a data frame of old tweets
 #'   with text, favoriteCount, retweetCount, and createdUTC (date/time) as
@@ -24,11 +18,7 @@
 #'   current headlines (currentheads) and the latests items to tweet (totweet).
 #' @details
 #'   This function is customized to work on a particular website.
-#'   It's not for general use. To store information in local .Renviron file,
-#'   use \code{writeLines(c("username=xxx", "website=xxx",
-#'   "twitter_api_key=xxx", "twitter_api_secret=xxx",
-#'   "twitter_access_token=xxx", "twitter_access_token_secret=xxx"),
-#'   file.path(getwd(), ".Renviron"))}.
+#'   It's not for general use.
 #' @export
 #' @references
 #'
@@ -46,33 +36,15 @@
 #' tweethead()
 #' }
 
-tweethead <- function(posttweet=TRUE, username=NULL, website=NULL,
-  credOrPath="C:/JVA/R/Working Directory/.Renviron") {
-  if (!requireNamespace("twitteR", quietly=TRUE)) {
-    stop("twitteR must be installed.", call.=FALSE)
+tweethead <- function(posttweet=TRUE, username=NULL, website=NULL) {
+  if (!requireNamespace("rtweet", quietly=TRUE)) {
+    stop("rtweet must be installed.", call.=FALSE)
   }
   if (!requireNamespace("RCurl", quietly=TRUE)) {
     stop("RCurl must be installed.", call.=FALSE)
   }
-  if (length(credOrPath)==1) {
-    readRenviron(credOrPath)
-    api_key <- Sys.getenv("twitter_api_key")
-    api_secret <- Sys.getenv("twitter_api_secret")
-    access_token <- Sys.getenv("twitter_access_token")
-    access_token_secret <- Sys.getenv("twitter_access_token_secret")
-  } else {
-    api_key <- credOrPath[1]
-    api_secret <- credOrPath[2]
-    access_token <- credOrPath[3]
-    access_token_secret <- credOrPath[4]
-  }
-
-  # connect to Twitter
-  origop <- options("httr_oauth_cache")
-  options(httr_oauth_cache=TRUE)
-  twitteR::setup_twitter_oauth(api_key, api_secret, access_token,
-    access_token_secret)
-  options(httr_oauth_cache=origop)
+  if(is.null(username)) username <- Sys.getenv("username")
+  if(is.null(website)) username <- Sys.getenv("website")
 
   # grab headlines from website
   # read in html source code
@@ -82,7 +54,7 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL,
   # pull off links that say "More"
   links <- strsplit(base.html, "ID=")[[1]]
   links2 <- sapply(strsplit(links, "</a>"), "[", 1)[-1]
-  more.codes <- substring(stringin("more", links2), 1, 5)
+  more.codes <- substring(jvamisc::stringin("more", links2), 1, 5)
   more.urls <- paste0(base.url, "index.php?ID=", more.codes)
 
   # pull off headline, photo url, photo caption
@@ -113,28 +85,31 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL,
   }
 
   # get new tweets ready
-  m <- do.call(rbind, lapply(more.urls, pull))
-  currentheads <- apply(m[, 2:1], 1, paste, collapse=". ")
-  currentheads <- gsub("&#39;", "'", currentheads)
+  df <- as.data.frame(do.call(rbind, lapply(more.urls, pull)),
+    stringsAsFactors=FALSE)
+  df$currentheads <- gsub("&#39;", "'",
+    paste(df$headline, df$article.url, sep=". "))
 
   ### grab latest tweets
-  adj <- twitteR::getUser(Sys.getenv("username"))
-  oldtweets <- twitteR::twListToDF(
-    twitteR::userTimeline(adj, n=15, excludeReplies=TRUE))[,
-    c("text", "favoriteCount", "retweetCount", "created")]
+  adj <- rtweet::get_timeline(Sys.getenv("username"), n=15, include_rts=FALSE)
+  oldtweets <- adj[1:15,
+    c("text", "favorite_count", "retweet_count", "created_at")]
   names(oldtweets)[names(oldtweets)=="created"] <- "createdUTC"
   oldtweets$text <- gsub("&#39;", "'", oldtweets$text)
 
   ### tweet all new tweets that haven't been tweeted before
-  totweet <- currentheads[!(substring(currentheads, 1, 30) %in%
-      substring(oldtweets$text, 1, 30))]
+  totweeti <- rev((1:dim(df)[1])[!(substring(df$currentheads, 1, 30) %in%
+      substring(oldtweets$text, 1, 30))])
 
-  if (length(totweet) > 0) {
+  if (length(totweeti) > 0) {
     if (posttweet) {
-      lapply(rev(totweet), twitteR::updateStatus, lat=45.141473, long=-89.152339)
+      for(i in totweeti) {
+        download.file(df$photo.url[i], "Image.jpg", mode="wb")
+        rtweet::post_tweet(status=df$currenthead[i], media="Image.jpg")
+      }
     } else {
       cat(paste("\n\n***  This is what would be posted if posttweet=TRUE.\n\n"))
-      print(totweet)
+      print(df$currenthead[totweeti])
       cat("\n\n")
     }
   } else {
@@ -143,5 +118,6 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL,
       ".\n\n\n"))
   }
 
-  list(oldtweets=oldtweets, currentheads=currentheads, totweet=totweet)
+  list(oldtweets=oldtweets, currentheads=df$currentheads,
+    totweet=df$currenthead[totweeti])
 }
