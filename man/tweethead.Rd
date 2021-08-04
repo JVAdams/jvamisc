@@ -4,7 +4,7 @@
 \alias{tweethead}
 \title{Tweet Headlines}
 \usage{
-tweethead(posttweet = TRUE, username = NULL, website = NULL)
+tweethead(posttweet = TRUE, username = NULL, website = NULL, save = FALSE)
 }
 \arguments{
 \item{posttweet}{A logical scalar indicating if tweets should be posted, default TRUE.}

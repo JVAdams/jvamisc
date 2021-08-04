@@ -4,8 +4,16 @@
 \alias{wedges}
 \title{Add Wedge-Shaped Line Segments to a Plot}
 \usage{
-wedges(x0, y0, x1, y1, ybase = 0.03 * diff(par("usr")[3:4]), pborder = NA,
-  pcol = "darkgray", ...)
+wedges(
+  x0,
+  y0,
+  x1,
+  y1,
+  ybase = 0.03 * diff(par("usr")[3:4]),
+  pborder = NA,
+  pcol = "darkgray",
+  ...
+)
 }
 \arguments{
 \item{x0}{Numeric vector of x coordinates \strong{from} which to draw

@@ -18,13 +18,38 @@ library(XLConnect)
 wb <- loadWorkbook("c:/temp/junk.xlsx")
 dat <- readWorksheet(wb, sheet=getSheets(wb)[1], startRow=1)
 
+
+
+
+
+
 ### update package ###
+#update version number, R version, date
+R.version.string
+jvamisc::cleanup()
 myPkg <- "jvamisc"
-pkgup(myPkg)
-pkgin(myPkg)
-del C:\\Users\\jvadams\\*.gz
-"C:\\Program Files\\R\\R-3.4.0\\bin\\x64\\R.exe" CMD build C:\\JVA\\GitHub\\jvamisc --resave-data
-"C:\\Program Files\\R\\R-3.4.0\\bin\\x64\\R.exe" CMD check C:\\Users\\jvadams\\jvamisc_1.0.1.9000.tar.gz
+jvamisc::pkgup(myPkg)
+jvamisc::pkgin(myPkg)
+
+del C:\Users\jvadams\*.gz
+"C:\Program Files\R\R-4.1.0\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
+"C:\Program Files\R\R-4.1.0\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_1.0.2.9000.tar.gz
+
+char <- paste0("package:", myPkg)
+mvbutils::foodweb(where=char, charlim=50, boxcolor="transparent")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### package and function connections ###
 # to see all of the functions and their interdependencies in WHERE
@@ -39,8 +64,8 @@ foodweb(where="package:maptools", prune="latlong2")
 
 ### Greek and math symbols ###
 # http://www.decodeunicode.org/
-plot(1, 1, xlab="Length  (\\U03BCm)", ylab="Temperature  (\\U00b0 C)",
- main="Lambda squared=\\\\U03BB\\\\U00B2=\\U03BB\\U00B2")
+plot(1, 1, xlab="Length  (\U03BCm)", ylab="Temperature  (\U00b0 C)",
+ main="Lambda squared=\\\\U03BB\\\\U00B2=\U03BB\U00B2")
 
 ### map scale and north arrow ###
 library(GISTools)
@@ -214,9 +239,9 @@ gsub("=.*", "", charvec)
 # replace all punctuation marks with spaces
 gsub("[[:punct:]]", " ", charvec)
 # get rid of leading and trailing white space
-gsub("^[ \\t]+|[ \\t]+$", "", charvec)
+gsub("^[ \t]+|[ \t]+$", "", charvec)
 # change double spaces to single spaces
-gsub("[ \\t]+", " ", charvec)
+gsub("[ \t]+", " ", charvec)
 
 ### convert a data frame to json ###
 library(RJSONIO)
@@ -267,7 +292,7 @@ for(i in 1:10) {
   points(i, i, pch=16, cex=2)
   savePlot(filename=paste("Rplot", i), type="bmp")
 }
-cat(paste("Plots saved to", getwd()), "\\n")
+cat(paste("Plots saved to", getwd()), "\n")
 # GIF Construction Set
 # Animation wizard
 # add the bitmaps and save as gif animation file

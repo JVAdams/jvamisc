@@ -4,8 +4,11 @@
 \alias{brewcol}
 \title{Assign Colors to Collection of Values Using Color Brewer}
 \usage{
-brewcol(x, n = 9, name = c("YlGnBu", "Oranges", "Greens", "Blues", "Greys",
-  "Dark2")[1])
+brewcol(
+  x,
+  n = 9,
+  name = c("YlGnBu", "Oranges", "Greens", "Blues", "Greys", "Dark2")[1]
+)
 }
 \arguments{
 \item{x}{A numeric vector of values to which colors will be assigned.}

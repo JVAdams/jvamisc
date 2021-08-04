@@ -3,9 +3,11 @@
 \name{states}
 \alias{states}
 \title{United States State Boundaries Map}
-\format{A list (of class map) with elements x, y, range, and names.
+\format{
+A list (of class map) with elements x, y, range, and names.
   The x and y vectors have longitude (x) and latitude (y) coordinates of
-  successive state polygons, separated by NAs.}
+  successive state polygons, separated by NAs.
+}
 \source{
 A copy of the \code{state} data base from the \code{maps} package.
 }

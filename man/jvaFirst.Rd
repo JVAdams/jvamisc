@@ -4,9 +4,14 @@
 \alias{jvaFirst}
 \title{Startup}
 \usage{
-jvaFirst(maxp = 500, ndec = 10, cont = "... ",
-  mirror = "http://streaming.stat.iastate.edu/CRAN/", helpt = "html",
-  fac = FALSE)
+jvaFirst(
+  maxp = 500,
+  ndec = 10,
+  cont = "... ",
+  mirror = "http://streaming.stat.iastate.edu/CRAN/",
+  helpt = "html",
+  fac = FALSE
+)
 }
 \arguments{
 \item{maxp}{Integer scalar, maximum number of lines printed, default 500.}

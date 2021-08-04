@@ -4,8 +4,11 @@
 \alias{pkgman}
 \title{Copy a Package Manual}
 \usage{
-pkgman(package, file = paste0("C:/Users/jvadams/", package, ".Rcheck/",
-  package, "-manual.pdf"), dir = "C:/JVA/GitHub/")
+pkgman(
+  package,
+  file = paste0("C:/Users/jvadams/", package, ".Rcheck/", package, "-manual.pdf"),
+  dir = "C:/JVA/GitHub/"
+)
 }
 \arguments{
 \item{package}{A character scalar, package name.}

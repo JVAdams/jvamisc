@@ -3,7 +3,9 @@
 \name{blindcolz}
 \alias{blindcolz}
 \title{Color-blind Friendly Colors}
-\format{A character vector, length 9.}
+\format{
+A character vector, length 9.
+}
 \source{
 How to make figures and presentations that are friendly to color blind
   people,

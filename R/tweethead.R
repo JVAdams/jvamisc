@@ -36,7 +36,7 @@
 #' tweethead()
 #' }
 
-tweethead <- function(posttweet=TRUE, username=NULL, website=NULL) {
+tweethead <- function(posttweet=TRUE, username=NULL, website=NULL, save=FALSE) {
   if (!requireNamespace("rtweet", quietly=TRUE)) {
     stop("rtweet must be installed.", call.=FALSE)
   }
@@ -44,18 +44,17 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL) {
     stop("RCurl must be installed.", call.=FALSE)
   }
   if(is.null(username)) username <- Sys.getenv("username")
-  if(is.null(website)) username <- Sys.getenv("website")
+  if(is.null(website)) website <- Sys.getenv("website")
 
   # grab headlines from website
   # read in html source code
-  base.url <- Sys.getenv("website")
-  base.html <- RCurl::getURLContent(base.url)[[1]]
+  base.html <- RCurl::getURLContent(website)[[1]]
 
   # pull off links that say "More"
   links <- strsplit(base.html, "ID=")[[1]]
   links2 <- sapply(strsplit(links, "</a>"), "[", 1)[-1]
   more.codes <- substring(jvamisc::stringin("more", links2), 1, 5)
-  more.urls <- paste0(base.url, "index.php?ID=", more.codes)
+  more.urls <- paste0(website, "index.php?ID=", more.codes)
 
   # pull off headline, photo url, photo caption
   pull <- function(thisurl) {
@@ -68,7 +67,7 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL) {
     if (length(photolong)>1) {
       photolong <- photolong[2]
       photo <- strsplit(photolong, "'><br>")[[1]][1]
-      photo.url <- paste0(base.url, "Photos/", photo)
+      photo.url <- paste0(website, "Photos/", photo)
     } else {
       photo.url <- ""
     }
@@ -91,7 +90,7 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL) {
     paste(df$headline, df$article.url, sep=". "))
 
   ### grab latest tweets
-  adj <- rtweet::get_timeline(Sys.getenv("username"), n=15, include_rts=FALSE)
+  adj <- rtweet::get_timeline(username, n=15, include_rts=FALSE)
   oldtweets <- adj[1:15,
     c("text", "favorite_count", "retweet_count", "created_at")]
   names(oldtweets)[names(oldtweets)=="created_at"] <- "createdUTC"
@@ -104,8 +103,12 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL) {
   if (length(totweeti) > 0) {
     if (posttweet) {
       for(i in totweeti) {
-        download.file(df$photo.url[i], "Image.jpg", mode="wb")
-        rtweet::post_tweet(status=df$currenthead[i], media="Image.jpg")
+        if(df$photo.url[i]=="") {
+          rtweet::post_tweet(status=df$currenthead[i])
+        } else {
+          download.file(df$photo.url[i], "Image.jpg", mode="wb")
+          rtweet::post_tweet(status=df$currenthead[i], media="Image.jpg")
+        }
       }
     } else {
       cat(paste("\n\n***  This is what would be posted if posttweet=TRUE.\n\n"))
@@ -118,6 +121,10 @@ tweethead <- function(posttweet=TRUE, username=NULL, website=NULL) {
       ".\n\n\n"))
   }
 
-  list(oldtweets=oldtweets, currentheads=df$currentheads,
-    totweet=df$currenthead[totweeti])
+  if(save) {
+    return(list(oldtweets=oldtweets, currentheads=df$currentheads,
+    totweet=df$currenthead[totweeti]))
+  } else {
+    invisible()
+  }
 }

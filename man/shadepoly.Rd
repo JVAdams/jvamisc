@@ -4,8 +4,17 @@
 \alias{shadepoly}
 \title{Add Shaded Polygon to Plot}
 \usage{
-shadepoly(x, ymd, ylo, yhi, subsel = NULL, kol = "#000000", opq = c(20,
-  50), addline = TRUE)
+shadepoly(
+  x,
+  ymd,
+  ylo,
+  yhi,
+  subsel = NULL,
+  kol = "#000000",
+  opq = c(20, 50),
+  addline = TRUE,
+  smooth = 100
+)
 }
 \arguments{
 \item{x}{A numeric vector, the metric to plot in the x direction (e.g., time).}
@@ -29,6 +38,11 @@ default c(20, 50).}
 
 \item{addline}{A logical scalar, indicating if the x vs ymd line should be added to
 the plot (on top of the shaded polygon), default TRUE.}
+
+\item{smooth}{A numeric scalar, indicating the degree of spline smoothing to be applied,
+default 100.  If set to 0, then no smoothing is done.
+See the \code{n} argument of \code{\link{spline}}, specifying
+interpolation at equally spaced points.}
 }
 \description{
 Add a spline-smoothed, shaded polygon to a plot, typically to show

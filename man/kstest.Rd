@@ -4,8 +4,15 @@
 \alias{kstest}
 \title{Kolmogorov-Smirnov Test}
 \usage{
-kstest(x, y, ids = c("X", "Y"), leg.loc = "right", txt.loc = "left",
-  cexall = 0.8, cexmain = 0.8)
+kstest(
+  x,
+  y,
+  ids = c("X", "Y"),
+  leg.loc = "right",
+  txt.loc = "left",
+  cexall = 0.8,
+  cexmain = 0.8
+)
 }
 \arguments{
 \item{x}{A numeric vector representing the values from the first distribution.}

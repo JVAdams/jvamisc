@@ -4,8 +4,12 @@
 \alias{assignReviewer}
 \title{Assign Reviewers to Papers}
 \usage{
-assignReviewer(data, Unitvar, prefOrd = c("LSBS", "HBBS", "LMERS", "Coastal",
-  "LMichigan", "LHuron", "LEBS", "LOBS", "TLAS"))
+assignReviewer(
+  data,
+  Unitvar,
+  prefOrd = c("LSBS", "HBBS", "LMERS", "Coastal", "LMichigan", "LHuron", "LEBS",
+    "LOBS", "TLAS")
+)
 }
 \arguments{
 \item{data}{Data frame of papers to be reviewed, each row represents a single paper.}

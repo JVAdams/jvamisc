@@ -4,8 +4,12 @@
 \alias{char2num}
 \title{Convert Character to Numeric}
 \usage{
-char2num(x, varname = NULL, pmissing = c("NA", ".", "", " ", "-"),
-  justindex = FALSE)
+char2num(
+  x,
+  varname = NULL,
+  pmissing = c("NA", ".", "", " ", "-"),
+  justindex = FALSE
+)
 }
 \arguments{
 \item{x}{A character vector to be converted to numeric.}

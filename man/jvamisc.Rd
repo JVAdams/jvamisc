@@ -3,7 +3,6 @@
 \docType{package}
 \name{jvamisc}
 \alias{jvamisc}
-\alias{jvamisc-package}
 \title{A Collection of Utility Functions}
 \description{
 \pkg{jvamisc} is a collection of miscellaneous utility functions.

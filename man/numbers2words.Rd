@@ -4,8 +4,11 @@
 \alias{numbers2words}
 \title{Convert Integers to Words}
 \usage{
-numbers2words(x, billion = c("US", "UK")[1], and = if (billion == "US") ""
-  else "and")
+numbers2words(
+  x,
+  billion = c("US", "UK")[1],
+  and = if (billion == "US") "" else "and"
+)
 }
 \arguments{
 \item{x}{An integer vector to be converted.}

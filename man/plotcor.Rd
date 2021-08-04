@@ -4,8 +4,15 @@
 \alias{plotcor}
 \title{Plot a Matrix of Correlations}
 \usage{
-plotcor(r, addtext = TRUE, atcex = NULL, incdiag = FALSE, rorder = TRUE,
-  plot = TRUE, ...)
+plotcor(
+  r,
+  addtext = TRUE,
+  atcex = NULL,
+  incdiag = FALSE,
+  rorder = TRUE,
+  plot = TRUE,
+  ...
+)
 }
 \arguments{
 \item{r}{A matrix of correlations (need not be symmetrical) with values ranging

@@ -3,9 +3,11 @@
 \name{counties}
 \alias{counties}
 \title{United States County Boundaries Map}
-\format{A list (of class map) with elements x, y, range, and names.
+\format{
+A list (of class map) with elements x, y, range, and names.
   The x and y vectors have longitude (x) and latitude (y) coordinates of
-  successive county polygons, separated by NAs.}
+  successive county polygons, separated by NAs.
+}
 \source{
 A copy of the \code{county} data base from the \code{maps} package.
 }

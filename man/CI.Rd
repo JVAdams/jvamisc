@@ -4,8 +4,7 @@
 \alias{CI}
 \title{Confidence Interval of Mean}
 \usage{
-CI(x, alpha = 0.05, keepMean = TRUE, limits = TRUE, prefix = "",
-  na.rm = FALSE)
+CI(x, alpha = 0.05, keepMean = TRUE, limits = TRUE, prefix = "", na.rm = FALSE)
 }
 \arguments{
 \item{x}{Numeric vector of sample observations.}

@@ -4,9 +4,21 @@
 \alias{plotmatrix}
 \title{Plot a Matrix as a Table with Colored Cells}
 \usage{
-plotmatrix(mvalue, mtext = mvalue, ctitle = "Columns", rtitle = "Rows",
-  vcex = 1, lcex = 1, mcex = 1, ctline = 3, rtline = 4,
-  colorange = c("white", "magenta"), mrange = NULL, border = NA, ...)
+plotmatrix(
+  mvalue,
+  mtext = mvalue,
+  ctitle = "Columns",
+  rtitle = "Rows",
+  vcex = 1,
+  lcex = 1,
+  mcex = 1,
+  ctline = 3,
+  rtline = 4,
+  colorange = c("white", "magenta"),
+  mrange = NULL,
+  border = NA,
+  ...
+)
 }
 \arguments{
 \item{mvalue}{Numeric matrix used to generate colors of table.}

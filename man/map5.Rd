@@ -3,8 +3,10 @@
 \name{map5}
 \alias{map5}
 \title{Great Lakes Basin Shoreline}
-\format{One row for each point, consecutive rows with non-missing values for
-  each line.}
+\format{
+One row for each point, consecutive rows with non-missing values for
+  each line.
+}
 \source{
 NOAA National Geophysical Data Center, (the now defunct) Coastline
   Extractor,

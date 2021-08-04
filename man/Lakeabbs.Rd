@@ -3,7 +3,9 @@
 \name{Lakeabbs}
 \alias{Lakeabbs}
 \title{Great Lakes Abbreviations}
-\format{A character vector, length 5.}
+\format{
+A character vector, length 5.
+}
 \description{
 A vector with the first initials of the five Great Lakes.
 }

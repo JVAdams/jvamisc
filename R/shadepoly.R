@@ -25,6 +25,11 @@
 #' @param addline
 #'   A logical scalar, indicating if the x vs ymd line should be added to
 #'   the plot (on top of the shaded polygon), default TRUE.
+#' @param smooth
+#'   A numeric scalar, indicating the degree of spline smoothing to be applied,
+#'   default 100.  If set to 0, then no smoothing is done.
+#'   See the \code{n} argument of \code{\link{spline}}, specifying
+#'   interpolation at equally spaced points.
 #' @details
 #'   Missing values are removed prior to plotting, such that there will be
 #'   no breaks in the shaded polygon nor the line (if requested).
@@ -41,19 +46,29 @@
 #' shadepoly(x, y, y-noise, y+noise)
 
 shadepoly <- function(x, ymd, ylo, yhi, subsel=NULL, kol="#000000",
-  opq=c(20, 50), addline=TRUE) {
+  opq=c(20, 50), addline=TRUE, smooth=100) {
   if (is.null(subsel)) {
     subsel2 <- !is.na(ymd)
   } else {
     subsel2 <- subsel & !is.na(ymd)
   }
-  a <- spline(x[subsel2], ylo[subsel2], n=100)
-  b <- spline(x[subsel2], yhi[subsel2], n=100)
+  ord <- order(x[subsel2])
+  if(smooth>0) {
+    a <- spline(x[subsel2], ylo[subsel2], n=smooth)
+    b <- spline(x[subsel2], yhi[subsel2], n=smooth)
+  } else {
+    a <- list(x=x[subsel2][ord], y=ylo[subsel2][ord])
+    b <- list(x=x[subsel2][ord], y=yhi[subsel2][ord])
+  }
   polygon(c(a$x, rev(b$x)), c(a$y, rev(b$y)), col=paste0(kol, opq[1]),
     border=NA)
   if (addline) {
-    lines(spline(x[subsel2], ymd[subsel2], n=100),
-      col=paste0(kol, opq[2]), lwd=2)
+    if(smooth>0) {
+      lines(spline(x[subsel2], ymd[subsel2], n=smooth),
+        col=paste0(kol, opq[2]), lwd=2)
+    } else {
+      lines(x[subsel2][ord], ymd[subsel2][ord], col=paste0(kol, opq[2]), lwd=2)
+    }
   }
   invisible()
 }

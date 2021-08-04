@@ -4,8 +4,17 @@
 \alias{addhist}
 \title{Add a Marginal Histogram}
 \usage{
-addhist(x, y = NULL, type = "xy", nclass = 20, newmar = 0:1,
-  adj.fac = 1.05, xlab = "Frequency", ylab = "", fill = "gray")
+addhist(
+  x,
+  y = NULL,
+  type = "xy",
+  nclass = 20,
+  newmar = 0:1,
+  adj.fac = 1.05,
+  xlab = "Frequency",
+  ylab = "",
+  fill = "gray"
+)
 }
 \arguments{
 \item{x}{A numeric vector, the first set of data to be binned into a histogram.}

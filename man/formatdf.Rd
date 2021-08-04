@@ -4,8 +4,16 @@
 \alias{formatdf}
 \title{Format a Data Frame}
 \usage{
-formatdf(df, numercol = NULL, round2 = 0, ndec = round2, comma = ",",
-  characol = NULL, align = "left", keepnum = TRUE)
+formatdf(
+  df,
+  numercol = NULL,
+  round2 = 0,
+  ndec = round2,
+  comma = ",",
+  characol = NULL,
+  align = "left",
+  keepnum = TRUE
+)
 }
 \arguments{
 \item{df}{Data frame to be formatted.}

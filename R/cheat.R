@@ -11,13 +11,38 @@
 #' wb <- loadWorkbook("c:/temp/junk.xlsx")
 #' dat <- readWorksheet(wb, sheet=getSheets(wb)[1], startRow=1)
 #'
+#'
+#'
+#'
+#'
+#'
 #' ### update package ###
+#' #update version number, R version, date
+#' R.version.string
+#' jvamisc::cleanup()
 #' myPkg <- "jvamisc"
-#' pkgup(myPkg)
-#' pkgin(myPkg)
+#' jvamisc::pkgup(myPkg)
+#' jvamisc::pkgin(myPkg)
+#'
 #' del C:\Users\jvadams\*.gz
-#' "C:\Program Files\R\R-3.4.0\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
-#' "C:\Program Files\R\R-3.4.0\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_1.0.1.9000.tar.gz
+#' "C:\Program Files\R\R-4.1.0\bin\x64\R.exe" CMD build C:\JVA\GitHub\jvamisc --resave-data
+#' "C:\Program Files\R\R-4.1.0\bin\x64\R.exe" CMD check C:\Users\jvadams\jvamisc_1.0.2.9000.tar.gz
+#'
+#' char <- paste0("package:", myPkg)
+#' mvbutils::foodweb(where=char, charlim=50, boxcolor="transparent")
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
+#'
 #'
 #' ### package and function connections ###
 #' # to see all of the functions and their interdependencies in WHERE

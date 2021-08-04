@@ -1,14 +1,15 @@
 Package: jvamisc
-Version: 1.0.1.9000
-Date: 2017-08-05
+Version: 1.0.2.9000
+Date: 2021-08-04
 Title: A Collection of Utility Functions
 Authors@R: person(given="Jean V.", family="Adams", email="jvadams@usgs.gov",
     role=c("aut", "cre"))
 Author: Jean V. Adams [aut, cre]
 Maintainer: Jean V. Adams <jvadams@usgs.gov>
 Depends:
-    R (>= 3.4.0),
+    R (>= 4.1.0),
 Imports:
+    lmtest,
     maptools,
     MASS,
     plotrix,
@@ -21,11 +22,16 @@ Imports:
     survey
 Suggests:
     devtools,
+    knitr,
     lubridate,
     RCurl,
+    rmarkdown,
     rtweet
 Description: A collection of miscellaneous utility functions.
-LazyData: TRUE
 License: GPL
 URL: https://github.com/JVAdams/jvamisc
-RoxygenNote: 6.0.1
+BugReports: https://github.com/JVAdams/jvamisc/issues
+LazyData: TRUE
+VignetteBuilder: knitr
+RoxygenNote: 7.1.1
+Encoding: UTF-8
